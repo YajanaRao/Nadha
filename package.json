@@ -1,0 +1,19 @@
+{
+  "name": "nadha",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Streaming music player that serves all your needs",
+  "scripts": {
+    "lerna": "node_modules/.bin/lerna"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lerna": "^3.21.0"
+  }
+}

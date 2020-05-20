@@ -1,0 +1,6 @@
+module Pods_Nadha {
+  umbrella header "Pods-Nadha-umbrella.h"
+
+  export *
+  module * { export * }
+}
