@@ -35,3 +35,12 @@ jobs:
       with:
         name: app-release.apk
         path: packages/mobile/android/app/build/outputs/apk/release/
+        
+    - name: Telegram Notify
+      uses: appleboy/telegram-action@0.0.3
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: send photo message
+        photo: tests/github.png
+        document: tests/gophercolor.png
