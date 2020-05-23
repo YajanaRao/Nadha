@@ -42,4 +42,4 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: send apk file
-        document: packages/mobile/android/app/build/outputs/apk/release/app-release.apk
+        document: ./packages/mobile/android/app/build/outputs/apk/release/app-release.apk
