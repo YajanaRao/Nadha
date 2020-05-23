@@ -24,12 +24,12 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install packages
-      run: yarn install
+      run: yarn
       
     # Build android app
     - name: Build Android Release
       run: |
-          cd android && ./gradlew assembleRelease
+          node_modules/.bin/lerna bootstrap && cd packages/mobile/android && ./gradlew assembleRelease
     - name: Upload Artifact
       uses: actions/upload-artifact@v1
       with:
