@@ -6,7 +6,8 @@
   "scripts": {
     "lerna": "node_modules/.bin/lerna",
     "bootstrap": "node_modules/.bin/lerna bootstrap",
-    "storybook": "yarn workspace @nadha/views storybook"
+    "storybook": "lerna run --scope @nadha/views storybook",
+    "android": "lerna run --scope @nadha/mobile android"
   },
   "husky": {
     "hooks": {
