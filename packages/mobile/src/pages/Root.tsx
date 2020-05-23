@@ -1,35 +1,35 @@
 import React from 'react';
 // import { createAppContainer } from "react-navigation";
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {IconButton, useTheme} from 'react-native-paper';
-import {createStackNavigator} from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { IconButton } from 'react-native-paper';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import {OfflineStack} from './offline';
-import {SearchStack} from './search';
-import {HomeStack} from './home';
-import {ExploreStack} from './explore';
-import {PlayerScreen} from './shared/Player';
-import {Screen} from '../components/Screen';
+import { OfflineStack } from './offline';
+import { SearchStack } from './search';
+import { HomeStack } from './home';
+import { ExploreStack } from './explore';
+import { PlayerScreen } from './shared/Player';
+import { Screen } from '../components/Screen';
 
 import NotificationContainer from '../containers/NotificationContainer';
+import { BottomTabBar } from '../components/BottomTabBar';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const BottomNavigator = () => {
-  const theme = useTheme();
-  const {colors} = theme;
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBar={props => <BottomTabBar {...props} />}>
       <Tab.Screen
         name="Home"
         component={HomeStack}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ color }) => (
             <IconButton
+              key="home"
               icon="home"
-              color={focused ? colors.primary : colors.surface}
-              style={{margin: 0, padding: 0}}
+              color={color}
+              style={{ margin: 0, padding: 0 }}
             />
           ),
         }}
@@ -38,11 +38,11 @@ const BottomNavigator = () => {
         name="Search"
         component={SearchStack}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ color }) => (
             <IconButton
               icon="magnify"
-              color={focused ? colors.primary : colors.surface}
-              style={{margin: 0, padding: 0}}
+              color={color}
+              style={{ margin: 0, padding: 0 }}
             />
           ),
         }}
@@ -51,11 +51,11 @@ const BottomNavigator = () => {
         name="Explore"
         component={ExploreStack}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ color }) => (
             <IconButton
               icon="compass"
-              color={focused ? colors.primary : colors.surface}
-              style={{margin: 0, padding: 0}}
+              color={color}
+              style={{ margin: 0, padding: 0 }}
             />
           ),
         }}
@@ -64,11 +64,11 @@ const BottomNavigator = () => {
         name="Offline"
         component={OfflineStack}
         options={{
-          tabBarIcon: ({focused}) => (
+          tabBarIcon: ({ color }) => (
             <IconButton
               icon="library-music"
-              color={focused ? colors.primary : colors.surface}
-              style={{margin: 0, padding: 0}}
+              color={color}
+              style={{ margin: 0, padding: 0 }}
             />
           ),
         }}

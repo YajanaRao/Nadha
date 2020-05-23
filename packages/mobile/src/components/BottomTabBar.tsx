@@ -1,34 +1,56 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import {Caption, TouchableRipple, Surface, Divider} from 'react-native-paper';
-import {PlayerBarContainer} from '../containers/PlayerBarContainer';
-import {NavigationState} from '@react-navigation/core';
+import { View, StyleSheet } from 'react-native';
+import { Caption, TouchableRipple, Surface, Divider, useTheme } from 'react-native-paper';
+import { PlayerBarContainer } from '../containers/PlayerBarContainer';
+import { NavigationState } from '@react-navigation/core';
 
-interface BottomTabBarProps {
-  renderIcon(route: NavigationState, focused: boolean): void;
-  getLabelText(route: NavigationState): void;
-  onTabPress(route: NavigationState): void;
-  onTabLongPress(route: NavigationState): void;
-  getAccessibilityLabel(route: NavigationState): void;
-  state: NavigationState;
-}
 
 export const BottomTabBar = ({
-  renderIcon,
-  getLabelText,
-  onTabPress,
-  onTabLongPress,
-  // getAccessibilityLabel,
-  state,
-}: BottomTabBarProps) => {
-  const {routes, index} = state;
+  descriptors,
+  navigation,
+  state
+}) => {
+  const { routes, index } = state;
+  const theme = useTheme();
+  const { colors } = theme;
   return (
-    <Surface style={{elevation: 4}}>
+    <Surface style={{ elevation: 4 }}>
       <PlayerBarContainer />
       <Divider />
       <Surface style={[styles.container]}>
         {routes.map((route: NavigationState, routeIndex: number) => {
-          const isRouteActive = routeIndex === index;
+          const { options } = descriptors[route.key];
+          const label =
+            options.tabBarLabel !== undefined
+              ? options.tabBarLabel
+              : options.title !== undefined
+                ? options.title
+                : route.name;
+
+          const isFocused = state.index === routeIndex;
+          const color = isFocused ? colors.primary : colors.text
+
+
+
+          const onPress = () => {
+            const event = navigation.emit({
+              type: 'tabPress',
+              target: route.key,
+              canPreventDefault: true,
+            });
+
+
+            if (!isFocused && !event.defaultPrevented) {
+              navigation.navigate(route.name);
+            }
+          }
+
+          const onLongPress = () => {
+            navigation.emit({
+              type: 'tabLongPress',
+              target: route.key,
+            });
+          };
           // const color = isRouteActive ? "green" : "red";
           return (
             <TouchableRipple
@@ -37,24 +59,24 @@ export const BottomTabBar = ({
               // rippleColor={colors.primary}
               // underlayColor={colors.primary}
               borderless
-              onPress={() => {
-                onTabPress({route});
-              }}
-              onLongPress={() => {
-                onTabLongPress({route});
-              }}
-              // accessibilityLabel={getAccessibilityLabel({ route })}
+              onPress={onPress}
+              onLongPress={onLongPress}
+              accessibilityRole="button"
+              accessibilityStates={isFocused ? ['selected'] : []}
+              accessibilityLabel={options.tabBarAccessibilityLabel}
+              testID={options.tabBarTestID}
             >
-              <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                {renderIcon({route, focused: isRouteActive})}
+              <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                {options.tabBarIcon({ color: color })}
                 <Caption
                   style={{
                     textAlign: 'center',
                     fontSize: 10,
                     margin: 0,
                     padding: 0,
+                    color
                   }}>
-                  {getLabelText({route})}
+                  {label}
                 </Caption>
               </View>
             </TouchableRipple>
