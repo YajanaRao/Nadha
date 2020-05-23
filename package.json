@@ -8,9 +8,6 @@
     "bootstrap": "node_modules/.bin/lerna bootstrap",
     "storybook": "yarn workspace @nadha/views storybook"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
