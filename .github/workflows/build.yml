@@ -6,9 +6,9 @@ name: Build
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,27 +19,33 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Install packages
-      run: yarn
-      
-    # Build android app
-    - name: Build Android Release
-      run: |
+      # Runs a single command using the runners shell
+      - name: Install packages
+        run: yarn
+
+      # Build android app
+      - name: Build Android Release
+        run: |
           node_modules/.bin/lerna bootstrap && cd packages/mobile/android && ./gradlew assembleRelease
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: app-release.apk
-        path: packages/mobile/android/app/build/outputs/apk/release/
-        
-    - name: Discord notification
-      env:
-        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-      uses: Ilshidur/action-discord@master
-      with:
-        args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: packages/mobile/android/app/build/outputs/apk/release/
 
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: "The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed."
+
+      - name: Send file app-release.apk to discord channel
+        uses: sinshutu/upload-to-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: README.md
