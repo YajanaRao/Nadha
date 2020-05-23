@@ -48,4 +48,4 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: README.md
+          args: packages/mobile/android/app/build/outputs/apk/release/app-release.apk
