@@ -18,6 +18,8 @@
   "dependencies": {},
   "devDependencies": {
     "husky": "^4.2.5",
-    "lerna": "^3.21.0"
+    "lerna": "^3.21.0",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^1.11.1"
   }
 }
