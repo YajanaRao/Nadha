@@ -15,9 +15,7 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "dependencies": {
-    "@nadha/core": "file:packages/core"
-  },
+  "dependencies": {},
   "devDependencies": {
     "husky": "^4.2.5",
     "lerna": "^3.21.0"

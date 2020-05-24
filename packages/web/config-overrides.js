@@ -2,7 +2,6 @@ module.exports = function override(config, env) {
   config.module.rules.push(
     {
       test: /\.tsx$/,
-      exclude: /node_modules[/\\](?!react-native-vector-icons|react-native-safe-area-view)/,
       use: {
         loader: "babel-loader",
         options: {
@@ -20,13 +19,13 @@ module.exports = function override(config, env) {
           plugins: [
             "@babel/plugin-proposal-class-properties",
             "@babel/plugin-proposal-object-rest-spread",
+            "@babel/plugin-transform-modules-commonjs",
           ],
         },
       },
     },
     {
       test: /\.js$/,
-      exclude: /node_modules[/\\](?!react-native-vector-icons|react-native-safe-area-view)/,
       use: {
         loader: "babel-loader",
         options: {
@@ -44,6 +43,7 @@ module.exports = function override(config, env) {
           plugins: [
             "@babel/plugin-proposal-class-properties",
             "@babel/plugin-proposal-object-rest-spread",
+            "@babel/plugin-transform-modules-commonjs",
           ],
         },
       },
