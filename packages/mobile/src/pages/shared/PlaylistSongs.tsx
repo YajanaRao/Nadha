@@ -7,7 +7,7 @@ import values from 'lodash/values';
 import {addToQueue} from '../../actions/playerState';
 import {TrackContainer} from '../../containers/TrackContainer';
 import {DefaultImage} from '../../components/DefaultImage';
-import {Screen} from '../../components/Screen';
+import {Screen} from '@nadha/views';
 import {EmptyPlaylist} from '../../components/EmptyPlaylist';
 
 import {TrackProps} from '../../types';

@@ -6,7 +6,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import generate from 'string-to-color';
 import {getOfflineArtists} from '../../actions/mediaStore';
 import {Blank} from '../../components/Blank';
-import {Screen} from '../../components/Screen';
+import {Screen} from '@nadha/views';
 
 interface ArtistProps {
   artist: string;

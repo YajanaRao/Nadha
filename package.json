@@ -6,15 +6,18 @@
   "scripts": {
     "lerna": "node_modules/.bin/lerna",
     "bootstrap": "node_modules/.bin/lerna bootstrap",
+    "android": "lerna run --scope @nadha/mobile android",
     "storybook": "lerna run --scope @nadha/views storybook",
-    "android": "lerna run --scope @nadha/mobile android"
+    "web": "lerna run --scope @nadha/web start"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "@nadha/core": "file:packages/core"
+  },
   "devDependencies": {
     "husky": "^4.2.5",
     "lerna": "^3.21.0"

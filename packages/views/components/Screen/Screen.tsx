@@ -18,9 +18,6 @@ export const Screen = ({ children, style }: Screen) => {
   const {
     colors: { background },
   } = theme;
-  return (
-    <View style={[SCREEN, { backgroundColor: background }, style]}>
-      {children}
-    </View>
-  );
+  const backgroundColor = background || "white";
+  return <View style={[SCREEN, { backgroundColor }, style]}>{children}</View>;
 };

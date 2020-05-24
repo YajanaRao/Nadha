@@ -2,17 +2,18 @@ import RNAndroidAudioStore from 'react-native-get-music-files';
 import groupBy from 'lodash/groupBy';
 import values from 'lodash/values';
 import orderBy from 'lodash/orderBy';
+import {MediaManager} from '@nadha/extensions';
 
-import { log } from '../utils/logging';
-import { ThunkDispatch } from 'redux-thunk';
-import { AnyAction } from 'redux';
+import {log} from '../utils/logging';
+import {ThunkDispatch} from 'redux-thunk';
+import {AnyAction} from 'redux';
 
 export const updateQuery = (query: string) => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ) => {
   try {
     if (query) {
-      RNAndroidAudioStore.search({ searchParam: query })
+      RNAndroidAudioStore.search({searchParam: query})
         .then((media) => {
           dispatch({
             type: 'UPDATE_QUERY',
@@ -30,18 +31,17 @@ export const updateQuery = (query: string) => (
         // query: query
       });
     }
-  } catch (error) {
-
-  }
+  } catch (error) {}
 };
 
 export const getOfflineSongs = () => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ) => {
   try {
-
-    RNAndroidAudioStore.getAll({})
-      .then((media) => {
+    console.log('get pff;oe');
+    MediaManager.getAll()
+      .then((media: any) => {
+        console.log('response', media);
         dispatch({
           type: 'OFFLINE_SONGS',
           payload: media,
@@ -55,7 +55,7 @@ export const getOfflineSongs = () => (
         });
       });
   } catch (error) {
-
+    console.log(error);
   }
 };
 
@@ -77,16 +77,13 @@ export const getOfflineArtists = () => (
           payload: 'Something went wrong',
         });
       });
-  } catch (error) {
-
-  }
+  } catch (error) {}
 };
 
 export const getOfflineAlbums = () => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ) => {
   try {
-
     RNAndroidAudioStore.getAlbums({})
       .then((media) => {
         dispatch({
@@ -101,9 +98,7 @@ export const getOfflineAlbums = () => (
           payload: 'Something went wrong',
         });
       });
-  } catch (error) {
-
-  }
+  } catch (error) {}
 };
 
 export const findAlbumSongs = async (album: string) => {
@@ -129,7 +124,7 @@ export const findArtistSongs = async (artist: string) => {
 };
 
 export const filterSongsByGenre = async (genre) => {
-  const songs = await RNAndroidAudioStore.getSongsByGenres({ genre })
+  const songs = await RNAndroidAudioStore.getSongsByGenres({genre})
     .then((media) => {
       return media;
     })

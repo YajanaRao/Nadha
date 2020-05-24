@@ -10,6 +10,7 @@ import {RootScreen} from './pages/Root';
 import {defaultSetup} from './actions';
 import {RootReducerType} from './reducers';
 import {log} from './utils/logging';
+import {ThemeProvider} from '@nadha/views';
 
 export const RootNavigator = () => {
   const themeType = useSelector(
@@ -53,7 +54,9 @@ export const RootNavigator = () => {
 
   return (
     <PaperProvider theme={themeType === 'dark' ? DarkTheme : DefaultTheme}>
-      <RootScreen />
+      <ThemeProvider theme={themeType === 'dark' ? DarkTheme : DefaultTheme}>
+        <RootScreen />
+      </ThemeProvider>
     </PaperProvider>
   );
 };

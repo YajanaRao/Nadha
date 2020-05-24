@@ -1,7 +1,9 @@
 {
   "name": "@nadha/extensions",
   "version": "0.0.1",
-  "description": "A short description of your package",
+  "description": "Nadha music player extensions",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "react-native-get-music-files": "https://github.com/YajanaRao/react-native-get-music-files.git"
+  }
 }

@@ -1,0 +1,10 @@
+{
+  "name": "@nadha/core",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Nadha core package",
+  "license": "MIT",
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.10.3"
+  }
+}

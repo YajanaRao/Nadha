@@ -1,35 +1,35 @@
 import React from 'react';
 // import { createAppContainer } from "react-navigation";
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { IconButton } from 'react-native-paper';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {IconButton} from 'react-native-paper';
+import {createStackNavigator} from '@react-navigation/stack';
 
-import { OfflineStack } from './offline';
-import { SearchStack } from './search';
-import { HomeStack } from './home';
-import { ExploreStack } from './explore';
-import { PlayerScreen } from './shared/Player';
-import { Screen } from '../components/Screen';
+import {OfflineStack} from './offline';
+import {SearchStack} from './search';
+import {HomeStack} from './home';
+import {ExploreStack} from './explore';
+import {PlayerScreen} from './shared/Player';
+import {Screen} from '@nadha/views';
 
 import NotificationContainer from '../containers/NotificationContainer';
-import { BottomTabBar } from '../components/BottomTabBar';
+import {BottomTabBar} from '../components/BottomTabBar';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const BottomNavigator = () => {
   return (
-    <Tab.Navigator tabBar={props => <BottomTabBar {...props} />}>
+    <Tab.Navigator tabBar={(props) => <BottomTabBar {...props} />}>
       <Tab.Screen
         name="Home"
         component={HomeStack}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <IconButton
               key="home"
               icon="home"
               color={color}
-              style={{ margin: 0, padding: 0 }}
+              style={{margin: 0, padding: 0}}
             />
           ),
         }}
@@ -38,11 +38,11 @@ const BottomNavigator = () => {
         name="Search"
         component={SearchStack}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <IconButton
               icon="magnify"
               color={color}
-              style={{ margin: 0, padding: 0 }}
+              style={{margin: 0, padding: 0}}
             />
           ),
         }}
@@ -51,11 +51,11 @@ const BottomNavigator = () => {
         name="Explore"
         component={ExploreStack}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <IconButton
               icon="compass"
               color={color}
-              style={{ margin: 0, padding: 0 }}
+              style={{margin: 0, padding: 0}}
             />
           ),
         }}
@@ -64,11 +64,11 @@ const BottomNavigator = () => {
         name="Offline"
         component={OfflineStack}
         options={{
-          tabBarIcon: ({ color }) => (
+          tabBarIcon: ({color}) => (
             <IconButton
               icon="library-music"
               color={color}
-              style={{ margin: 0, padding: 0 }}
+              style={{margin: 0, padding: 0}}
             />
           ),
         }}

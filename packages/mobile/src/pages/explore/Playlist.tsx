@@ -8,7 +8,7 @@ import {
   getPlaylistSongs,
 } from '../../actions/realmAction';
 import {deserializePlaylists} from '../../utils/database';
-import {Screen} from '../../components/Screen';
+import {Screen} from '@nadha/views';
 import {PlaylistProps, NavigationScreenProps} from '../../types';
 import {Collection} from 'realm';
 

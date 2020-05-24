@@ -5,7 +5,7 @@ import {NetNotify} from '../../components/NetNotify';
 import {RecentContainer} from '../../containers/RecentContainer';
 import {MostPlayedContainer} from '../../containers/MostPlayedContainer';
 import OnlineContainer from '../../containers/OnlineContainer';
-import {Screen} from '../../components/Screen';
+import {Screen} from '@nadha/views';
 import {ShortCutContainer} from '../../containers/ShortcutContainer';
 import {useScrollToTop} from '@react-navigation/native';
 
