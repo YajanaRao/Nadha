@@ -8,12 +8,12 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "noEmit": false,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react"
   },
-  "include": ["*"]
+  "include": ["packages/web", "packages/core", "packages/views"]
 }

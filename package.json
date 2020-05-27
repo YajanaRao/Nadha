@@ -15,7 +15,9 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.13.1"
+  },
   "devDependencies": {
     "husky": "^4.2.5",
     "lerna": "^3.21.0",

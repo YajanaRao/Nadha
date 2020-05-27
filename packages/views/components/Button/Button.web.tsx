@@ -22,14 +22,14 @@ export const Button = ({ children, style, onPress }: Props) => {
   const theme: Theme = useTheme();
   const {
     roundness,
-    colors: { primary },
+    colors: { primary, text },
   } = theme;
 
   return (
     <View
       style={[
         BUTTON,
-        { backgroundColor: primary, borderRadius: roundness },
+        { backgroundColor: primary, borderRadius: roundness, color: text },
         style,
       ]}
     >

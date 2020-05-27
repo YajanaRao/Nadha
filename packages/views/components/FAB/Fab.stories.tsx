@@ -1,21 +1,21 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { Button } from "./Button";
+import { Fab } from "./Fab";
 import { Container } from "../Container/Container";
 
 const onButtonPressed = action("Clicked on button");
 export const ButtonWithText = () => (
   <Container>
-    <Button onPress={onButtonPressed}>What's Happening</Button>
+    <Fab onPress={onButtonPressed}>What's Happening</Fab>
   </Container>
 );
 
 export const buttonWithEmoji = () => (
   <Container>
-    <Button onPress={onButtonPressed}>🔥</Button>
+    <Fab onPress={onButtonPressed}>🔥</Fab>
   </Container>
 );
 
 export default {
-  title: "Button",
+  title: "FAB",
 };

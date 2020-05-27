@@ -6,34 +6,30 @@ import { Theme } from "../../types";
 interface Props {
   style?: StyleProp<ViewStyle>;
   children: ReactNode;
-  onPress?: () => void;
 }
 
-const BUTTON: ViewStyle = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  marginVertical: 4,
+const CARD: ViewStyle = {
   padding: 8,
-  elevation: 4,
+  elevation: 8,
+  margin: 4,
 };
 
-export const Button = ({ children, style, onPress }: Props) => {
+export const Card = ({ children, style }: Props) => {
   const theme: Theme = useTheme();
   const {
     roundness,
-    colors: { primary },
+    colors: { surface },
   } = theme;
 
   return (
     <View
       style={[
-        BUTTON,
-        { backgroundColor: primary, borderRadius: roundness },
+        CARD,
+        { backgroundColor: surface, borderRadius: roundness },
         style,
       ]}
     >
-      <TouchableOpacity onPress={onPress}>{children}</TouchableOpacity>
+      {children}
     </View>
   );
 };

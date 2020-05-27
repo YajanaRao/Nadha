@@ -1,7 +1,10 @@
+const path = require("path");
+
 module.exports = function override(config, env) {
   config.module.rules.push(
     {
       test: /\.tsx$/,
+      exclude: /node_modules/,
       use: {
         loader: "babel-loader",
         options: {
@@ -26,6 +29,7 @@ module.exports = function override(config, env) {
     },
     {
       test: /\.js$/,
+      exclude: /node_modules/,
       use: {
         loader: "babel-loader",
         options: {

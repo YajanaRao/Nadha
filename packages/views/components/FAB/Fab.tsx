@@ -1,15 +1,20 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { useTheme } from "emotion-theming";
-import { StyleProp, TouchableOpacity, View, ViewStyle } from "react-native";
+import {
+  TouchableOpacity,
+  Text,
+  StyleProp,
+  ButtonProps,
+  ViewStyle,
+} from "react-native";
 import { Theme } from "../../types";
 
 interface Props {
-  style?: StyleProp<ViewStyle>;
-  children: ReactNode;
-  onPress?: () => void;
+  onPress: () => void;
+  style: StyleProp<ButtonProps>;
 }
 
-const BUTTON: ViewStyle = {
+const FAB: ViewStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
@@ -18,7 +23,7 @@ const BUTTON: ViewStyle = {
   elevation: 4,
 };
 
-export const Button = ({ children, style, onPress }: Props) => {
+export const Fab = ({ style, onPress }: Props) => {
   const theme: Theme = useTheme();
   const {
     roundness,
@@ -26,14 +31,15 @@ export const Button = ({ children, style, onPress }: Props) => {
   } = theme;
 
   return (
-    <View
+    <TouchableOpacity
+      onPress={onPress}
       style={[
-        BUTTON,
+        FAB,
         { backgroundColor: primary, borderRadius: roundness },
         style,
       ]}
     >
-      <TouchableOpacity onPress={onPress}>{children}</TouchableOpacity>
-    </View>
+      <Text>+</Text>
+    </TouchableOpacity>
   );
 };

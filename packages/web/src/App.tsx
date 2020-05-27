@@ -10,53 +10,51 @@
 
 import React from "react";
 import { SafeAreaView, StyleSheet, ScrollView, Text } from "react-native";
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 import {
   Screen,
-  Welcome,
   DefaultTheme,
   Button,
   Container,
   ThemeProvider,
 } from "@nadha/views";
-import configureStore from "@nadha/core/store";
+import { Home } from "./pages/home";
+// import configureStore from "@nadha/core/store";
 
-const { store, persistor } = configureStore();
+// const { store, persistor } = configureStore();
 
 const App = () => {
   console.log(DefaultTheme);
   return (
-    <Provider store={store}>
-      <ThemeProvider theme={DefaultTheme}>
-        <SafeAreaView>
-          <ScrollView
-            // contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}
-          >
-            <Screen>
-              {/*<MobileApp/>*/}
-              <Welcome />
-              <Container style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Step One</Text>
-                <Text style={styles.sectionDescription}>
-                  Edit <Text style={styles.highlight}>App.tsx</Text> to change
-                  this screen and then come back to see your edits.
-                </Text>
-                <Text style={styles.sectionTitle}>See Your Changes</Text>
-                <Text style={styles.sectionTitle}>Debug</Text>
-              </Container>
+    <ThemeProvider theme={DefaultTheme}>
+      <SafeAreaView>
+        <ScrollView
+          // contentInsetAdjustmentBehavior="automatic"
+          style={styles.scrollView}
+        >
+          <Screen>
+            {/*<MobileApp/>*/}
+            <Home />
+            <Container style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Step One</Text>
+              <Text style={styles.sectionDescription}>
+                Edit <Text style={styles.highlight}>App.tsx</Text> to change
+                this screen and then come back to see your edits.
+              </Text>
+              <Text style={styles.sectionTitle}>See Your Changes</Text>
+              <Text style={styles.sectionTitle}>Debug</Text>
+            </Container>
 
-              <Container style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Learn More</Text>
-                <Button onPress={() => console.log("clicked")}>
-                  Get started
-                </Button>
-              </Container>
-            </Screen>
-          </ScrollView>
-        </SafeAreaView>
-      </ThemeProvider>
-    </Provider>
+            <Container style={styles.sectionContainer}>
+              <Text style={styles.sectionTitle}>Learn More</Text>
+              <Button onPress={() => console.log("clicked")}>
+                Get started
+              </Button>
+            </Container>
+          </Screen>
+        </ScrollView>
+      </SafeAreaView>
+    </ThemeProvider>
   );
 };
 
