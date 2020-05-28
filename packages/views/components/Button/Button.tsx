@@ -16,20 +16,27 @@ const BUTTON: ViewStyle = {
   marginVertical: 4,
   padding: 8,
   elevation: 4,
+  shadowOffset: { width: 0, height: 0 },
+  shadowOpacity: 0.1,
+  shadowRadius: 5,
 };
 
 export const Button = ({ children, style, onPress }: Props) => {
   const theme: Theme = useTheme();
   const {
     roundness,
-    colors: { primary },
+    colors: { primary, text },
   } = theme;
 
   return (
     <View
       style={[
         BUTTON,
-        { backgroundColor: primary, borderRadius: roundness },
+        {
+          backgroundColor: primary,
+          borderRadius: roundness,
+          shadowColor: text,
+        },
         style,
       ]}
     >

@@ -11,6 +11,7 @@ interface Props {
 const CARD: ViewStyle = {
   padding: 8,
   margin: 4,
+  backgroundColor: "red",
 };
 
 export const Card = ({ children, style }: Props) => {

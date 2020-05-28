@@ -29,7 +29,7 @@ export const Button = ({ children, style, onPress }: Props) => {
     <View
       style={[
         BUTTON,
-        { backgroundColor: primary, borderRadius: roundness, color: text },
+        { backgroundColor: primary, borderRadius: roundness },
         style,
       ]}
     >

@@ -1,7 +1,7 @@
 import React from "react";
 import { Screen } from "../Screen";
 import { Container } from "../Container/Container";
-import { Button } from "../Button/Button";
+import { Button } from "../Button";
 import { Text } from "react-native";
 import { Card } from "./Card";
 
