@@ -1,7 +1,22 @@
 import media from "./media";
-export function setupExtentions() {}
+import RNAndroidAudioStore from "react-native-get-music-files";
 
-export function initExtensions() {
-  console.log(media);
-  return media;
-}
+export const MediaManager = {
+  getAll() {
+    return new Promise((resolve, reject) => {
+      resolve(media);
+    });
+    // RNAndroidAudioStore.getAll({})
+    //   .then((tracks) => {
+    //     console.log("tracks", tracks)
+    //     if (tracks) {
+    //       resolve(tracks)
+    //     }
+    //   })
+    //   .catch((er) => {
+    //     console.log("error");
+    //     reject(er)
+    //   });
+    // })
+  },
+};

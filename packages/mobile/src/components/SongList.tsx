@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {PlaylistDialog} from './PlaylistDialog';
 import {SwipeList} from './SwipeList';
-import {Container} from './Container';
+import {Container} from '@nadha/views';
 
 import {TrackProps} from '../types';
 

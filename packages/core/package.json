@@ -1,0 +1,12 @@
+{
+  "name": "@nadha/core",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Nadha core package",
+  "license": "MIT",
+  "dependencies": {
+    "redux-thunk": "2.3.0",
+    "@react-native-community/async-storage": "^1.10.3",
+    "redux-devtools-extension": "^2.13.8"
+  }
+}

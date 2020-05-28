@@ -4,16 +4,24 @@
   "private": true,
   "description": "Streaming music player that serves all your needs",
   "scripts": {
-    "lerna": "node_modules/.bin/lerna"
+    "lerna": "node_modules/.bin/lerna",
+    "bootstrap": "node_modules/.bin/lerna bootstrap",
+    "android": "lerna run --scope @nadha/mobile android",
+    "storybook": "lerna run --scope @nadha/views storybook",
+    "web": "lerna run --scope @nadha/web start"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.13.1"
+  },
   "devDependencies": {
     "husky": "^4.2.5",
-    "lerna": "^3.21.0"
+    "lerna": "^3.21.0",
+    "prettier": "^2.0.4",
+    "pretty-quick": "^1.11.1"
   }
 }

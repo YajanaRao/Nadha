@@ -7,7 +7,7 @@ import {FavContainer} from '../../containers/FavContainer';
 import {RepeatContainer} from '../../containers/RepeatContainer';
 import {PlayerController} from '../../containers/PlayerController';
 import {Progress} from '../../components/ProgressBar';
-import {Screen} from '../../components/Screen';
+import {Screen} from '@nadha/views';
 import {ActiveTrackDetails} from '../../components/ActiveTrackDetails';
 import {RootReducerType} from '../../reducers';
 import {useSelector} from 'react-redux';

@@ -2,6 +2,7 @@ import RNAndroidAudioStore from 'react-native-get-music-files';
 import groupBy from 'lodash/groupBy';
 import values from 'lodash/values';
 import orderBy from 'lodash/orderBy';
+import {MediaManager} from '@nadha/extensions';
 
 import {log} from '../utils/logging';
 import {ThunkDispatch} from 'redux-thunk';
@@ -10,82 +11,94 @@ import {AnyAction} from 'redux';
 export const updateQuery = (query: string) => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ) => {
-  if (query) {
-    RNAndroidAudioStore.search({searchParam: query})
-      .then((media) => {
-        dispatch({
-          type: 'UPDATE_QUERY',
-          payload: media,
-          // query: query
+  try {
+    if (query) {
+      RNAndroidAudioStore.search({searchParam: query})
+        .then((media) => {
+          dispatch({
+            type: 'UPDATE_QUERY',
+            payload: media,
+            // query: query
+          });
+        })
+        .catch((error) => {
+          log(error);
         });
-      })
-      .catch((error) => {
-        log(error);
+    } else {
+      dispatch({
+        type: 'UPDATE_QUERY',
+        payload: false,
+        // query: query
       });
-  } else {
-    dispatch({
-      type: 'UPDATE_QUERY',
-      payload: false,
-      // query: query
-    });
-  }
+    }
+  } catch (error) {}
 };
 
 export const getOfflineSongs = () => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ) => {
-  RNAndroidAudioStore.getAll({})
-    .then((media) => {
-      dispatch({
-        type: 'OFFLINE_SONGS',
-        payload: media,
+  try {
+    console.log('get pff;oe');
+    MediaManager.getAll()
+      .then((media: any) => {
+        console.log('response', media);
+        dispatch({
+          type: 'OFFLINE_SONGS',
+          payload: media,
+        });
+      })
+      .catch((er) => {
+        log(er);
+        dispatch({
+          type: 'OFFLINE_SONGS',
+          payload: [],
+        });
       });
-    })
-    .catch((er) => {
-      log(er);
-      dispatch({
-        type: 'OFFLINE_SONGS',
-        payload: [],
-      });
-    });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const getOfflineArtists = () => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ) => {
-  RNAndroidAudioStore.getArtists({})
-    .then((media) => {
-      dispatch({
-        type: 'OFFLINE_ARTISTS',
-        payload: media,
+  try {
+    RNAndroidAudioStore.getArtists({})
+      .then((media) => {
+        dispatch({
+          type: 'OFFLINE_ARTISTS',
+          payload: media,
+        });
+      })
+      .catch((er) => {
+        log(er);
+        dispatch({
+          type: 'NOTIFY',
+          payload: 'Something went wrong',
+        });
       });
-    })
-    .catch((er) => {
-      log(er);
-      dispatch({
-        type: 'NOTIFY',
-        payload: 'Something went wrong',
-      });
-    });
+  } catch (error) {}
 };
 
 export const getOfflineAlbums = () => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ) => {
-  RNAndroidAudioStore.getAlbums({})
-    .then((media) => {
-      dispatch({
-        type: 'OFFLINE_ALBUMS',
-        payload: media,
+  try {
+    RNAndroidAudioStore.getAlbums({})
+      .then((media) => {
+        dispatch({
+          type: 'OFFLINE_ALBUMS',
+          payload: media,
+        });
+      })
+      .catch((er) => {
+        log(er);
+        dispatch({
+          type: 'NOTIFY',
+          payload: 'Something went wrong',
+        });
       });
-    })
-    .catch((er) => {
-      log(er);
-      dispatch({
-        type: 'NOTIFY',
-        payload: 'Something went wrong',
-      });
-    });
+  } catch (error) {}
 };
 
 export const findAlbumSongs = async (album: string) => {

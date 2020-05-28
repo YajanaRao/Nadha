@@ -1,7 +1,6 @@
 import {defaultDBSetup} from './realmAction';
 import {ThunkDispatch} from 'redux-thunk';
 import {AnyAction} from 'redux';
-import {setupExtentions} from '@nadha/extensions';
 
 export const updateTheme = (theme: string) => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
@@ -23,7 +22,6 @@ export const defaultSetup = () => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ) => {
   defaultDBSetup();
-  setupExtentions();
   dispatch({
     payload: true,
     type: 'DEFAULT_SETUP',

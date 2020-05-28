@@ -8,7 +8,7 @@ import generate from 'string-to-color';
 import {FollowArtistDialog} from '../../containers/FollowArtistDialog';
 import {addArtist, getArtists} from '../../actions/realmAction';
 import {deserializeArtists} from '../../utils/database';
-import {Screen} from '../../components/Screen';
+import {Screen} from '@nadha/views';
 import {ArtistProps} from '../../types';
 
 export const ArtistScreen = ({navigation}) => {

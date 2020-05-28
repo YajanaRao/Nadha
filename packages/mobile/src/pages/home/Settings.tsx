@@ -9,7 +9,7 @@ import {
 } from 'react-native-paper';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {Screen} from '../../components/Screen';
+import {Screen} from '@nadha/views';
 import {updateTheme, changeRadioMode} from '../../actions';
 import {clearHistory} from '../../actions/playerState';
 import {AlertDialog} from '../../components/AlertDialog';

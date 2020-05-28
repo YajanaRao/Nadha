@@ -4,7 +4,7 @@ import {Subheading, Title, Divider} from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import {useSelector} from 'react-redux';
 import Genre from '../../data/genre.json';
-import {Screen} from '../../components/Screen';
+import {Screen} from '@nadha/views';
 import {TrackContainer} from '../../containers/TrackContainer';
 import {TrackProps} from '../../types.js';
 import {RootReducerType} from '../../reducers/index.js';

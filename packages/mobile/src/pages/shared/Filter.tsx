@@ -5,7 +5,7 @@ import isEmpty from 'lodash/isEmpty';
 import {addToQueue} from '../../actions/playerState';
 import {filterSongsByGenre} from '../../actions/mediaStore';
 import {SongListContainer} from '../../containers/SongListContainer';
-import {Screen} from '../../components/Screen';
+import {Screen} from '@nadha/views';
 import {NavigationScreenProps} from '../../types';
 import {EmptyPlaylist} from '../../components/EmptyPlaylist';
 

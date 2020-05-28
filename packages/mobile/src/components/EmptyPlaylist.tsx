@@ -2,7 +2,7 @@ import React from 'react';
 import {Subheading} from 'react-native-paper';
 import {View, ViewStyle} from 'react-native';
 import {ThemedIcon} from './ThemedIcon';
-import {Screen} from './Screen';
+import {Screen} from '@nadha/views';
 
 const CONTAINER: ViewStyle = {
   flex: 1,
