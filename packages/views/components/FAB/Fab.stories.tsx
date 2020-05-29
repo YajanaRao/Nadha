@@ -5,7 +5,7 @@ import { Container } from "../Container/Container";
 
 const onButtonPressed = action("Clicked on button");
 
-export const ButtonWithText = () => (
+export const CreateActionFab = () => (
   <Container>
     <Fab onPress={onButtonPressed} />
   </Container>
