@@ -10,15 +10,20 @@
     "storybook": "lerna run --scope @nadha/views storybook",
     "web": "lerna run --scope @nadha/web start"
   },
+  "workspaces": {
+    "nohoist": [
+      "**react-native**"
+    ],
+    "packages": [
+      "packages/*"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-native": "^0.62.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "husky": "^4.2.5",
     "lerna": "^3.21.0",

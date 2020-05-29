@@ -14,7 +14,7 @@ module.exports = function override(config, env) {
 
           // The configuration for compilation
           presets: [
-            ["@babel/preset-env", { useBuiltIns: "usage" }],
+            "@babel/preset-env",
             "@babel/preset-react",
             "@babel/preset-flow",
             "@babel/preset-typescript",
@@ -39,7 +39,7 @@ module.exports = function override(config, env) {
 
           // The configuration for compilation
           presets: [
-            ["@babel/preset-env", { useBuiltIns: "usage" }],
+            "@babel/preset-env",
             "@babel/preset-react",
             "@babel/preset-flow",
             "@babel/preset-typescript",

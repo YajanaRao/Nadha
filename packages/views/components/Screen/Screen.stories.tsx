@@ -5,6 +5,7 @@ import { Container } from "../Container/Container";
 import { Fab } from "../FAB/Fab";
 import { Card } from "../Card";
 import { Appbar } from "../Appbar/AppBar";
+import { List } from "../List/List";
 
 export const LandingScreen = () => (
   <Screen>
@@ -19,7 +20,15 @@ export const LandingScreen = () => (
         closed after 30 days. Thanks!
       </Card>
     </Container>
-    <Fab style={{ position: "absolute", bottom: 0, right: 0 }} />
+    <Container>
+      <List title={"Music"} icon="Folder" />
+      <List title={"Kannada songs"} icon="Folder" />
+    </Container>
+    <Container>
+      <List title={"Song title 1"} />
+      <List title={"Song title 2"} />
+    </Container>
+    <Fab style={{ position: "absolute", bottom: 10, right: 10 }} />
   </Screen>
 );
 
