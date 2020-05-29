@@ -29,7 +29,7 @@ module.exports = function override(config, env) {
     },
     {
       test: /\.js$/,
-      exclude: /node_modules/,
+      // exclude: /node_modules/,
       use: {
         loader: "babel-loader",
         options: {

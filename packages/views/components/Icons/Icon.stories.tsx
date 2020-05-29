@@ -1,11 +1,21 @@
 import React from "react";
 import { Heart, HeartFilled } from "./Heart";
+import { AlertTriangle } from "./Alert";
+import { Container } from "../Container/Container";
 
 export const OutlinedHeart = () => <Heart value={false} />;
 
-export const FilledHeart = () => <Heart value={true} />;
+export const AlertIcon = () => (
+  <Container style={{ width: 60, height: 60 }}>
+    <AlertTriangle />
+  </Container>
+);
 
-export const FilledHeartWithColor = () => <HeartFilled color="red" />;
+export const FilledHeartWithColor = () => (
+  <Container style={{ width: 60, height: 60 }}>
+    <HeartFilled color="red" />
+  </Container>
+);
 
 export const BigIcon = () => <Heart value={true} size={32} />;
 

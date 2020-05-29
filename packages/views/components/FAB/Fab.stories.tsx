@@ -4,15 +4,10 @@ import { Fab } from "./Fab";
 import { Container } from "../Container/Container";
 
 const onButtonPressed = action("Clicked on button");
-export const ButtonWithText = () => (
-  <Container>
-    <Fab onPress={onButtonPressed}>What's Happening</Fab>
-  </Container>
-);
 
-export const buttonWithEmoji = () => (
+export const CreateActionFab = () => (
   <Container>
-    <Fab onPress={onButtonPressed}>🔥</Fab>
+    <Fab onPress={onButtonPressed} />
   </Container>
 );
 

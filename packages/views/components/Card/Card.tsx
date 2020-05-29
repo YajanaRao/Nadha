@@ -12,20 +12,27 @@ const CARD: ViewStyle = {
   padding: 8,
   elevation: 8,
   margin: 4,
+  shadowOffset: { width: 0, height: 0 },
+  shadowOpacity: 0.1,
+  shadowRadius: 5,
 };
 
 export const Card = ({ children, style }: Props) => {
   const theme: Theme = useTheme();
   const {
     roundness,
-    colors: { surface },
+    colors: { surface, text },
   } = theme;
 
   return (
     <View
       style={[
         CARD,
-        { backgroundColor: surface, borderRadius: roundness },
+        {
+          backgroundColor: surface,
+          borderRadius: roundness,
+          shadowColor: text,
+        },
         style,
       ]}
     >

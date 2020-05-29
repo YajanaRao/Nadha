@@ -1,3 +1,4 @@
+import React from "react";
 import { Welcome } from "./components/Welcome";
 import { Screen } from "./components/Screen";
 import { Button } from "./components/Button";
@@ -16,7 +17,6 @@ export {
   ThemeProvider,
 };
 
-export { Icon } from "./components/Icons";
+export { Heart } from "./components/Icons";
 export { Music } from "./components/Icons/Music";
-export { Heart } from "./components/Icons/Heart";
 export { Logo } from "./components/Icons/Logo";

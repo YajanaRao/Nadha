@@ -10,7 +10,7 @@ module.exports = {
         },
       ],
     });
-    config.resolve.extensions.push(".ts", ".tsx");
+    config.resolve.extensions.push(".ts", ".tsx", ".web.tsx", ".web.ts");
     config.resolve.alias = {
       "react-native": "react-native-web",
     };

@@ -51,3 +51,5 @@ export const Heart = ({
     </TouchableOpacity>
   );
 };
+
+export default Heart;
