@@ -39,8 +39,8 @@ Nadha is currently extended with the following plugins. Instructions on how to u
 
 | Plugin | README |
 | ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
+| Dropbox | [Coming up]!(plugins/dropbox/README.md)[PlDb] |
+| Google Drive | [Coming up]!(plugins/googledrive/README.md)[PlGd] |
 
 
 
