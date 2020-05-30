@@ -1,26 +1,43 @@
 import React from 'react';
-import {Provider} from 'react-redux';
-import {PersistGate} from 'redux-persist/integration/react';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  Screen,
+  Container,
+  List,
+  Card,
+  Appbar,
+  Fab,
+  DefaultTheme,
+  ThemeProvider,
+} from '@nadha/views';
+import {Text} from 'react-native';
 
-import {RootNavigator} from './RootNavigator';
-import configureStore from './store';
-import {Welcome} from './components/Welcome';
-
-const {store, persistor} = configureStore();
-
-const App = () => {
-  const renderActivityIndicator = () => <Welcome />;
-
+export function App() {
   return (
-    <NavigationContainer>
-      <Provider store={store}>
-        <PersistGate loading={renderActivityIndicator()} persistor={persistor}>
-          <RootNavigator />
-        </PersistGate>
-      </Provider>
-    </NavigationContainer>
+    <ThemeProvider theme={DefaultTheme}>
+      <Screen>
+        <Appbar />
+        <Container>
+          <Card>
+            <Text>
+              Hi everyone! Seems like there hasn't been much going on in this
+              issue lately. If there are still questions, comments, or bugs,
+              please feel free to continue the discussion. Unfortunately, we
+              don't have time to get to every issue. We are always open to
+              contributions so please send us a pull request if you would like
+              to help. Inactive issues will be closed after 30 days. Thanks!
+            </Text>
+          </Card>
+        </Container>
+        <Container>
+          <List title={'Music'} icon="Folder" />
+          <List title={'Kannada songs'} icon="Folder" />
+        </Container>
+        <Container>
+          <List title={'Song title 1'} />
+          <List title={'Song title 2'} />
+        </Container>
+        <Fab style={{position: 'absolute', bottom: 10, right: 10}} />
+      </Screen>
+    </ThemeProvider>
   );
-};
-
-export default App;
+}

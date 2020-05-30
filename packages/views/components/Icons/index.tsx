@@ -22,7 +22,7 @@ const Loader = ({ size, color }: { size: number; color: string }) => (
 );
 
 export const Icon = ({ name, size = 24 }: Props) => {
-  const IconComponent = React.lazy(() => import(`./${name}`));
+  // const IconComponent = React.lazy(() => import(`./${name}`));
   const theme: Theme = useTheme();
   const {
     colors: { text },
@@ -31,7 +31,7 @@ export const Icon = ({ name, size = 24 }: Props) => {
   return (
     <Suspense fallback={<Loader size={size - 4} color={color.lighten(0.8)} />}>
       <View style={{ height: size, width: size }}>
-        <IconComponent color={color.lighten(0.8)} />
+        {/* <IconComponent color={color.lighten(0.8)} /> */}
       </View>
     </Suspense>
   );

@@ -3,6 +3,7 @@ import { View, Text, ViewStyle } from "react-native";
 import { useTheme } from "emotion-theming";
 import { Theme } from "../../types";
 import { Icon } from "../Icons";
+const Color = require("color");
 
 export interface Props {
   title?: string;
@@ -11,7 +12,6 @@ export interface Props {
 }
 
 const LIST_CONTAINER: ViewStyle = {
-  flex: 1,
   padding: 8,
   marginVertical: 2,
   flexDirection: "row",
@@ -33,8 +33,9 @@ const TEXT_CONTAINER: ViewStyle = {
 export const List = ({ title, description, icon }: Props) => {
   const theme: Theme = useTheme();
   const {
-    colors: { surface },
+    colors: { surface, text },
   } = theme;
+  const color = Color(text);
   return (
     <View style={[LIST_CONTAINER, { backgroundColor: surface }]}>
       {icon ? (
@@ -45,8 +46,14 @@ export const List = ({ title, description, icon }: Props) => {
         false
       )}
       <View style={TEXT_CONTAINER}>
-        <Text>{title}</Text>
-        <Text>{description}</Text>
+        <Text style={{ color: text }}>{title}</Text>
+        {description ? (
+          <Text style={{ fontSize: 12, color: color.opaquer(0.8) }}>
+            {description}
+          </Text>
+        ) : (
+          false
+        )}
       </View>
     </View>
   );

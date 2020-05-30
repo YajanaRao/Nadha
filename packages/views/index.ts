@@ -1,4 +1,3 @@
-import React from "react";
 import { Welcome } from "./components/Welcome";
 import { Screen } from "./components/Screen";
 import { Button } from "./components/Button";
