@@ -30,7 +30,9 @@ export const Appbar = () => {
         { backgroundColor: primary, shadowColor: text },
       ]}
     >
-      <Text style={{ color: textColor }}>Nadha</Text>
+      <Text style={{ color: textColor, fontSize: 24, fontWeight: "800" }}>
+        Nadha
+      </Text>
     </View>
   );
 };

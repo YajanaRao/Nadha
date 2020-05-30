@@ -6,7 +6,7 @@ import { Card } from "./components/Card";
 import { List } from "./components/List/List";
 import { Appbar } from "./components/Appbar/AppBar";
 import { DefaultTheme } from "./theme";
-import { ThemeProvider } from "emotion-theming";
+export { ThemeProvider } from "emotion-theming";
 import { Fab } from "./components/FAB/Fab";
 export {
   Screen,
@@ -15,7 +15,6 @@ export {
   Card,
   Welcome,
   DefaultTheme,
-  ThemeProvider,
   Appbar,
   List,
   Fab,

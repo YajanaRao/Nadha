@@ -1,0 +1,2 @@
+# no need to upload build storybook. We can add CI CD
+storybook-static

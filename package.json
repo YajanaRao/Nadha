@@ -11,7 +11,10 @@
     "web": "lerna run --scope @nadha/web start"
   },
   "workspaces": {
-    "nohoist": [],
+    "nohoist": [
+      "**/react-native",
+      "**/react-native/**"
+    ],
     "packages": [
       "packages/*"
     ]

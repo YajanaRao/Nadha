@@ -2,20 +2,9 @@ import { create } from "@storybook/theming";
 import React from "react";
 import { addParameters, configure, addDecorator } from "@storybook/react";
 import { ThemeProvider } from "emotion-theming";
-
-const theme = {
-  dark: true,
-  roundness: 4,
-  colors: {
-    background: "#f1f3f4",
-    surface: "#fff",
-    primary: "#0070f3",
-    text: "#111",
-  },
-};
-
+import { DefaultTheme } from "../src/theme";
 addDecorator((storyFn) => (
-  <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
+  <ThemeProvider theme={DefaultTheme}>{storyFn()}</ThemeProvider>
 ));
 
 // Option defaults:
@@ -50,7 +39,7 @@ addParameters({
   },
 });
 
-const req = require.context("../components", true, /\.stories\.tsx$/);
+const req = require.context("../src/components", true, /\.stories\.tsx$/);
 
 function loadStories() {
   req.keys().forEach((filename) => req(filename));
