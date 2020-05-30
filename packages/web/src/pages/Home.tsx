@@ -1,8 +1,16 @@
-import React from "react";
-import { Text } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Text, FlatList } from "react-native";
 import { Screen, Container, List, Card, Appbar, Fab } from "@nadha/views";
+// import { MediaManager } from '@nadha/core';
 
 export function Home() {
+  const [songs, setSongs] = useState([]);
+  // useEffect(() => {
+  //   let list: any = MediaManager.getSongs();
+  //   console.log(list)
+  //   // setSongs(list)
+  // }, [])
+
   return (
     <Screen>
       <Appbar />
@@ -24,10 +32,15 @@ export function Home() {
         <List title={"Kannada songs"} description={"32 songs"} icon="Folder" />
       </Container>
       <Container>
-        <List title={"Song title 1"} />
-        <List title={"Song title 2"} />
+        <FlatList
+          data={songs}
+          renderItem={(song: any) => (
+            <List title={song.title} description={song.artist} />
+          )}
+          keyExtractor={(item: any) => item.nid}
+        />
       </Container>
-      <Fab style={{ position: "absolute", bottom: 10, right: 10 }} />
+      {/* <Fab style={{ position: "absolute", bottom: 10, right: 10 }} onPress={() => MediaManager.addSongs(songs)}/> */}
     </Screen>
   );
 }

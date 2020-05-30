@@ -9,48 +9,22 @@
  */
 
 import React from "react";
-import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
-import { Screen, DefaultTheme, ThemeProvider } from "@nadha/views";
-import { Home } from "./pages/home";
+import { SafeAreaView } from "react-native";
+import { DefaultTheme, ThemeProvider } from "@nadha/views";
+import { Home } from "./pages/Home";
+
 // import configureStore from "@nadha/core/store";
 
 // const { store, persistor } = configureStore();
 
 const App = () => {
-  console.log(DefaultTheme);
   return (
     <ThemeProvider theme={DefaultTheme}>
       <SafeAreaView>
-        <ScrollView
-          // contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}
-        >
-          <Screen>
-            <Home />
-          </Screen>
-        </ScrollView>
+        <Home />
       </SafeAreaView>
     </ThemeProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: "#ff0fff",
-    minHeight: "100%",
-  },
-  engine: {
-    position: "absolute",
-    right: 0,
-  },
-  footer: {
-    color: "black",
-    fontSize: 12,
-    fontWeight: "600",
-    padding: 4,
-    paddingRight: 12,
-    textAlign: "right",
-  },
-});
 
 export default App;
