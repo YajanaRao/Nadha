@@ -1,2 +1,5 @@
 # no need to upload build storybook. We can add CI CD
 storybook-static
+
+# compiled files won't be required
+lib
