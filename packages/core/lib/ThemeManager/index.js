@@ -1,21 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MediaManager = void 0;
+exports.ThemeManager = void 0;
 function makeId() {
   return Math.random().toString(36).substring(7);
 }
-exports.MediaManager = {
+exports.ThemeManager = {
   songs: [
     {
-      nid: "randomstring0",
-      title: "Song Name 0",
-      url: "Song url",
-      artist: "Artist Name",
-      album: "Album Name",
-    },
-    {
-      nid: "randomstring1",
-      title: "Song Name 1",
+      nid: "randomstring",
+      title: "Song Name",
       url: "Song url",
       artist: "Artist Name",
       album: "Album Name",

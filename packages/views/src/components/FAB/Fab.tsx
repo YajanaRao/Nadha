@@ -3,6 +3,8 @@ import { useTheme } from "emotion-theming";
 import { TouchableOpacity, Text, StyleProp, ViewStyle } from "react-native";
 import { Theme } from "../../types";
 
+const Color = require("color");
+
 interface Props {
   onPress?: () => void;
   style?: StyleProp<ViewStyle>;
@@ -29,13 +31,15 @@ export const Fab = ({ style, onPress }: Props) => {
     colors: { primary, surface, text },
   } = theme;
 
+  const textColor = Color(primary).isDark() ? "white" : "black";
+
   return (
     <TouchableOpacity
       key="fab"
-      // onPress={onPress}
+      onPress={onPress}
       style={[FAB, { backgroundColor: primary, shadowColor: text }, style]}
     >
-      <Text style={{ color: surface, fontSize: 30 }}>+</Text>
+      <Text style={{ color: textColor, fontSize: 30 }}>+</Text>
     </TouchableOpacity>
   );
 };

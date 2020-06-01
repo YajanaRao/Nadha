@@ -10,7 +10,7 @@
 
 import React from "react";
 import { SafeAreaView } from "react-native";
-import { DefaultTheme, ThemeProvider } from "@nadha/views";
+import { DefaultTheme, ThemeProvider, DarkTheme } from "@nadha/views";
 import { Home } from "./pages/Home";
 
 // import configureStore from "@nadha/core/store";
