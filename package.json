@@ -11,10 +11,7 @@
     "web": "lerna run --scope @nadha/web start"
   },
   "workspaces": {
-    "nohoist": [
-      "**/react-native",
-      "**/react-native/**"
-    ],
+    "nohoist": [],
     "packages": [
       "packages/*"
     ]
@@ -24,7 +21,12 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-native": "0.62.2"
+  },
+  "resolutions": {
+    "@types/react": "16.9.35"
+  },
   "devDependencies": {
     "husky": "^4.2.5",
     "lerna": "^3.21.0",
