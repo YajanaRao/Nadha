@@ -36,10 +36,6 @@
     "typescript": "^3.9.2",
     "webpack": "^4.42.5"
   },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
-  },
   "scripts": {
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook"

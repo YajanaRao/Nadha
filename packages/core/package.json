@@ -17,6 +17,7 @@
     "typescript": "tsc"
   },
   "dependencies": {
+    "redux": "^4.0.0-0",
     "redux-thunk": "2.3.0",
     "@react-native-community/async-storage": "^1.10.3",
     "redux-devtools-extension": "^2.13.8"

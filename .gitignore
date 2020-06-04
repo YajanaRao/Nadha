@@ -64,3 +64,6 @@ buck-out/
 
 # Workspace files
 workspace.config
+
+# built apps
+lib/
