@@ -15,11 +15,11 @@ const middleware = [thunk];
 
 const persistedReducer = persistReducer(persistConfig, RootReducer);
 
-export default () => {
-  const store = createStore(
+export const configureStore = () => {
+  const store: any = createStore(
     persistedReducer,
     composeWithDevTools(applyMiddleware(...middleware))
   );
-  const persistor = persistStore(store);
+  const persistor: any = persistStore(store);
   return { store, persistor };
 };

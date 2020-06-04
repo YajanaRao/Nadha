@@ -1,7 +1,8 @@
 import React, { ReactNode } from "react";
 import { useTheme } from "emotion-theming";
-import { StyleProp, TouchableOpacity, View, ViewStyle } from "react-native";
+import { StyleProp, View, ViewStyle } from "react-native";
 import { Theme } from "../../types";
+const Color = require("color");
 
 interface Props {
   style?: StyleProp<ViewStyle>;
@@ -21,8 +22,11 @@ export const Card = ({ children, style }: Props) => {
   const theme: Theme = useTheme();
   const {
     roundness,
+    border,
     colors: { surface, text },
   } = theme;
+
+  let borderColor = Color(text).fade(0.75);
 
   return (
     <View
@@ -32,6 +36,8 @@ export const Card = ({ children, style }: Props) => {
           backgroundColor: surface,
           borderRadius: roundness,
           shadowColor: text,
+          borderWidth: border,
+          borderColor,
         },
         style,
       ]}

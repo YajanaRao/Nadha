@@ -1,9 +1,10 @@
-import media from "./media";
-import RNAndroidAudioStore from "react-native-get-music-files";
+// import media from "./media";
+// import RNAndroidAudioStore from "react-native-get-music-files";
 
 export const MediaManager = {
   getAll() {
     return new Promise((resolve, reject) => {
+      const media: any = [];
       resolve(media);
     });
     // RNAndroidAudioStore.getAll({})

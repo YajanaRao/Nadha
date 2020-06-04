@@ -1,49 +1,43 @@
-import { defaultDBSetup } from "./realmAction";
-import { ThunkDispatch } from "redux-thunk";
-import { AnyAction } from "redux";
-
-export const updateTheme = (theme: string) => (
-  dispatch: ThunkDispatch<{}, {}, AnyAction>
-) => {
-  if (theme === "dark") {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.changeRadioMode = exports.defaultSetup = exports.updateTheme = void 0;
+exports.updateTheme = function (theme) {
+  return function (dispatch) {
+    if (theme === "dark") {
+      dispatch({
+        payload: "default",
+        type: "UPDATE_THEME",
+      });
+    } else {
+      dispatch({
+        payload: "dark",
+        type: "UPDATE_THEME",
+      });
+    }
+  };
+};
+exports.defaultSetup = function () {
+  return function (dispatch) {
     dispatch({
-      payload: "default",
-      type: "UPDATE_THEME",
+      payload: true,
+      type: "DEFAULT_SETUP",
     });
-  } else {
+  };
+};
+exports.changeRadioMode = function (radio) {
+  return function (dispatch) {
     dispatch({
-      payload: "dark",
-      type: "UPDATE_THEME",
+      payload: radio,
+      type: "RADIO_MODE",
     });
-  }
+  };
 };
-
-export const defaultSetup = () => (
-  dispatch: ThunkDispatch<{}, {}, AnyAction>
-) => {
-  defaultDBSetup();
-  dispatch({
-    payload: true,
-    type: "DEFAULT_SETUP",
-  });
-};
-
-export const changeRadioMode = (radio: boolean) => (
-  dispatch: ThunkDispatch<{}, {}, AnyAction>
-) => {
-  dispatch({
-    payload: radio,
-    type: "RADIO_MODE",
-  });
-};
-
 // const _downloadFileProgress = (data) => {
 //   const percentage = ((100 * data.bytesWritten) / data.contentLength) | 0;
 //   const text = `Progress ${percentage}%`;
 //   if (percentage == 100) {
 //   }
 // }
-
 // export const downloadMedia = (item) => dispatch => {
 //   try {
 //     if(item){
@@ -66,7 +60,6 @@ export const changeRadioMode = (radio: boolean) => (
 //   } catch (error) {
 //   }
 // }
-
 // RNFS.readdir(RNFS.DocumentDirectoryPath).then(files => {
 //   let response = []
 //   _.forEach(files, function (value) {

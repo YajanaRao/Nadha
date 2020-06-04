@@ -39,6 +39,7 @@ export interface PlaylistProps {
 export interface Theme {
   dark: boolean;
   roundness: number;
+  border: number;
   colors: {
     background: string;
     primary: string;

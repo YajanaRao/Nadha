@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Text, FlatList } from "react-native";
-import { Screen, Container, List, Card, Appbar, Fab } from "@nadha/views";
-// import { MediaManager } from '@nadha/core';
+import { FlatList } from "react-native";
+import { Screen, Container, List, Card, Appbar, Fab, Text } from "@nadha/views";
+import { MediaManager } from "@nadha/core";
 
 export function Home() {
   const [songs, setSongs] = useState([]);
-  // useEffect(() => {
-  //   let list: any = MediaManager.getSongs();
-  //   console.log(list)
-  //   // setSongs(list)
-  // }, [])
+  useEffect(() => {
+    let list: any = MediaManager.getSongs();
+    console.log(list);
+    setSongs(list);
+  }, []);
 
   return (
     <Screen>
       <Appbar />
       <Container>
         <Card>
-          <Text style={{ fontSize: 18, marginBottom: 2 }}>Hi everyone!</Text>
+          <Text style={{ fontSize: 24, marginBottom: 2, fontWeight: "700" }}>
+            Hi everyone!
+          </Text>
           <Text>
             Hi everyone! Seems like there hasn't been much going on in this
             issue lately. If there are still questions, comments, or bugs,
@@ -34,13 +36,16 @@ export function Home() {
       <Container>
         <FlatList
           data={songs}
-          renderItem={(song: any) => (
-            <List title={song.title} description={song.artist} />
+          renderItem={({ item }) => (
+            <List title={item.title} description={item.artist} />
           )}
           keyExtractor={(item: any) => item.nid}
         />
       </Container>
-      {/* <Fab style={{ position: "absolute", bottom: 10, right: 10 }} onPress={() => MediaManager.addSongs(songs)}/> */}
+      <Fab
+        style={{ position: "absolute", bottom: 10, right: 10 }}
+        onPress={() => MediaManager.addSongs(songs)}
+      />
     </Screen>
   );
 }

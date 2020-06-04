@@ -9,21 +9,26 @@
  */
 
 import React from "react";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, Text } from "react-native";
 import { DefaultTheme, ThemeProvider } from "@nadha/views";
 import { Home } from "./pages/Home";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { configureStore } from "@nadha/core";
 
-// import configureStore from "@nadha/core/store";
-
-// const { store, persistor } = configureStore();
+const { store, persistor } = configureStore();
 
 const App = () => {
   return (
-    <ThemeProvider theme={DefaultTheme}>
-      <SafeAreaView>
-        <Home />
-      </SafeAreaView>
-    </ThemeProvider>
+    <Provider store={store}>
+      <PersistGate loading={<Text>Loading</Text>} persistor={persistor}>
+        <ThemeProvider theme={DefaultTheme}>
+          <SafeAreaView>
+            <Home />
+          </SafeAreaView>
+        </ThemeProvider>
+      </PersistGate>
+    </Provider>
   );
 };
 

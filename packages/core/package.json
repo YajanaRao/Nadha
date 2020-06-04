@@ -17,9 +17,13 @@
     "typescript": "tsc"
   },
   "dependencies": {
-    "redux": "^4.0.0-0",
-    "redux-thunk": "2.3.0",
     "@react-native-community/async-storage": "^1.10.3",
-    "redux-devtools-extension": "^2.13.8"
+    "lodash": "^4.17.15",
+    "redux": "^4.0.0-0",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "2.3.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.155"
   }
 }

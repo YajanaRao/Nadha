@@ -1,7 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MediaManager = void 0;
 function makeId() {
   return Math.random().toString(36).substring(7);
 }
-export const MediaManager = {
+exports.MediaManager = {
   songs: [
     {
       nid: "randomstring0",
@@ -18,15 +21,14 @@ export const MediaManager = {
       album: "Album Name",
     },
   ],
-
   getSongs: function () {
     return this.songs;
   },
-
-  addSongs: function (items: any) {
-    items.forEach((item: any) => {
+  addSongs: function (items) {
+    var _this = this;
+    items.forEach(function (item) {
       item.nid = makeId();
-      this.songs.push(item);
+      _this.songs.push(item);
     });
   },
 };

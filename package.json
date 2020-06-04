@@ -4,16 +4,13 @@
   "private": true,
   "description": "Streaming music player that serves all your needs",
   "scripts": {
-    "lerna": "node_modules/.bin/lerna",
     "bootstrap": "node_modules/.bin/lerna bootstrap",
     "android": "lerna run --scope @nadha/mobile android",
     "storybook": "lerna run --scope @nadha/views storybook",
-    "web": "lerna run --scope @nadha/web start"
+    "web": "yarn workspace @nadha/web run start"
   },
   "workspaces": {
-    "nohoist": [
-      "mobile/react-native/**"
-    ],
+    "nohoist": [],
     "packages": [
       "packages/*"
     ]
@@ -23,7 +20,12 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-native": "0.62.2"
+  },
+  "resolutions": {
+    "@types/react": "16.9.35"
+  },
   "devDependencies": {
     "husky": "^4.2.5",
     "lerna": "^3.21.0",

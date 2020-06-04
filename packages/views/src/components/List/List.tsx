@@ -33,11 +33,25 @@ const TEXT_CONTAINER: ViewStyle = {
 export const List = ({ title, description, icon }: Props) => {
   const theme: Theme = useTheme();
   const {
+    border,
     colors: { surface, text },
+    roundness,
   } = theme;
   const color = Color(text);
+  let borderColor = color.fade(0.75);
+
   return (
-    <View style={[LIST_CONTAINER, { backgroundColor: surface }]}>
+    <View
+      style={[
+        LIST_CONTAINER,
+        {
+          backgroundColor: surface,
+          borderRadius: roundness,
+          borderWidth: border,
+          borderColor,
+        },
+      ]}
+    >
       {icon ? (
         <View style={ICON_CONTAINER}>
           <Icon name={icon} />
@@ -46,7 +60,7 @@ export const List = ({ title, description, icon }: Props) => {
         false
       )}
       <View style={TEXT_CONTAINER}>
-        <Text style={{ color: text }}>{title}</Text>
+        <Text style={{ color: text, fontWeight: "600" }}>{title}</Text>
         {description ? (
           <Text style={{ fontSize: 12, color: color.opaquer(0.8) }}>
             {description}

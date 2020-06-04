@@ -7,13 +7,14 @@ import {
   Appbar,
   Fab,
   DefaultTheme,
+  DarkTheme,
   ThemeProvider,
 } from '@nadha/views';
 import {Text} from 'react-native';
 
 export function App() {
   return (
-    <ThemeProvider theme={DefaultTheme}>
+    <ThemeProvider theme={DarkTheme}>
       <Screen>
         <Appbar />
         <Container>
