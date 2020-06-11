@@ -16,7 +16,7 @@ export const DataPull = () => {
                 <FlatList data={[{title: "Dropbox"}, {title: "Google Drive"}, {title: 'Spotify'}]}
                           numColumns={2}
                           renderItem={({item}) => <Card style={{flex: 1}}><Text>{item.title}</Text></Card>}/>
-                <Button onPress={() => navigation.goBack()}> Go Back</Button>
+                <Button onPress={() => navigation.goBack()} title={"Go Back"}/>
             </Container>
         </Screen>
     )

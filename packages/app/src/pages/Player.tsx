@@ -8,9 +8,7 @@ export const Player = () => {
         <Screen>
             <Container>
                 <Text>Player</Text>
-                <Button onPress={() => navigation.goBack()}>
-                    <Text>Go back</Text>
-                </Button>
+                <Button onPress={() => navigation.goBack()} title={"Go back"} />
             </Container>
         </Screen>
     )
