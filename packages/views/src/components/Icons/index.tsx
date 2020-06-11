@@ -26,7 +26,8 @@ const Loader = ({size, color}: { size: number; color: string }) => (
 
 const ICON_MAPS: any = {
     'Folder': require('./Folder').default,
-    'Music': require("./Music").default
+    'Music': require("./Music").default,
+    'Close': require('./Close').default
 }
 
 export const Icon = ({name, size = 24, onPress}: Props) => {
