@@ -8,7 +8,9 @@
     "target": "es6",
     "jsx": "react",
     "declaration": true,
-    "allowJs": true
+    "allowJs": true,
+    "noEmit": false
   },
-  "include": ["./src"]
+  "include": ["./src"],
+  "exclude": ["./src/stories"]
 }

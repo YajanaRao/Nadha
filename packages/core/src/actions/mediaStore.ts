@@ -3,34 +3,34 @@ import values from "lodash/values";
 import orderBy from "lodash/orderBy";
 import { MediaManager } from "../MediaManager";
 
+
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
 import { Action } from "../types";
 
-export const getAllSongs = () => (
-  dispatch: ThunkDispatch<{}, {}, AnyAction>
-) => {
+export const getAllMedia = () => (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
   try {
-    const media: any = MediaManager.getSongs();
+    const media: any = MediaManager.getMedia()
 
     dispatch({
-      type: Action.LIST_SONGS,
+      type: Action.LIST_MEDIA,
       payload: media,
       // query: query
     });
-  } catch (error) {}
-};
 
-export const addSongs = (songs: any) => (
-  dispatch: ThunkDispatch<{}, {}, AnyAction>
-) => {
+  } catch (error) { }
+}
+
+export const addSongs = (songs: any) => (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
   try {
     dispatch({
       type: Action.ADD_SONGS,
-      payload: MediaManager.addSongs(songs),
-    });
-  } catch (error) {}
-};
+      payload: MediaManager.addSongs(songs)
+    })
+  } catch (error) {
+
+  }
+}
 
 export const updateQuery = (query: string) => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>
@@ -55,7 +55,7 @@ export const updateQuery = (query: string) => (
         // query: query
       });
     }
-  } catch (error) {}
+  } catch (error) { }
 };
 
 export const getOfflineArtists = () => (
@@ -76,7 +76,7 @@ export const getOfflineArtists = () => (
     //       payload: "Something went wrong",
     //     });
     //   });
-  } catch (error) {}
+  } catch (error) { }
 };
 
 export const getOfflineAlbums = () => (
@@ -97,7 +97,7 @@ export const getOfflineAlbums = () => (
     //       payload: "Something went wrong",
     //     });
     //   });
-  } catch (error) {}
+  } catch (error) { }
 };
 
 export const findAlbumSongs = async (album: string) => {

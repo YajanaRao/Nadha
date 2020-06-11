@@ -37,6 +37,6 @@ export interface PlaylistProps {
 }
 
 export const Action = {
-  LIST_SONGS: "LIST_SONGS",
-  ADD_SONGS: "ADD_SONGS",
-};
+  LIST_MEDIA: 'LIST_MEDIA',
+  ADD_SONGS: 'ADD_SONGS'
+}

@@ -27,7 +27,6 @@ export const Card = ({ children, style }: Props) => {
   } = theme;
 
   let borderColor = Color(text).fade(0.25);
-  console.log(borderColor);
 
   return (
     <View

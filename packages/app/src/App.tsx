@@ -11,10 +11,11 @@
 import React from "react";
 import { SafeAreaView, Text, Dimensions } from "react-native";
 import { DefaultTheme, ThemeProvider, Appbar, Fab, Screen } from "@nadha/views";
-
-import { configureStore, Provider, PersistGate } from "@nadha/core";
+import { configureStore } from "@nadha/core";
 import Navigation from "./navigation";
-
+import { Provider } from "react-redux";
+// @ts-ignore
+import { PersistGate } from "redux-persist/integration/react";
 const { store, persistor } = configureStore();
 
 const App = () => {
@@ -23,19 +24,10 @@ const App = () => {
       <PersistGate loading={<Text>Loading</Text>} persistor={persistor}>
         <ThemeProvider theme={DefaultTheme}>
           <SafeAreaView>
-            <Appbar />
             <Screen>
               <Navigation />
             </Screen>
-            <Fab
-              style={{
-                position: "absolute",
-                bottom: 10,
-                right: 10,
-                top: Dimensions.get("window").height - 80,
-              }}
-              onPress={() => console.log("supposed to open modal")}
-            />
+
           </SafeAreaView>
         </ThemeProvider>
       </PersistGate>

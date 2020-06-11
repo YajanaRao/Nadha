@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { View } from "react-native";
+import {TouchableOpacity, View} from "react-native";
 import { Theme } from "../../types";
 import { useTheme } from "emotion-theming";
 export { Heart } from "./Heart";
@@ -8,6 +8,7 @@ const Color = require("color");
 interface Props {
   name: string;
   size?: number;
+  onPress?: () => void;
 }
 
 const Loader = ({ size, color }: { size: number; color: string }) => (
@@ -21,7 +22,7 @@ const Loader = ({ size, color }: { size: number; color: string }) => (
   </View>
 );
 
-export const Icon = ({ name, size = 24 }: Props) => {
+export const Icon = ({ name, size = 24, onPress }: Props) => {
   const IconComponent = React.lazy(() => import(`./${name}`));
   const theme: Theme = useTheme();
   const {
@@ -30,9 +31,9 @@ export const Icon = ({ name, size = 24 }: Props) => {
   const color = Color(text);
   return (
     <Suspense fallback={<Loader size={size - 4} color={color.lighten(0.8)} />}>
-      <View style={{ height: size, width: size }}>
+      <TouchableOpacity style={{ height: size, width: size }} onPress={onPress}>
         <IconComponent color={color.fade(0.75)} />
-      </View>
+      </TouchableOpacity>
     </Suspense>
   );
 };

@@ -6,7 +6,7 @@ import { Theme } from "../../types";
 export interface Props {
   children: ReactNode;
   style?: StyleProp<TextStyle>;
-  onPress?: () => void;
+  onPress?: () => void
 }
 
 export const Text = ({ children, style, onPress }: Props) => {
@@ -15,9 +15,5 @@ export const Text = ({ children, style, onPress }: Props) => {
     colors: { text },
   } = theme;
 
-  return (
-    <BareText style={[{ color: text }, style]} onPress={onPress}>
-      {children}
-    </BareText>
-  );
+  return <BareText style={[{ color: text }, style]} onPress={onPress}>{children}</BareText>;
 };

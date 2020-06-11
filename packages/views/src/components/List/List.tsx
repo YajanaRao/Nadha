@@ -13,21 +13,22 @@ export interface Props {
 }
 
 const LIST_CONTAINER: ViewStyle = {
-  padding: 8,
+  padding: 12,
   marginVertical: 2,
   flexDirection: "row",
   justifyContent: "space-between",
-  flex: 1,
+  flex: 1
 };
 
 const ICON_CONTAINER: ViewStyle = {
-  paddingHorizontal: 8,
-  maxWidth: 50,
-  // flex: 1
+  maxWidth: 40,
+  marginRight: 16,
+  justifyContent: "center",
+  alignItems: "center"
 };
 
 const TEXT_CONTAINER: ViewStyle = {
-  width: "100%",
+  width: '100%',
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "flex-start",
@@ -61,17 +62,17 @@ export const List = ({ title, description, icon, onPress }: Props) => {
           <Icon name={icon} />
         </View>
       ) : (
-        false
-      )}
+          false
+        )}
       <View style={TEXT_CONTAINER}>
-        <Text style={{ color: text, fontWeight: "600" }}>{title}</Text>
+        <Text style={{ color: text,  fontSize: 16 }}>{title}</Text>
         {description ? (
-          <Text style={{ fontSize: 12, color: color.opaquer(0.8) }}>
+          <Text style={{ fontSize: 12, color: color.fade(0.50), marginTop: 2 }}>
             {description}
           </Text>
         ) : (
-          false
-        )}
+            false
+          )}
       </View>
     </TouchableOpacity>
   );

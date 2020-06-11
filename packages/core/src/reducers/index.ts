@@ -53,16 +53,16 @@ export const mediaStoreReducer = (
   action: MediaActions
 ) => {
   switch (action.type) {
-    case Action.LIST_SONGS:
+    case Action.LIST_MEDIA:
       return {
         ...state,
-        songs: action.payload,
-      };
+        songs: action.payload
+      }
     case Action.ADD_SONGS:
       return {
         ...state,
-        songs: uniqBy(action.payload, "nid"),
-      };
+        songs: uniqBy(action.payload, 'nid')
+      }
     default:
       return state;
   }

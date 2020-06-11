@@ -9,31 +9,24 @@ export interface Screen {
   style?: StyleProp<ViewStyle>;
 }
 
+
+
 export const Screen = ({ children, style }: Screen) => {
   const theme: Theme = useTheme();
   const {
     colors: { background },
   } = theme;
   const backgroundColor = background || "white";
-  return (
-    <View
-      style={[
-        {
-          backgroundColor,
-          ...Platform.select({
-            web: {
-              height: "100vh",
-              overflowY: "auto",
-            },
-            default: {
-              flex: 1,
-            },
-          }),
-        },
-        style,
-      ]}
-    >
-      {children}
-    </View>
-  );
+  return <View style={[{
+    backgroundColor, ...Platform.select({
+      web: {
+        height: '100vh',
+        overflowY: 'auto',
+        overflowX: 'hidden'
+      },
+      default: {
+        flex: 1
+      }
+    })
+  }, style]}>{children}</View>;
 };

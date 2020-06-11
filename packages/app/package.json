@@ -7,6 +7,9 @@
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "react-native": "lib/index.js",
+  "scripts": {
+    "tsc": "tsc"
+  },
   "files": [
     "lib",
     "src"
@@ -14,10 +17,5 @@
   "author": "Yajana N Rao",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-    "@nadha/core": "0.0.1",
-    "@nadha/views": "0.0.1",
-    "react": "^16.13.1",
-    "react-native": "^0.62.2"
-  }
+  "dependencies": {}
 }

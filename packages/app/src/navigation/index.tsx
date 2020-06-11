@@ -3,27 +3,17 @@ import { Platform } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "react-native-screens/native-stack";
 import { enableScreens } from "react-native-screens";
-import { Library } from "../pages/Home/Library";
-import { Player } from "../pages/Player";
-import { Folder } from "../pages/Home/Folder";
+import { Library } from '../pages/Home/Library';
+import { Player } from '../pages/Player';
+import { Folder } from '../pages/Home/Folder';
 import { Breadcrumb } from "@nadha/views";
 
+
 enableScreens();
-const FolderHeader = ({
-  route,
-  navigation,
-}: {
-  route: any;
-  navigation: any;
-}) => {
+const FolderHeader = ({ route, navigation }: { route: any, navigation: any }) => {
   const { folderName } = route.params;
-  return (
-    <Breadcrumb
-      routes={["Library", folderName ? folderName : "Folder"]}
-      navigate={(route: string) => navigation.navigate(route)}
-    />
-  );
-};
+  return <Breadcrumb routes={['Library', folderName ? folderName : 'Folder']} navigate={(route: string) => navigation.navigate(route)} />
+}
 
 const RootStack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
@@ -46,7 +36,7 @@ export function Landing() {
         // })}
       />
     </HomeStack.Navigator>
-  );
+  )
 }
 
 export function Root() {
@@ -57,8 +47,14 @@ export function Root() {
         headerShown: false,
       }}
     >
-      <RootStack.Screen name="Landing" component={Landing} />
-      <RootStack.Screen name="Player" component={Player} />
+      <RootStack.Screen
+        name="Landing"
+        component={Landing}
+      />
+      <RootStack.Screen
+        name="Player"
+        component={Player}
+      />
     </RootStack.Navigator>
   );
 }

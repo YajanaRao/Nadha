@@ -1,23 +1,22 @@
-const path = require("path");
 module.exports = {
-  stories: ["../src/components/**/*.stories.tsx"],
-  webpackFinal: async (config) => {
+  stories:['../src/stories/*.stories.tsx'],
+  webpackFinal: async config => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       use: [
         {
-          loader: require.resolve("ts-loader"),
+          loader: require.resolve('ts-loader'),
+        },
+        // Optional
+        {
+          loader: require.resolve('react-docgen-typescript-loader'),
         },
       ],
     });
-    config.resolve.extensions.push(".ts", ".tsx", ".web.tsx", ".web.ts");
     config.resolve.alias = {
       "react-native": "react-native-web",
     };
-    config.externals = {
-      // react: "React",
-      // "react-dom": "ReactDOM",
-    };
+    config.resolve.extensions.push('.ts', '.tsx');
     return config;
   },
 };

@@ -7,7 +7,8 @@
     "target": "es6",
     "jsx": "react",
     "declaration": true,
-    "allowJs": true
+    "allowJs": true,
+    "noEmit": false
   },
   "include": ["./src"]
 }
