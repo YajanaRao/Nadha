@@ -29,12 +29,12 @@ jobs:
       # Build android app
       - name: Build Android Release
         run: |
-          node_modules/.bin/lerna bootstrap && cd packages/mobile/android && ./gradlew assembleRelease
+          yarn && cd android && ./gradlew assembleRelease
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
           name: app-release.apk
-          path: packages/mobile/android/app/build/outputs/apk/release/
+          path: android/app/build/outputs/apk/release/
 
       - name: Discord notification
         env:
@@ -48,4 +48,4 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: packages/mobile/android/app/build/outputs/apk/release/app-release.apk
+          args: android/app/build/outputs/apk/release/app-release.apk
