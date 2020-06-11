@@ -1,0 +1,23 @@
+{
+  "name": "@nadha/app",
+  "version": "0.0.1",
+  "description": "Application code lives here",
+  "main": "lib/index.js",
+  "source": "src/index.ts",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "react-native": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "author": "Yajana N Rao",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@nadha/core": "0.0.1",
+    "@nadha/views": "0.0.1",
+    "react": "^16.13.1",
+    "react-native": "^0.62.2"
+  }
+}

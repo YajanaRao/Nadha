@@ -1,6 +1,5 @@
-function makeId() {
-  return Math.random().toString(36).substring(7);
-}
+import { makeId } from "../utils";
+
 export const MediaManager = {
   songs: [
     {
@@ -24,9 +23,11 @@ export const MediaManager = {
   },
 
   addSongs: function (items: any) {
-    items.forEach((item: any) => {
-      item.nid = makeId();
-      this.songs.push(item);
-    });
+    for (const index in items) {
+      let song = items[index];
+      song.nid = makeId();
+      this.songs.push(song);
+    }
+    return this.songs;
   },
 };

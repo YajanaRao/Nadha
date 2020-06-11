@@ -7,8 +7,14 @@ import { Card } from "./components/Card";
 import { List } from "./components/List/List";
 import { Appbar } from "./components/Appbar/AppBar";
 import { DefaultTheme, DarkTheme } from "./theme";
-export { ThemeProvider } from "emotion-theming";
+export { ThemeProvider, useTheme } from "emotion-theming";
 import { Fab } from "./components/FAB/Fab";
+import { Theme } from "./types";
+export { Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
+export { Heart } from "./components/Icons";
+export { Music } from "./components/Icons/Music";
+export { Logo } from "./components/Icons/Logo";
+
 export {
   Screen,
   Button,
@@ -22,7 +28,3 @@ export {
   Fab,
   Text,
 };
-
-export { Heart } from "./components/Icons";
-export { Music } from "./components/Icons/Music";
-export { Logo } from "./components/Icons/Logo";

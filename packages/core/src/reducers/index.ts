@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
-import { ArtistProps, TrackProps, AlbumProps } from "../types";
+import { ArtistProps, TrackProps, AlbumProps, Action } from "../types";
+import { uniqBy } from "lodash";
 
 interface MediaActions {
-  payload: TrackProps[] | ArtistProps[] | AlbumProps[];
+  payload: TrackProps[] | ArtistProps[] | AlbumProps[] | any;
   type: string;
 }
 
@@ -52,22 +53,15 @@ export const mediaStoreReducer = (
   action: MediaActions
 ) => {
   switch (action.type) {
-    case "OFFLINE_SONGS":
+    case Action.LIST_SONGS:
       return {
         ...state,
         songs: action.payload,
       };
-
-    case "OFFLINE_ARTISTS":
+    case Action.ADD_SONGS:
       return {
         ...state,
-        artists: action.payload,
-      };
-
-    case "OFFLINE_ALBUMS":
-      return {
-        ...state,
-        albums: action.payload,
+        songs: uniqBy(action.payload, "nid"),
       };
     default:
       return state;

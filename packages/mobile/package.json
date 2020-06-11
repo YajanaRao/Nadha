@@ -13,6 +13,7 @@
   },
   "workspaces": {
     "nohoist": [
+      "react",
       "react-native",
       "react-native/**"
     ]

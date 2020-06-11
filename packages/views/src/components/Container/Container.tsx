@@ -1,7 +1,5 @@
 import React, { ReactNode } from "react";
-import { useTheme } from "emotion-theming";
-import { StyleProp, TouchableOpacity, View, ViewStyle } from "react-native";
-import { Theme } from "../../types";
+import { StyleProp, View, ViewStyle } from "react-native";
 
 interface Props {
   style?: StyleProp<ViewStyle>;

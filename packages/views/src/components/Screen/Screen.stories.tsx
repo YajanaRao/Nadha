@@ -1,11 +1,11 @@
 import React from "react";
-import { Screen } from "./Screen.web";
-import { View, Text } from "react-native";
+import { Screen } from "./Screen";
 import { Container } from "../Container/Container";
 import { Fab } from "../FAB/Fab";
 import { Card } from "../Card";
 import { Appbar } from "../Appbar/AppBar";
 import { List } from "../List/List";
+import { Text } from "../Text/Text";
 
 export const LandingScreen = () => (
   <Screen>

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -11,9 +11,15 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noEmit": false,
+    "incremental": true,
+    "sourceMap": true,
     "isolatedModules": true,
-    "jsx": "react"
+    "jsx": "preserve"
   },
-  "include": ["packages/web", "packages/core", "packages/views"]
+  "include": [
+    "packages/web",
+    "packages/core",
+    "packages/views",
+    "packages/app/src/pages"
+  ]
 }

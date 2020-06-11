@@ -12,7 +12,7 @@ export const ThemeManager = {
     },
   ],
 
-  getSongs: function () {
+  getThemes: function () {
     return this.songs;
   },
 

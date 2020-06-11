@@ -1,11 +1,36 @@
 import groupBy from "lodash/groupBy";
 import values from "lodash/values";
 import orderBy from "lodash/orderBy";
-import { MediaManager } from "@nadha/extensions";
+import { MediaManager } from "../MediaManager";
 
-// import { log } from "../utils/logging";
 import { ThunkDispatch } from "redux-thunk";
 import { AnyAction } from "redux";
+import { Action } from "../types";
+
+export const getAllSongs = () => (
+  dispatch: ThunkDispatch<{}, {}, AnyAction>
+) => {
+  try {
+    const media: any = MediaManager.getSongs();
+
+    dispatch({
+      type: Action.LIST_SONGS,
+      payload: media,
+      // query: query
+    });
+  } catch (error) {}
+};
+
+export const addSongs = (songs: any) => (
+  dispatch: ThunkDispatch<{}, {}, AnyAction>
+) => {
+  try {
+    dispatch({
+      type: Action.ADD_SONGS,
+      payload: MediaManager.addSongs(songs),
+    });
+  } catch (error) {}
+};
 
 export const updateQuery = (query: string) => (
   dispatch: ThunkDispatch<{}, {}, AnyAction>
@@ -31,31 +56,6 @@ export const updateQuery = (query: string) => (
       });
     }
   } catch (error) {}
-};
-
-export const getOfflineSongs = () => (
-  dispatch: ThunkDispatch<{}, {}, AnyAction>
-) => {
-  try {
-    console.log("get pff;oe");
-    MediaManager.getAll()
-      .then((media: any) => {
-        console.log("response", media);
-        dispatch({
-          type: "OFFLINE_SONGS",
-          payload: media,
-        });
-      })
-      .catch((er) => {
-        // log(er);
-        dispatch({
-          type: "OFFLINE_SONGS",
-          payload: [],
-        });
-      });
-  } catch (error) {
-    console.log(error);
-  }
 };
 
 export const getOfflineArtists = () => (
@@ -122,23 +122,4 @@ export const findArtistSongs = async (artist: string) => {
   //   .catch((er) => log(er));
   const songs: any = [];
   return songs;
-};
-
-export const filterSongsByGenre = async (genre: any) => {
-  // const songs = await RNAndroidAudioStore.getSongsByGenres({ genre })
-  //   .then((media) => {
-  //     return media;
-  //   })
-  //   .catch((error) => log(error));
-  const songs: any = [];
-  return songs;
-};
-
-export const mostPlayedSongs = (array: []) => {
-  return orderBy(
-    values(groupBy(array, "title")).map((group: any) => ({
-      ...group[0],
-      count: group.length,
-    }))
-  );
 };

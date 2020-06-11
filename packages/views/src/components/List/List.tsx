@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, ViewStyle } from "react-native";
+import { View, Text, ViewStyle, TouchableOpacity } from "react-native";
 import { useTheme } from "emotion-theming";
 import { Theme } from "../../types";
 import { Icon } from "../Icons";
@@ -9,6 +9,7 @@ export interface Props {
   title?: string;
   description?: string;
   icon?: string;
+  onPress?: () => void;
 }
 
 const LIST_CONTAINER: ViewStyle = {
@@ -16,21 +17,23 @@ const LIST_CONTAINER: ViewStyle = {
   marginVertical: 2,
   flexDirection: "row",
   justifyContent: "space-between",
+  flex: 1,
 };
 
 const ICON_CONTAINER: ViewStyle = {
   paddingHorizontal: 8,
+  maxWidth: 50,
   // flex: 1
 };
 
 const TEXT_CONTAINER: ViewStyle = {
-  flex: 1,
+  width: "100%",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "flex-start",
 };
 
-export const List = ({ title, description, icon }: Props) => {
+export const List = ({ title, description, icon, onPress }: Props) => {
   const theme: Theme = useTheme();
   const {
     border,
@@ -41,7 +44,8 @@ export const List = ({ title, description, icon }: Props) => {
   let borderColor = color.fade(0.75);
 
   return (
-    <View
+    <TouchableOpacity
+      onPress={onPress}
       style={[
         LIST_CONTAINER,
         {
@@ -69,6 +73,6 @@ export const List = ({ title, description, icon }: Props) => {
           false
         )}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };

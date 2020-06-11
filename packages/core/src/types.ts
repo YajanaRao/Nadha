@@ -35,3 +35,8 @@ export interface PlaylistProps {
   owner: string;
   songs?: TrackProps;
 }
+
+export const Action = {
+  LIST_SONGS: "LIST_SONGS",
+  ADD_SONGS: "ADD_SONGS",
+};

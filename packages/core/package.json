@@ -14,7 +14,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "typescript": "tsc"
+    "tsc": "tsc"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.10.3",
