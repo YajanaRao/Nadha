@@ -26,6 +26,10 @@ jobs:
       - name: Install packages
         run: yarn
 
+      # Compile typescript packages
+      - name: Compile packages
+        run: yarn workspaces run tsc
+
       # Build android app
       - name: Build Android Release
         run: |
