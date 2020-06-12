@@ -1,14 +1,15 @@
 import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { Library } from '../pages/Home/Library';
-import { Player } from '../pages/Player';
-import { Folder } from "../pages/Home/Folder";
+import {NavigationContainer} from "@react-navigation/native";
+import {createStackNavigator} from "@react-navigation/stack";
+import {Library} from '../pages/Home/Library';
+import {Player} from '../pages/Player';
+import {Folder} from "../pages/Home/Folder";
 import {DataPull} from "../pages/DataPull";
 
 
 const RootStack = createStackNavigator();
 const HomeStack = createStackNavigator();
+
 export function Landing() {
     return (
         <HomeStack.Navigator
@@ -55,7 +56,7 @@ export function Root() {
 export default function Navigation() {
     return (
         <NavigationContainer>
-            <Root />
+            <Root/>
         </NavigationContainer>
     );
 }
