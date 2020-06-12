@@ -18,6 +18,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
+    "paths": {
+      "@nadha/*": [
+        "packages/*"
+      ]
+    },
     "noEmit": true
   },
   "exclude": [
