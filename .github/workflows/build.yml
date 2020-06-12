@@ -32,7 +32,7 @@ jobs:
 
       # Compile typescript packages
       - name: Compile packages
-        run: yarn workspaces run tsc
+        run: yarn workspace @nadha/views run tsc && yarn workspace @nadha/core run tsc && yarn workspace @nadha/app run tsc
 
       # Build android app
       - name: Build Android Release
