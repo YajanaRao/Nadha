@@ -22,6 +22,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Enable yarn workspace
+      - name: Enable yarn workspace
+        run: yarn config set workspaces-experimental true
+
       # Runs a single command using the runners shell
       - name: Install packages
         run: yarn
