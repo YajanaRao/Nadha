@@ -41,7 +41,7 @@ jobs:
 
       # Compile typescript packages
       - name: Compile packages
-        run: yarn workspace @nadha/views  && yarn workspace @nadha/utils run tsc run tsc && yarn workspace @nadha/core run tsc && yarn workspace @nadha/app run tsc
+        run: yarn workspace @nadha/views run tsc && yarn workspace @nadha/core run tsc && yarn workspace @nadha/app run tsc && yarn workspace @nadha/utils run tsc
 
       # Build web app
       - name: Build release bundle
