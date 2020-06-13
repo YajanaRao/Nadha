@@ -31,6 +31,8 @@ jobs:
         id: cache-primes
         uses: actions/cache@v2
         with:
+          path: |
+            **/node_modules
           key: ${{ runner.os }}-cache
 
       # Runs a single command using the runners shell
