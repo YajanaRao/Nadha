@@ -1,10 +1,7 @@
 import React from 'react';
 import {Appbar, Breadcrumb, Container, Fab, List, Screen} from '@nadha/views';
 import {useNavigation, useRoute} from "@react-navigation/native";
-import {Dimensions, FlatList} from "react-native";
 import {MediaList} from "../../components/MediaList";
-
-const SCREEN_HEIGHT = Dimensions.get("window").height;
 
 const FolderHeader = ({route, navigation}: { route: any, navigation: any }) => {
     const {folderName} = route.params;
@@ -32,9 +29,9 @@ export const Folder = () => {
         <Screen>
             <Appbar/>
             <FolderHeader navigation={navigation} route={route}/>
-            <MediaList media={children} onItemPress={navigate} />
+            <MediaList media={children} onItemPress={navigate}/>
             <Fab
-                style={{position: "absolute", top: SCREEN_HEIGHT - 80, right: 10}}
+                style={{position: "absolute", bottom: 10, right: 10}}
                 onPress={() => navigation.navigate("DataPull")}
             />
         </Screen>

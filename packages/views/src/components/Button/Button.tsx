@@ -22,9 +22,9 @@ const BUTTON: ViewStyle = {
     shadowOffset: {width: 0, height: 0},
     shadowOpacity: 0.1,
     shadowRadius: 5,
-    borderColor: 'transparent',
     borderWidth: 1,
     minWidth: 70,
+    minHeight: 40,
 };
 
 export const Button = ({style, onPress, title}: Props) => {
@@ -44,6 +44,7 @@ export const Button = ({style, onPress, title}: Props) => {
                 backgroundColor: primary,
                 borderRadius: roundness,
                 shadowColor: text,
+                borderColor: primary,
             },
             style,
         ]} onPress={onPress}><Text style={{
@@ -51,7 +52,6 @@ export const Button = ({style, onPress, title}: Props) => {
             fontWeight: '500',
             fontSize: 12,
             textTransform: "uppercase",
-            flex: 1
         }}>{title}</Text></TouchableOpacity>
     );
 };

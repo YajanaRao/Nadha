@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./lib",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "declaration": true,
+    "allowJs": true,
+    "noImplicitUseStrict": true,
+    "alwaysStrict": false,
+    "noEmit": false
+  },
+  "include": ["./src"]
+}

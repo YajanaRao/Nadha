@@ -1,0 +1,17 @@
+{
+  "name": "@nadha/utils",
+  "version": "0.0.1",
+  "description": "Utils package to manage logs and other stuff",
+  "main": "lib/index.js",
+  "source": "src/index.ts",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "react-native": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "author": "Yajana N Rao",
+  "license": "MIT",
+  "private": true
+}

@@ -3,7 +3,7 @@ import {makeId} from "../utils";
 export const mediaManager = {
         media: [
             {
-                "nid": 1,
+                "nid": "1",
                 "artwork": "https://dl.dropboxusercontent.com/s/0dk1xmdi05eci1p/kannadiga.jpg?dl=0",
                 "title": "Sandalwood Hits",
                 "artist": "All",
@@ -16,115 +16,133 @@ export const mediaManager = {
                         "artwork": "https://dl.dropboxusercontent.com/s/cmzkdk7lxsxvnnb/ni-sanihake-bandare.jpg?dl=0",
                         "title": "Ni Sanihake bandare",
                         "url": "https://dl.dropboxusercontent.com/s/o4djrulrcic6zjb/Nee%20Sanihake%20Bandre.mp3?dl=0",
-                        "artist": "Sonu Nigam"
+                        "artist": "Sonu Nigam",
+                        type: "Music"
                     },
                     {
                         "nid": "2",
                         "artwork": "http://kannadasongs.cc/thumbs/102.png",
                         "title": " Avarivara Jothe",
                         "url": "http://kannadasongs.cc/file/download/104.html",
-                        "artist": "Sonu Nigam"
+                        "artist": "Sonu Nigam",
+                        type: "Music"
                     },
                     {
                         "nid": "3",
                         "artwork": "http://kannadasongs.cc/thumbs/46.png",
                         "title": " Natasaarvabhowma ",
-                        "url": "http://kannadasongs.cc/file/download/46.html"
+                        "url": "http://kannadasongs.cc/file/download/46.html",
+                        type: "Music"
                     },
                     {
                         "nid": "4",
                         "artwork": "http://kannadasongs.cc/thumbs/41.png",
                         "title": " Nagarahavu",
-                        "url": "http://kannadasongs.cc/file/download/41.html"
+                        "url": "http://kannadasongs.cc/file/download/41.html",
+                        type: "Music"
                     },
                     {
                         "nid": "5",
                         "artwork": "http://kannadasongs.cc/icon.php?file=L2ZpbGVzL05ld19NcDNfU29uZ3MvS2F2YWNoYS9SZWtrYXlhX3NvbG9fLm1wMw==&fid=21",
                         "title": " Rekkaya-solo ",
-                        "url": "http://kannadasongs.cc/file/download/21.html"
+                        "url": "http://kannadasongs.cc/file/download/21.html",
+                        type: "Music"
                     },
                     {
                         "nid": "6",
                         "artwork": "http://kannadasongs.cc/thumbs/108.png",
                         "title": " Magariya",
-                        "url": "http://kannadasongs.cc/file/download/108.html"
+                        "url": "http://kannadasongs.cc/file/download/108.html",
+                        type: "Music"
                     },
                     {
                         "nid": "7",
                         "artwork": "http://kannadasongs.cc/icon.php?file=L2ZpbGVzL05ld19NcDNfU29uZ3MvQW5hbnRodV9WU19OdXNyYXRoL09tbWV5dV9UaGlydWdpXy5tcDM=&fid=29",
                         "title": " Ommeyu Thirugi ",
-                        "url": "http://kannadasongs.cc/file/download/29.html"
+                        "url": "http://kannadasongs.cc/file/download/29.html",
+                        type: "Music"
                     },
                     {
                         "nid": "8",
                         "artwork": "http://kannadasongs.cc/thumbs/42.png",
                         "title": " Kotigobba-2 ",
-                        "url": "http://kannadasongs.cc/file/download/42.html"
+                        "url": "http://kannadasongs.cc/file/download/42.html",
+                        type: "Music"
                     },
                     {
                         "nid": "9",
                         "artwork": "http://kannadasongs.cc/thumbs/102.png",
                         "title": " Avarivara Jothe",
-                        "url": "http://kannadasongs.cc/file/download/104.html"
+                        "url": "http://kannadasongs.cc/file/download/104.html",
+                        type: "Music"
                     },
                     {
                         "nid": "10",
                         "artwork": "https://dl.dropboxusercontent.com/s/iw69wlkr9k7e8l6/Googly-2015.jpg?dl=0",
                         "title": "Yeno Yeno Aagide ",
-                        "url": "https://dl.dropboxusercontent.com/s/j00rbiout3lt8yn/Yeno%20Yeno%20Aagide.mp3?dl=0"
+                        "url": "https://dl.dropboxusercontent.com/s/j00rbiout3lt8yn/Yeno%20Yeno%20Aagide.mp3?dl=0",
+                        type: "Music"
                     },
                     {
                         "nid": "111",
                         "artwork": "http://kannadasongs.cc/thumbs/94.png",
                         "title": " Nee Eshtu Muddhu",
-                        "url": "http://kannadasongs.cc/file/download/97.html"
+                        "url": "http://kannadasongs.cc/file/download/97.html",
+                        type: "Music"
                     },
                     {
                         "nid": "112",
                         "artwork": "http://kannadasongs.cc/thumbs/109.png",
                         "title": " Ninna Shehadinda",
-                        "url": "http://kannadasongs.cc/file/download/118.html"
+                        "url": "http://kannadasongs.cc/file/download/118.html",
+                        type: "Music"
                     },
                     {
                         "nid": "113",
                         "artwork": "http://kannadasongs.cc/thumbs/41.png",
                         "title": " Nagarahavu",
-                        "url": "http://kannadasongs.cc/file/download/41.html"
+                        "url": "http://kannadasongs.cc/file/download/41.html",
+                        type: "Music"
                     },
                     {
                         "nid": "114",
                         "artwork": "https://dl.dropboxusercontent.com/s/iw69wlkr9k7e8l6/Googly-2015.jpg?dl=0",
                         "title": "Neenirade",
-                        "url": "https://dl.dropboxusercontent.com/s/cfwy6incaicpaqo/Neenirade.mp3?dl=0"
+                        "url": "https://dl.dropboxusercontent.com/s/cfwy6incaicpaqo/Neenirade.mp3?dl=0",
+                        type: "Music"
                     },
                     {
                         "nid": "15",
                         "artwork": "https://dl.dropboxusercontent.com/s/3a5o701zlpujpr9/Dont-Worry-2019.jpg?dl=0",
                         "title": " Don't Worry",
-                        "url": "https://dl.dropboxusercontent.com/s/evzyrlnrtyovho6/Don%27t%20Worry.mp3?dl=0"
+                        "url": "https://dl.dropboxusercontent.com/s/evzyrlnrtyovho6/Don%27t%20Worry.mp3?dl=0",
+                        type: "Music"
                     },
                     {
                         "nid": "16",
                         "artwork": "http://kannadasongs.cc/thumbs/46.png",
                         "title": " Natasaarvabhowma ",
-                        "url": "http://kannadasongs.cc/file/download/46.html"
+                        "url": "http://kannadasongs.cc/file/download/46.html",
+                        type: "Music"
                     },
                     {
                         "nid": "117",
                         "artwork": "https://dl.dropboxusercontent.com/s/vxbiutz5e0yyen0/Amar-2019.jpg?dl=0",
                         "title": "Marethuhoyithe",
-                        "url": "https://dl.dropboxusercontent.com/s/gcg48saswg7juu8/Marethuhoyithe.mp3?dl=0"
+                        "url": "https://dl.dropboxusercontent.com/s/gcg48saswg7juu8/Marethuhoyithe.mp3?dl=0",
+                        type: "Music"
                     },
                     {
                         "nid": "18",
                         "artwork": "http://kannadasongs.cc/icon.php?file=L2ZpbGVzL05ld19NcDNfU29uZ3MvS2F2YWNoYS9SZWtrYXlhX3NvbG9fLm1wMw==&fid=21",
                         "title": " Rekkaya-solo ",
-                        "url": "http://kannadasongs.cc/file/download/21.html"
+                        "url": "http://kannadasongs.cc/file/download/21.html",
+                        type: "Music"
                     }
                 ]
             },
             {
-                "nid": 2,
+                "nid": "2",
                 "artwork": "https://dl.dropboxusercontent.com/s/z42l5cnuvvox8vv/hindi.jpg?dl=0",
                 "title": "Bollywood Hits",
                 "artist": "All",
@@ -167,7 +185,7 @@ export const mediaManager = {
                 ]
             },
             {
-                "nid": 4,
+                "nid": "4",
                 "artwork": "https://dl.dropboxusercontent.com/s/t8lsj6lo61qfxir/billboard.jpg?dl=0",
                 "title": "International Hits",
                 "artist": "All",
@@ -201,60 +219,6 @@ export const mediaManager = {
                     }
                 ]
             },
-            {
-                nid: "randomstring0",
-                title: "Song Name 0",
-                properties: {
-                    url: "Song url",
-                    artist: "Artist Name",
-                    album: "Album Name",
-                }
-                ,
-                type: "Music",
-                subtitle: "Artist Name"
-            }
-            ,
-            {
-                nid: "randomstring1",
-                title: "Song Name 1",
-                properties:
-                    {
-                        url: "Song url",
-                        artist: "Artist Name",
-                        album: "Album Name",
-                    }
-                ,
-                type: "Music",
-                subtitle: "Album Name"
-            }
-            ,
-            {
-                nid: "randomstring2",
-                title: "Song Name 2",
-                properties:
-                    {
-                        url: "Song url",
-                        artist: "Artist Name",
-                        album: "Album Name",
-                    }
-                ,
-                type: 'Music',
-                subtitle: "03:24"
-            }
-            ,
-            {
-                nid: "randomstring2",
-                title: "Music",
-                properties:
-                    {
-                        url: "Song url",
-                        artist: "Artist Name",
-                        album: "Album Name",
-                    }
-                ,
-                type: 'Folder',
-                subtitle: "03:24"
-            }
         ],
 
         getMedia: function () {
