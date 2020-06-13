@@ -26,13 +26,16 @@ jobs:
       - name: Enable yarn workspace
         run: yarn config set workspaces-experimental true
 
+      - name: Cache
+        uses: actions/cache@v2.0.0
+
       # Runs a single command using the runners shell
       - name: Install packages
         run: yarn
 
       # Compile typescript packages
       - name: Compile packages
-        run: yarn workspace @nadha/views run tsc && yarn workspace @nadha/core run tsc && yarn workspace @nadha/app run tsc
+        run: yarn workspace @nadha/views run tsc && yarn workspace @nadha/core run tsc && yarn workspace @nadha/app run tsc && yarn workspace @nadha/utils run tsc
 
       # Build web app
       - name: Build release bundle

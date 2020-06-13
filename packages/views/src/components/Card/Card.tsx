@@ -11,7 +11,7 @@ interface Props {
 
 const CARD: ViewStyle = {
   padding: 8,
-  elevation: 8,
+  elevation: 4,
   margin: 4,
   shadowOffset: { width: 0, height: 0 },
   shadowOpacity: 0.1,
