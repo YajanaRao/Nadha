@@ -6,9 +6,9 @@ name: Build
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,27 +19,60 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Install packages
-      run: yarn
-      
-    # Build android app
-    - name: Build Android Release
-      run: |
-          node_modules/.bin/lerna bootstrap && cd packages/mobile/android && ./gradlew assembleRelease
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: app-release.apk
-        path: packages/mobile/android/app/build/outputs/apk/release/
-        
-    - name: Discord notification
-      env:
-        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-      uses: Ilshidur/action-discord@master
-      with:
-        args: 'The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed.'
+      # Enable yarn workspace
+      - name: Enable yarn workspace
+        run: yarn config set workspaces-experimental true
 
+      # Runs a single command using the runners shell
+      - name: Install packages
+        run: yarn
+
+      # Compile typescript packages
+      - name: Compile packages
+        run: yarn workspace @nadha/views run tsc && yarn workspace @nadha/core run tsc && yarn workspace @nadha/app run tsc
+
+      # Build web app
+      - name: Build release bundle
+        run: yarn build
+
+      # ( Build to ./dist or other directory... )
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: './build'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+      # Build android app
+      - name: Build Android Release
+        run: |
+          yarn && cd android && ./gradlew assembleRelease
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: app-release.apk
+          path: android/app/build/outputs/apk/release/
+
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: "The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed."
+
+      - name: Send file app-release.apk to discord channel
+        uses: sinshutu/upload-to-discord@master
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: android/app/build/outputs/apk/release/app-release.apk

@@ -1,0 +1,23 @@
+{
+  "name": "@nadha/core",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Nadha core package",
+  "main": "lib/index.js",
+  "source": "src/index.ts",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "react-native": "lib/index.js",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.10.1"
+  }
+}

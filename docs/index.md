@@ -2,4 +2,4 @@
 
 Extensible, Cross platform music player
 
-## [Troubleshooting Guide](./Troubleshooting.md)
+### [Troubleshooting Guide](./Troubleshooting.md)

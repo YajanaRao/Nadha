@@ -62,3 +62,11 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 
+# Workspace files
+workspace.config
+
+# built code
+lib/
+
+# config
+.env

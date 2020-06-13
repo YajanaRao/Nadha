@@ -1,28 +1,16 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "outDir": "./lib",
+    "sourceMap": true,
+    "noImplicitAny": true,
     "module": "commonjs",
     "target": "es6",
-    "lib": ["es5", "es6", "es7", "es2017", "dom"],
-    "sourceMap": true,
-    "allowJs": true,
     "jsx": "react",
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "rootDirs": ["components", "stories"],
-    "baseUrl": "./components",
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
     "declaration": true,
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "allowJs": true,
+    "noEmit": false
   },
-  "include": ["components/**/*"],
-  "exclude": ["node_modules", "build", "scripts"]
+  "include": ["./src"],
+  "exclude": ["./src/stories"]
 }
