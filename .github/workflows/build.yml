@@ -26,8 +26,12 @@ jobs:
       - name: Enable yarn workspace
         run: yarn config set workspaces-experimental true
 
-      - name: Cache
-        uses: actions/cache@v2.0.0
+      # Yarn cache
+      - name: Cache Primes
+          id: cache-primes
+          uses: actions/cache@v2
+          with:
+            key: ${{ runner.os }}-cache
 
       # Runs a single command using the runners shell
       - name: Install packages
