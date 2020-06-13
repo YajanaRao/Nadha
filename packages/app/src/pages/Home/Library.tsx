@@ -13,7 +13,7 @@ export function Library() {
     const navigation = useNavigation();
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(MediaManager.getAllMedia())
+        dispatch(MediaManager.getMedia())
     }, []);
 
     const navigate = (media: any) => {

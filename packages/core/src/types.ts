@@ -36,7 +36,3 @@ export interface PlaylistProps {
   songs?: TrackProps;
 }
 
-export const Action = {
-  LIST_MEDIA: 'LIST_MEDIA',
-  ADD_SONGS: 'ADD_SONGS'
-}

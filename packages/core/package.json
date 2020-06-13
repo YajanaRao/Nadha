@@ -16,9 +16,8 @@
   "scripts": {
     "tsc": "tsc"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-
+    "@babel/preset-typescript": "^7.10.1"
   }
 }

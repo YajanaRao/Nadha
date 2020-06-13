@@ -1,6 +1,6 @@
 import {makeId} from "../utils";
 
-export const MediaManager = {
+export const mediaManager = {
         media: [
             {
                 "nid": 1,
@@ -255,56 +255,6 @@ export const MediaManager = {
                 type: 'Folder',
                 subtitle: "03:24"
             }
-            ,
-            {
-                nid: "randomstring3",
-                title: "Kannada songs",
-                properties:
-                    {
-                        url: "Song url",
-                        artist: "Artist Name",
-                        album: "Album Name",
-
-                    }
-                ,
-                children: [
-                    {
-                        nid: "randomstring4",
-                        title: "Song Name 0",
-                        properties: {
-                            url: "Song url",
-                            artist: "Artist Name",
-                            album: "Album Name",
-                        },
-                        type: "Music",
-                        subtitle: "Artist Name"
-                    },
-                    {
-                        nid: "randomstring5",
-                        title: "Song Name 1",
-                        properties: {
-                            url: "Song url",
-                            artist: "Artist Name",
-                            album: "Album Name",
-                        },
-                        type: "Music",
-                        subtitle: "Album Name"
-                    },
-                    {
-                        nid: "randomstring6",
-                        title: "Song Name 2",
-                        properties: {
-                            url: "Song url",
-                            artist: "Artist Name",
-                            album: "Album Name",
-                        },
-                        type: 'Music',
-                        subtitle: "03:24"
-                    },
-                ],
-                type: 'Folder',
-                subtitle: "10 songs"
-            }
         ],
 
         getMedia: function () {
@@ -313,7 +263,7 @@ export const MediaManager = {
         ,
 
         addSongs: function (items: any) {
-            for (const index in items) {
+            for (let index = 0; index < items.length; index++) {
                 let song = items[index];
                 song.nid = makeId();
                 this.media.push(song);

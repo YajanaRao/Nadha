@@ -2,6 +2,7 @@
 
 A extensible, cross platform music player
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fea67322-45d4-4a22-b388-bf990397775d/deploy-status)](https://app.netlify.com/sites/nadha/deploys)
 ![Build](https://github.com/YajanaRao/Nadha/workflows/Build/badge.svg?branch=master)
 ![Platform - Android](https://img.shields.io/badge/platform-Android-yellow.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/YajanaRao/Serenity/pulls)
