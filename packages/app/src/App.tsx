@@ -16,19 +16,23 @@ import Navigation from "./navigation";
 import {Provider} from "react-redux";
 // @ts-ignore
 import {PersistGate} from "redux-persist/integration/react";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const {store, persistor} = configureStore();
 
 const App = () => {
     return (
+
         <Provider store={store}>
             <PersistGate loading={<Text>Loading</Text>} persistor={persistor}>
                 <ThemeProvider theme={DefaultTheme}>
-                    <SafeAreaView style={{flex: 1}}>
-                        <Screen>
-                            <Navigation/>
-                        </Screen>
-                    </SafeAreaView>
+                    <ErrorBoundary>
+                        <SafeAreaView style={{flex: 1}}>
+                            <Screen>
+                                <Navigation/>
+                            </Screen>
+                        </SafeAreaView>
+                    </ErrorBoundary>
                 </ThemeProvider>
             </PersistGate>
         </Provider>

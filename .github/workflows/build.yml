@@ -38,7 +38,7 @@ jobs:
       - name: Build release bundle
         run: yarn build
 
-      # ( Build to ./dist or other directory... )
+      # ( Build to ./build or other directory... )
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v1.1
         with:

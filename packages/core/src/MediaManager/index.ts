@@ -3,7 +3,7 @@ import {makeId} from "../utils";
 export const mediaManager = {
         media: [
             {
-                "nid": 1,
+                "nid": "1",
                 "artwork": "https://dl.dropboxusercontent.com/s/0dk1xmdi05eci1p/kannadiga.jpg?dl=0",
                 "title": "Sandalwood Hits",
                 "artist": "All",
@@ -124,7 +124,7 @@ export const mediaManager = {
                 ]
             },
             {
-                "nid": 2,
+                "nid": "2",
                 "artwork": "https://dl.dropboxusercontent.com/s/z42l5cnuvvox8vv/hindi.jpg?dl=0",
                 "title": "Bollywood Hits",
                 "artist": "All",
@@ -167,7 +167,7 @@ export const mediaManager = {
                 ]
             },
             {
-                "nid": 4,
+                "nid": "4",
                 "artwork": "https://dl.dropboxusercontent.com/s/t8lsj6lo61qfxir/billboard.jpg?dl=0",
                 "title": "International Hits",
                 "artist": "All",
@@ -201,60 +201,6 @@ export const mediaManager = {
                     }
                 ]
             },
-            {
-                nid: "randomstring0",
-                title: "Song Name 0",
-                properties: {
-                    url: "Song url",
-                    artist: "Artist Name",
-                    album: "Album Name",
-                }
-                ,
-                type: "Music",
-                subtitle: "Artist Name"
-            }
-            ,
-            {
-                nid: "randomstring1",
-                title: "Song Name 1",
-                properties:
-                    {
-                        url: "Song url",
-                        artist: "Artist Name",
-                        album: "Album Name",
-                    }
-                ,
-                type: "Music",
-                subtitle: "Album Name"
-            }
-            ,
-            {
-                nid: "randomstring2",
-                title: "Song Name 2",
-                properties:
-                    {
-                        url: "Song url",
-                        artist: "Artist Name",
-                        album: "Album Name",
-                    }
-                ,
-                type: 'Music',
-                subtitle: "03:24"
-            }
-            ,
-            {
-                nid: "randomstring2",
-                title: "Music",
-                properties:
-                    {
-                        url: "Song url",
-                        artist: "Artist Name",
-                        album: "Album Name",
-                    }
-                ,
-                type: 'Folder',
-                subtitle: "03:24"
-            }
         ],
 
         getMedia: function () {
