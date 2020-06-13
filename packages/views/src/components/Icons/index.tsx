@@ -34,7 +34,7 @@ export const Icon = ({name, size = 24, onPress}: Props) => {
     let IconComponent: any = null;
     try {
         IconComponent = ICON_MAPS[name];
-    }catch (e) {
+    } catch (e) {
         console.log(e)
     }
     const theme: Theme = useTheme();

@@ -1,12 +1,9 @@
 import React, {useEffect} from "react";
-import {Dimensions} from "react-native";
 import {useNavigation} from "@react-navigation/native";
 import {Appbar, Breadcrumb, Card, Container, Fab, Screen, Text} from "@nadha/views";
 import {MediaManager,} from "@nadha/core";
 import {useDispatch, useSelector} from 'react-redux';
 import {MediaList} from "../../components/MediaList";
-
-const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 export function Library() {
     const songs = useSelector((state: any) => state.mediaStore.media);
@@ -49,7 +46,7 @@ export function Library() {
             </Container>
             <MediaList media={songs} onItemPress={navigate}/>
             <Fab
-                style={{position: "absolute", top: SCREEN_HEIGHT - 80, right: 10}}
+                style={{position: "absolute", bottom: 10, right: 10}}
                 onPress={() => navigation.navigate("DataPull")}
             />
         </Screen>
