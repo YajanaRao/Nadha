@@ -34,6 +34,25 @@ jobs:
       - name: Compile packages
         run: yarn workspace @nadha/views run tsc && yarn workspace @nadha/core run tsc && yarn workspace @nadha/app run tsc
 
+      # Build web app
+      - name: Build release bundle
+        run: yarn build
+
+      # ( Build to ./dist or other directory... )
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: './build'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Actions"
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
       # Build android app
       - name: Build Android Release
         run: |
