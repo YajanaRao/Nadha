@@ -9,7 +9,7 @@ import {MediaList} from "../../components/MediaList";
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 
 export function Library() {
-    const songs = useSelector((state: any) => state.mediaStore.songs);
+    const songs = useSelector((state: any) => state.mediaStore.media);
     const navigation = useNavigation();
     const dispatch = useDispatch();
     useEffect(() => {
