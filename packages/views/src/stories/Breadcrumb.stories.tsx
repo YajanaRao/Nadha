@@ -2,7 +2,6 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import { Breadcrumb } from "../components/Breadcrumb/Breadcrumb";
 import { Container } from "../components/Container/Container";
-import {Screen} from "../../lib/components/Screen";
 
 const navigation = {
   navigate: action("navigate")
