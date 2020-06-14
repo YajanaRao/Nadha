@@ -1,5 +1,6 @@
-import {platform} from "os";
+/* global __DEV__ */
 import {Platform} from "react-native";
+
 
 const WEBHOOK: string = "https://discord.com/api/webhooks/721281224600977428/OpPLEzrok2azWUlObFwyA2y2INWV_9E2Yz8C3IXOxm3GIaTHs-4fmPW01ENhR0ktRlJ0"
 
@@ -13,42 +14,47 @@ export function sendMessage(content: any) {
 
 export const log = {
     error(title: any, message?: any) {
-        const text = message.componentStack.slice(0, 2000);
-        const platform = Platform.OS;
-        let extras: any = []
-        extras.push({
-            name: 'Platform',
-            value: platform,
-        });
-        if (platform == "web") {
+        if (__DEV__) {
+            console.log(title, message);
+        } else {
+            const text = message.componentStack.slice(0, 2000);
+            const platform = Platform.OS;
+            let extras: any = []
             extras.push({
-                name: 'Browser',
-                value: navigator.appCodeName,
-            },{
-                name: "OS",
-                value: navigator.platform
+                name: 'Platform',
+                value: platform,
             });
-        } else if(platform == "android"){
-            extras.push({
-                name: 'Android Version',
-                value: Platform.Version,
-            });
-        }
-        let content = {
-            "username": "error-logs",
-            "avatar_url": "https://i.imgur.com/4M34hi2.png",
-            "content": title.toString(),
-            "embeds": [
-                {
-                    "title": arguments.callee.name,
-                    fields: extras,
-                    "description": text,
-                    "color": 14177041,
+            if (platform == "web") {
+                extras.push({
+                    name: 'Browser',
+                    value: navigator.appCodeName,
+                }, {
+                    name: "OS",
+                    value: navigator.platform
+                });
+            } else if (platform == "android") {
+                extras.push({
+                    name: 'Android Version',
+                    value: Platform.Version,
+                });
+            }
+            let content = {
+                "username": "error-logs",
+                "avatar_url": "https://i.imgur.com/4M34hi2.png",
+                "content": title.toString(),
+                "embeds": [
+                    {
+                        "title": arguments.callee.name,
+                        fields: extras,
+                        "description": text,
+                        "color": 14177041,
 
-                }
-            ]
+                    }
+                ]
+            }
+            sendMessage(content);
         }
-        sendMessage(content);
+
     },
 
     debug(message: string) {
