@@ -12,10 +12,16 @@ export const DataPull = () => {
                 <Icon name={"Close"} onPress={() => navigation.goBack()}/>
             </Container>
             <Container>
-                <Text>List of integrations</Text>
+                <Text style={{textAlign: 'center', marginVertical: 16}}>List of integrations</Text>
                 <FlatList data={[{title: "Dropbox"}, {title: "Google Drive"}, {title: 'Spotify'}]}
                           numColumns={2}
-                          renderItem={({item}) => <Card style={{flex: 1}}><Text>{item.title}</Text></Card>}/>
+                          renderItem={({item}) => <Card
+                              style={{
+                                  flex: 1,
+                                  height: 100,
+                                  alignItems: 'center',
+                                  justifyContent: 'center'
+                              }}><Text>{item.title}</Text></Card>}/>
                 <Button onPress={() => navigation.goBack()} title={"Go Back"}/>
             </Container>
         </Screen>
