@@ -1,9 +1,10 @@
 import React, {useEffect} from "react";
 import {useNavigation} from "@react-navigation/native";
-import {Appbar, Breadcrumb, Card, Container, Fab, Screen, Text} from "@nadha/views";
+import {Appbar, Breadcrumb, Card, Container, Screen, Text} from "@nadha/views";
 import {MediaManager,} from "@nadha/core";
 import {useDispatch, useSelector} from 'react-redux';
 import {MediaList} from "../../components/MediaList";
+import {Toolbox} from "../../components/Toolbox";
 
 export function Library() {
     const songs = useSelector((state: any) => state.mediaStore.media);
@@ -35,20 +36,15 @@ export function Library() {
                         Hi everyone!
                     </Text>
                     <Text>
-                        Hi everyone! Seems like there hasn't been much going on in this
-                        issue lately. If there are still questions, comments, or bugs,
-                        please feel free to continue the discussion. Unfortunately, we don't
-                        have time to get to every issue. We are always open to contributions
-                        so please send us a pull request if you would like to help. Inactive
-                        issues will be closed after 30 days. Thanks!
+                        Hi everyone! The application is in development. The developers are working to make this great.
+                        You can checkout the development and code at <Text
+                        style={{color: 'blue'}}>https://github.com/YajanaRao/Nadha</Text>. If you find any issues or
+                        like to see a new feature? Feel free a create a new issue. Thanks!
                     </Text>
                 </Card>
             </Container>
             <MediaList media={songs} onItemPress={navigate}/>
-            <Fab
-                style={{position: "absolute", bottom: 10, right: 10}}
-                onPress={() => navigation.navigate("DataPull")}
-            />
+            <Toolbox navigation={navigation}/>
         </Screen>
     );
 }

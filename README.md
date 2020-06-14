@@ -12,12 +12,8 @@ A extensible, cross platform music player
 Nadha uses a number of open source projects to work properly:
 
 * [React Native](https://reactnative.dev) - React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.!
-* [Lerna](https://lerna.js.org) - A tool for managing JavaScript projects with multiple packages
-
 
 ### Installation
-
-Dillinger requires [Node.js](https://nodejs.org/) v12+ to run.
 
 Install the dependencies and devDependencies and start the server.
 
@@ -39,8 +35,8 @@ Nadha is currently extended with the following plugins. Instructions on how to u
 
 | Plugin | README |
 | ------ | ------ |
-| Dropbox | [Coming up]!(plugins/dropbox/README.md)[PlDb] |
-| Google Drive | [Coming up]!(plugins/googledrive/README.md)[PlGd] |
+| Dropbox | [Coming up](plugins/dropbox/README.md) |
+| Google Drive | [Coming up](plugins/googledrive/README.md) |
 
 
 

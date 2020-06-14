@@ -2,6 +2,7 @@ import React from 'react';
 import {Appbar, Breadcrumb, Container, Fab, List, Screen} from '@nadha/views';
 import {useNavigation, useRoute} from "@react-navigation/native";
 import {MediaList} from "../../components/MediaList";
+import {Toolbox} from "../../components/Toolbox";
 
 const FolderHeader = ({route, navigation}: { route: any, navigation: any }) => {
     const {folderName} = route.params;
@@ -30,10 +31,7 @@ export const Folder = () => {
             <Appbar/>
             <FolderHeader navigation={navigation} route={route}/>
             <MediaList media={children} onItemPress={navigate}/>
-            <Fab
-                style={{position: "absolute", bottom: 10, right: 10}}
-                onPress={() => navigation.navigate("DataPull")}
-            />
+            <Toolbox navigation={navigation} />
         </Screen>
     )
 }

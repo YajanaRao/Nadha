@@ -53,13 +53,14 @@ jobs:
 
       # ( Build to ./build or other directory... )
       - name: Deploy to Netlify
+        id: netlify-deploy
         uses: nwtgck/actions-netlify@v1.1
         with:
           publish-dir: './build'
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy from GitHub Actions"
-          enable-pull-request-comment: false
+          deploy-message: "Deploy ${{ github.event.pull_request.title }} from GitHub Actions"
+          enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
         env:
@@ -81,11 +82,4 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         uses: Ilshidur/action-discord@master
         with:
-          args: "The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed."
-
-      - name: Send file app-release.apk to discord channel
-        uses: sinshutu/upload-to-discord@master
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        with:
-          args: android/app/build/outputs/apk/release/app-release.apk
+          args: "The project {{ EVENT_PAYLOAD.repository.full_name }} has been deployed. Checkout at ${{steps.netlify-deploy.outputs.deploy-url}}"

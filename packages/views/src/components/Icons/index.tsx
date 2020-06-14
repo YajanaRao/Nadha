@@ -2,7 +2,7 @@ import React, {Suspense} from "react";
 import {TouchableOpacity, View} from "react-native";
 import {Theme} from "../../types";
 import {useTheme} from "emotion-theming";
-import {Svg, Path} from "react-native-svg";
+import {Path, Svg} from "react-native-svg";
 
 export {Heart} from "./Heart";
 const Color = require("color");
@@ -27,7 +27,11 @@ const Loader = ({size, color}: { size: number; color: string }) => (
 const ICON_MAPS: any = {
     'Folder': require('./Folder').default,
     'Music': require("./Music").default,
-    'Close': require('./Close').default
+    'Close': require('./Close').default,
+    'Play': require("./Play").default,
+    'Pause': require("./Pause").default,
+    'SkipForward': require("./SkipForward").default,
+    'SkipBack': require("./SkipBack").default
 }
 
 export const Icon = ({name, size = 24, onPress}: Props) => {
