@@ -9,15 +9,15 @@
  */
 
 import React from "react";
-import {SafeAreaView, Text, Dimensions, View, ActivityIndicator} from "react-native";
-import {DefaultTheme, ThemeProvider, Appbar, Fab, Screen} from "@nadha/views";
-import {configureStore} from "@nadha/core";
+import {ActivityIndicator, SafeAreaView, View} from "react-native";
+import {DefaultTheme, Screen, ThemeProvider} from "@nadha/views";
+import {configureStore, PlayerContext, playerMachine} from "@nadha/core";
 import Navigation from "./navigation";
 import {Provider} from "react-redux";
 // @ts-ignore
 import {PersistGate} from "redux-persist/integration/react";
 import ErrorBoundary from "./components/ErrorBoundary";
-
+import {useMachine} from "@xstate/react";
 
 const {store, persistor} = configureStore();
 
@@ -28,16 +28,19 @@ const Loader = () => (
 );
 
 const App = () => {
+    const [current, send] = useMachine(playerMachine);
     return (
         <Provider store={store}>
             <PersistGate loading={<Loader/>} persistor={persistor}>
                 <ThemeProvider theme={DefaultTheme}>
                     <ErrorBoundary>
-                        <SafeAreaView style={{flex: 1}}>
-                            <Screen>
-                                <Navigation/>
-                            </Screen>
-                        </SafeAreaView>
+                        <PlayerContext.Provider value={{current, send}}>
+                            <SafeAreaView style={{flex: 1}}>
+                                <Screen>
+                                    <Navigation/>
+                                </Screen>
+                            </SafeAreaView>
+                        </PlayerContext.Provider>
                     </ErrorBoundary>
                 </ThemeProvider>
             </PersistGate>

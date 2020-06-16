@@ -45,7 +45,7 @@ jobs:
           yarn workspace @nadha/views run tsc
           yarn workspace @nadha/utils run tsc
           yarn workspace @nadha/core run tsc 
-          yarn workspace @nadha/app run tsc 
+          yarn workspace @nadha/app run tsc
 
       # Build web app
       - name: Build release bundle
@@ -56,7 +56,7 @@ jobs:
         id: netlify-deploy
         uses: nwtgck/actions-netlify@v1.1
         with:
-          publish-dir: './build'
+          publish-dir: "./build"
           production-branch: master
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy ${{ github.event.pull_request.title }} from GitHub Actions"
@@ -75,7 +75,15 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: app-release.apk
-          path: android/app/build/outputs/apk/release/
+          path: android/app/build/outputs/apk/release/app-release.apk
+
+      - name: upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.2.1
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          token: ${{secrets.FIREBASE_TOKEN}}
+          groups: testers
+          file: android/app/build/outputs/apk/release/app-release.apk
 
       - name: Discord notification
         env:

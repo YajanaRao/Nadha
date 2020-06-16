@@ -1,5 +1,7 @@
 import * as MediaManager from './MediaManager/action';
+import { playerMachine } from './PlayerManager/playerMachine';
+import { PlayerContext} from "./PlayerManager";
+export { playerMachine, PlayerContext }
 export { MediaManager }
-export { Provider } from "react-redux";
-export { useSelector, useDispatch } from "react-redux";
 export { configureStore } from "./store";
+

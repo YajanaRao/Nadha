@@ -17,7 +17,13 @@ export const log = {
         if (__DEV__) {
             console.log(title, message);
         } else {
-            const text = message.componentStack.slice(0, 2000);
+            let text;
+            if (message.componentStack) {
+                text = message.componentStack.slice(0, 2000);
+            } else {
+                text = message.toString();
+            }
+
             const platform = Platform.OS;
             let extras: any = []
             extras.push({

@@ -1,10 +1,10 @@
 import React from 'react';
 import Svg, {G, Path, Rect} from "react-native-svg";
 
-const SkipBack = () => {
+const SkipBack = ({color}: { color: string }) => {
     return (
         <Svg viewBox="0 0 24 24">
-            <G data-name="Layer 2">
+            <G data-name="Layer 2" fill={color}>
                 <G data-name="skip-back">
                     <Rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/>
                     <Path
