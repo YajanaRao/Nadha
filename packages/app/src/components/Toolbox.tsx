@@ -15,12 +15,13 @@ export const Toolbox = ({navigation}: { navigation: any }) => {
                         flexDirection: "row",
                         justifyContent: 'center',
                         alignItems: 'center',
-                        maxWidth: '70%'
+                        marginLeft: 10,
                     }}>
                         <Icon name={current.matches("play") ? "Pause" : "Play"} onPress={() => send('TOGGLE')}/>
-                        <TouchableOpacity style={{marginHorizontal: 16}} onPress={() => navigation.navigate("Player")}>
+                        <TouchableOpacity style={{marginHorizontal: 16, justifyContent: 'center', alignItems: 'center'}}
+                                          onPress={() => navigation.navigate("Player")}>
                             <Text style={{fontWeight: 'bold', fontSize: 16}}>{current.context.media.title}</Text>
-                            <Text>{current.context.media.subtitle}</Text>
+                            {current.context.media.subtitle ? <Text>{current.context.media.subtitle}</Text> : false}
                         </TouchableOpacity>
                     </Card>
                 )}
