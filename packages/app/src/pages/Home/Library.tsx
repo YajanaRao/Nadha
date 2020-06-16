@@ -45,7 +45,7 @@ export function Library() {
                     </Text>
                 </Card>
             </Container>
-            <MediaList media={songs} onItemPress={navigate}/>
+            <MediaList media={songs} onMediaSelect={navigate}/>
             <Toolbox navigation={navigation}/>
         </Screen>
     );

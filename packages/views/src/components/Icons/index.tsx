@@ -11,7 +11,7 @@ interface Props {
     name: string;
     size?: number;
     onPress?: () => void;
-    color?: number;
+    color?: string;
 }
 
 const Loader = ({size, color}: { size: number; color: string }) => (
