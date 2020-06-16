@@ -33,7 +33,6 @@ jobs:
         with:
           path: |
             **/node_modules
-            android/.gradle
           key: ${{ runner.os }}-cache
 
       # Runs a single command using the runners shell
