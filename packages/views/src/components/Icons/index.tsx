@@ -11,6 +11,7 @@ interface Props {
     name: string;
     size?: number;
     onPress?: () => void;
+    color?: number;
 }
 
 const Loader = ({size, color}: { size: number; color: string }) => (
@@ -34,8 +35,9 @@ const ICON_MAPS: any = {
     'SkipBack': require("./SkipBack").default
 }
 
-export const Icon = ({name, size = 24, onPress}: Props) => {
+export const Icon = ({name, size = 24, onPress, color}: Props) => {
     let IconComponent: any = null;
+    let iconColor = null;
     try {
         IconComponent = ICON_MAPS[name];
     } catch (e) {
@@ -45,11 +47,16 @@ export const Icon = ({name, size = 24, onPress}: Props) => {
     const {
         colors: {text},
     } = theme;
-    const color = Color(text);
+    if (color) {
+        iconColor = color;
+    } else {
+        const color = Color(text);
+        iconColor = color.lighten(0.8)
+    }
     return (
-        <Suspense fallback={<Loader size={size - 4} color={color.lighten(0.8)}/>}>
+        <Suspense fallback={<Loader size={size - 4} color={iconColor}/>}>
             <TouchableOpacity style={{height: size, width: size}} onPress={onPress}>
-                {IconComponent ? <IconComponent color={color.fade(0.75).hex()}/> : false}
+                {IconComponent ? <IconComponent color={iconColor}/> : false}
             </TouchableOpacity>
         </Suspense>
     );
