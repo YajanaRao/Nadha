@@ -14,7 +14,7 @@ export function sendMessage(content: any) {
 
 export const log = {
     error(title: any, message?: any) {
-        if (__DEV__) {
+        if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
             console.log(title, message);
         } else {
             let text;
