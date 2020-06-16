@@ -1,6 +1,6 @@
 # Nadha
 
-A extensible, cross platform music player
+An extensible, cross platform music player
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fea67322-45d4-4a22-b388-bf990397775d/deploy-status)](https://app.netlify.com/sites/nadha/deploys)
 ![Build](https://github.com/YajanaRao/Nadha/workflows/Build/badge.svg?branch=master)
@@ -18,15 +18,15 @@ Nadha uses a number of open source projects to work properly:
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ cd Nadha
-$ yarn install
-$ yarn android
+cd Nadha
+yarn install
+yarn android
 ```
 
 For production environments...
 
 ```sh
-$ yarn build
+yarn build
 ```
 
 ### Plugins
@@ -39,8 +39,7 @@ Nadha is currently extended with the following plugins. Instructions on how to u
 | Google Drive | [Coming up](plugins/googledrive/README.md) |
 
 
-
-License
+### License
 ----
 
 MIT
