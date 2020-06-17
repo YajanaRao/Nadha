@@ -16,11 +16,16 @@ export const Toolbox = ({navigation}: { navigation: any }) => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         marginLeft: 10,
+                        backgroundColor: 'rgb(50, 50, 50)',
                     }}>
-                        <Icon name={current.matches("play") ? "Pause" : "Play"} onPress={() => send('TOGGLE')}/>
+                        <Icon name={current.matches("play") ? "Pause" : "Play"} onPress={() => send('TOGGLE')} color={'#fff'}/>
                         <TouchableOpacity style={{marginHorizontal: 16, justifyContent: 'center', alignItems: 'center'}}
                                           onPress={() => navigation.navigate("Player")}>
-                            <Text style={{fontWeight: 'bold', fontSize: 16}}>{current.context.media.title}</Text>
+                            <Text style={{
+                                fontWeight: 'bold',
+                                fontSize: 16,
+                                color: '#fff'
+                            }}>{current.context.media.title}</Text>
                             {current.context.media.subtitle ? <Text>{current.context.media.subtitle}</Text> : false}
                         </TouchableOpacity>
                     </Card>

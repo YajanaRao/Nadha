@@ -12,7 +12,7 @@ export { Breadcrumb } from './components/Breadcrumb/Breadcrumb';
 export { Heart } from "./components/Icons";
 export { Logo } from "./components/Icons/Logo";
 export { Icon } from "./components/Icons";
-
+export { Link } from "./components/Link/Link";
 export {
   Screen,
   Button,

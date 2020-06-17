@@ -2,6 +2,7 @@ import {assign, Machine} from "xstate";
 
 interface PlayerContext {
     media: {
+        nid: string;
         title: string;
         subtitle: string;
     };
@@ -12,6 +13,7 @@ export const playerMachine = Machine<PlayerContext>({
     initial: "idle",
     context: {
         media: {
+            nid: "",
             title: "",
             subtitle: ""
         }

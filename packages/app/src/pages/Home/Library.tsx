@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {useNavigation} from "@react-navigation/native";
-import {Appbar, Breadcrumb, Card, Container, Screen, Text} from "@nadha/views";
+import {Appbar, Breadcrumb, Card, Container, Link, Screen, Text} from "@nadha/views";
 import {MediaManager,} from "@nadha/core";
 import {useDispatch, useSelector} from 'react-redux';
 import {MediaList} from "../../components/MediaList";
@@ -31,19 +31,21 @@ export function Library() {
             <Appbar/>
             <Breadcrumb routes={['Library']} navigate={(route: string) => navigation.navigate(route)}/>
             <Container>
-                <Card>
+                <Card style={{backgroundColor: '#ffe56433'}}>
                     <Text style={{fontSize: 24, marginBottom: 2, fontWeight: "700"}}>
                         Hi everyone!
                     </Text>
                     <Text>
                         Hi everyone! The application is in development. The developers are working to make this great.
-                        You can checkout the development and code at <Text
-                        style={{color: 'blue'}}>https://github.com/YajanaRao/Nadha</Text>. If you find any issues or
+                        You can checkout the development and code at
+                        <Link url={"https://github.com/YajanaRao/Nadha"}>
+                            https://github.com/YajanaRao/Nadha
+                        </Link>. If you find any issues or
                         like to see a new feature? Feel free a create a new issue. Thanks!
                     </Text>
                 </Card>
             </Container>
-            <MediaList media={songs} onItemPress={navigate}/>
+            <MediaList media={songs} onMediaSelect={navigate}/>
             <Toolbox navigation={navigation}/>
         </Screen>
     );
