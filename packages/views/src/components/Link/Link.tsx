@@ -1,5 +1,6 @@
 import React, {ReactNode, useCallback} from 'react';
-import {Alert, Linking, TouchableHighlight} from "react-native";
+import {Alert, Linking} from "react-native";
+import {Text} from "../..";
 
 export const Link = ({url, children}: { url: string, children: ReactNode }) => {
     const handlePress = useCallback(async () => {
@@ -15,5 +16,7 @@ export const Link = ({url, children}: { url: string, children: ReactNode }) => {
         }
     }, [url]);
 
-    return <TouchableHighlight onPress={handlePress}>{children}</TouchableHighlight>
+    return (
+        <Text style={{color: 'blue'}} onPress={handlePress}>{" "}{children}{" "}</Text>
+    )
 };

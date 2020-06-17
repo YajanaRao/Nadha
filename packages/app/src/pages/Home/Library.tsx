@@ -37,10 +37,10 @@ export function Library() {
                     </Text>
                     <Text>
                         Hi everyone! The application is in development. The developers are working to make this great.
-                        You can checkout the development and code at <Link
-                        url={"https://github.com/YajanaRao/Nadha"}><Text
-                        style={{color: 'blue'}}>https://github.com/YajanaRao/Nadha</Text></Link>. If you find any issues
-                        or
+                        You can checkout the development and code at
+                        <Link url={"https://github.com/YajanaRao/Nadha"}>
+                            https://github.com/YajanaRao/Nadha
+                        </Link>. If you find any issues or
                         like to see a new feature? Feel free a create a new issue. Thanks!
                     </Text>
                 </Card>

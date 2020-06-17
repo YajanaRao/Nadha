@@ -24,6 +24,7 @@ export const Folder = () => {
                 children: media.children
             })
         } else {
+            console.log(media);
             send('SELECT', {media});
         }
     }

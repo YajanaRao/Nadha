@@ -39,6 +39,14 @@ const TEXT_CONTAINER: ViewStyle = {
 
 export const List = ({title, description, icon, onPress, style, active = false}: Props) => {
 
+
+    const theme: Theme = useTheme();
+    const {
+        border,
+        colors: {surface, text, primary},
+        roundness,
+    } = theme;
+
     const getActiveTextColor = () => {
         let textColor = "black";
         let color = Color(primary);
@@ -47,17 +55,11 @@ export const List = ({title, description, icon, onPress, style, active = false}:
         }
         return textColor;
     }
-    const theme: Theme = useTheme();
-    const {
-        border,
-        colors: {surface, text, primary},
-        roundness,
-    } = theme;
 
     let backgroundColor = active ? primary : surface;
     let textColor = active ? getActiveTextColor() : text;
     const color = Color(textColor);
-    let borderColor = color.fade(0.75);
+    let borderColor = color.fade(0.75).hex();
 
     return (
         <TouchableOpacity
@@ -83,7 +85,7 @@ export const List = ({title, description, icon, onPress, style, active = false}:
             <View style={TEXT_CONTAINER}>
                 <Text style={{color: textColor, fontSize: 16}}>{title}</Text>
                 {description ? (
-                    <Text style={{fontSize: 12, color: color.fade(0.50), marginTop: 2}}>
+                    <Text style={{fontSize: 12, color: textColor, marginTop: 2}}>
                         {description}
                     </Text>
                 ) : (

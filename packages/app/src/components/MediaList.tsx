@@ -5,11 +5,12 @@ import {PlayerContext} from "@nadha/core";
 
 const MediaItem = ({media, onSelect}: { media: any, onSelect: (media: any) => void }) => {
     const {current: {context}} = useContext(PlayerContext);
+    const isActive = media.type !== "Folder" ? context.media.nid === media.nid : false;
     return (
         <List icon={media.type} title={media.title}
               description={media.subtitle}
               onPress={() => onSelect(media)}
-              active={context.media.nid === media.nid}
+              active={isActive}
         />
     )
 }

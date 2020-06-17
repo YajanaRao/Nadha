@@ -51,7 +51,7 @@ export const Icon = ({name, size = 24, onPress, color}: Props) => {
         iconColor = color;
     } else {
         const color = Color(text);
-        iconColor = color.lighten(0.8)
+        iconColor = color.lighten(0.8).hex();
     }
     return (
         <Suspense fallback={<Loader size={size - 4} color={iconColor}/>}>
