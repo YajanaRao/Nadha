@@ -1,9 +1,10 @@
 import React, {useContext} from 'react';
-import {Appbar, Breadcrumb, Screen} from '@nadha/views';
+import {Breadcrumb, Screen} from '@nadha/views';
 import {useNavigation, useRoute} from "@react-navigation/native";
 import {MediaList} from "../../components/MediaList";
 import {Toolbox} from "../../components/Toolbox";
 import {PlayerContext} from "@nadha/core";
+import Header from "../../components/Header";
 
 const FolderHeader = ({route, navigation}: { route: any, navigation: any }) => {
     const {folderName} = route.params;
@@ -31,7 +32,7 @@ export const Folder = () => {
 
     return (
         <Screen>
-            <Appbar/>
+            <Header/>
             <FolderHeader navigation={navigation} route={route}/>
             <MediaList media={children} onMediaSelect={onMediaSelect}/>
             <Toolbox navigation={navigation}/>

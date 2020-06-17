@@ -1,10 +1,11 @@
 import React, {useEffect} from "react";
 import {useNavigation} from "@react-navigation/native";
-import {Appbar, Breadcrumb, Card, Container, Link, Screen, Text} from "@nadha/views";
+import {Breadcrumb, Card, Container, Link, Screen, Text} from "@nadha/views";
 import {MediaManager,} from "@nadha/core";
 import {useDispatch, useSelector} from 'react-redux';
 import {MediaList} from "../../components/MediaList";
 import {Toolbox} from "../../components/Toolbox";
+import Header from "../../components/Header";
 
 export function Library() {
     const songs = useSelector((state: any) => state.mediaStore.media);
@@ -28,7 +29,7 @@ export function Library() {
 
     return (
         <Screen>
-            <Appbar/>
+            <Header/>
             <Breadcrumb routes={['Library']} navigate={(route: string) => navigation.navigate(route)}/>
             <Container>
                 <Card style={{backgroundColor: '#ffe56433'}}>

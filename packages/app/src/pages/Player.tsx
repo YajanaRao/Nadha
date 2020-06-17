@@ -7,7 +7,6 @@ import {Image} from "react-native";
 export const Player = () => {
     const {current, send} = useContext(PlayerContext);
     const {context: {media}} = current;
-    console.log(media);
     const navigation = useNavigation();
     return (
         <Screen>
