@@ -12,11 +12,11 @@ const version = NativeModules.PlatformConstants
 export interface Props {
     value: boolean;
     onValueChange: () => void;
-    disabled?: false;
+    disabled?: boolean;
     color?: string;
 }
 
-export const Switch = ({ value, onValueChange, disabled, color }: Props) => {
+export const Switch = ({ value, onValueChange, disabled = false, color }: Props) => {
     const theme: Theme = useTheme();
     const checkedColor = color || theme.colors.accent;
 
@@ -74,4 +74,4 @@ export const Switch = ({ value, onValueChange, disabled, color }: Props) => {
             {...props}
         />
     );
-}
+};

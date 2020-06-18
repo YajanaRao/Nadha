@@ -32,12 +32,13 @@ const ICON_MAPS: any = {
     'Play': require("./Play").default,
     'Pause': require("./Pause").default,
     'SkipForward': require("./SkipForward").default,
-    'SkipBack': require("./SkipBack").default
-}
+    'SkipBack': require("./SkipBack").default,
+    'ArrowForward': require("./ArrowForward").default
+};
 
 export const Icon = ({ name, size = 24, onPress, color }: Props) => {
     let IconComponent: any = null;
-    let iconColor = null;
+    let iconColor: string;
     try {
         IconComponent = ICON_MAPS[name];
     } catch (e) {
@@ -51,7 +52,7 @@ export const Icon = ({ name, size = 24, onPress, color }: Props) => {
         iconColor = color;
     } else {
         const color = Color(text);
-        iconColor = color.lighten(0.8).hex();
+        iconColor = color.lighten(0.75).hex();
     }
     return (
         <Suspense fallback={<Loader size={size - 4} color={iconColor} />}>

@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { View, StyleProp, ViewStyle, Platform } from "react-native";
+import { StatusBar, StyleProp, ViewStyle, Platform, SafeAreaView } from "react-native";
 import { Theme } from "../../types";
 
 import { useTheme } from "../../theme";
@@ -14,10 +14,11 @@ export interface Screen {
 export const Screen = ({ children, style }: Screen) => {
   const theme: Theme = useTheme();
   const {
-    colors: { background },
+    dark,
+    colors: { background, primary },
   } = theme;
   const backgroundColor = background || "white";
-  return <View style={[{
+  return <SafeAreaView style={[{
     backgroundColor, ...Platform.select({
       web: {
         height: '100vh',
@@ -28,5 +29,8 @@ export const Screen = ({ children, style }: Screen) => {
         flex: 1
       }
     })
-  }, style]}>{children}</View>;
+  }, style]}>
+    <StatusBar barStyle={Platform.OS === "android" ? dark ? "light-content" : "dark-content" : "default"} backgroundColor={primary} />
+    {children}
+  </SafeAreaView>;
 };
