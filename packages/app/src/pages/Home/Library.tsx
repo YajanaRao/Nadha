@@ -33,10 +33,10 @@ export function Library() {
             <Breadcrumb routes={['Library']} navigate={(route: string) => navigation.navigate(route)}/>
             <Container>
                 <Card style={{backgroundColor: '#ffe564'}}>
-                    <Text style={{fontSize: 24, marginBottom: 2, fontWeight: "700"}}>
+                    <Text style={{fontSize: 24, marginBottom: 2, fontWeight: "700", color: "black"}}>
                         Hi everyone!
                     </Text>
-                    <Text>
+                    <Text style={{color: "black"}}>
                         Hi everyone! The application is in development. The developers are working to make this great.
                         You can checkout the development and code at
                         <Link url={"https://github.com/YajanaRao/Nadha"}>
