@@ -10,7 +10,7 @@
 
 import React from "react";
 import {ActivityIndicator, SafeAreaView, View} from "react-native";
-import {DefaultTheme, Screen, ThemeProvider} from "@nadha/views";
+import {Screen, ThemeProvider} from "@nadha/views";
 import {configureStore, PlayerContext, playerMachine} from "@nadha/core";
 import Navigation from "./navigation";
 import {Provider} from "react-redux";
@@ -29,10 +29,12 @@ const Loader = () => (
 
 const App = () => {
     const [current, send] = useMachine(playerMachine);
+
+
     return (
         <Provider store={store}>
             <PersistGate loading={<Loader/>} persistor={persistor}>
-                <ThemeProvider theme={DefaultTheme}>
+                <ThemeProvider>
                     <ErrorBoundary>
                         <PlayerContext.Provider value={{current, send}}>
                             <SafeAreaView style={{flex: 1}}>
