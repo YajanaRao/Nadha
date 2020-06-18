@@ -3,7 +3,7 @@ import { Container } from '../Container/Container';
 import { Text } from '../Text/Text';
 import { Theme } from '../../types';
 import { useTheme } from '../../theme';
-import { TextStyle } from 'react-native';
+import { TextStyle, View } from 'react-native';
 
 interface Props {
     routes: string[];
@@ -11,12 +11,14 @@ interface Props {
 }
 
 const TEXT_STYLE: TextStyle = {
-    fontWeight: '500',
+    fontWeight: '600',
     fontSize: 16
 }
 
 const Divider = () => (
-    <Text style={{ marginHorizontal: 6, color: 'gray' }}>/</Text>
+    <View style={{ marginHorizontal: 6 }}>
+        <Text style={{ color: 'gray' }}>/</Text>
+    </View>
 )
 
 export const Breadcrumb = ({ routes, navigate }: Props) => {

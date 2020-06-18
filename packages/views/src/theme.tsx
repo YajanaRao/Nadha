@@ -10,6 +10,7 @@ export const DefaultTheme = {
         background: "#f1f3f4",
         surface: "#fff",
         primary: "#0070f3",
+        accent: "#90ee02",
         text: "#111",
     },
 };
@@ -23,6 +24,7 @@ export const DarkTheme = {
         background: "#212121",
         surface: "#272d34",
         primary: "#0070f3",
+        accent: '#90ee02',
         text: "#fff",
     },
 };

@@ -13,6 +13,7 @@ export interface Theme {
   roundness: number;
   border: number;
   colors: {
+    accent: string;
     background: string;
     primary: string;
     secondary: string;
