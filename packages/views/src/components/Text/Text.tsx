@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Text as BareText, TextStyle, StyleProp } from "react-native";
-import { useTheme } from "emotion-theming";
+import { useTheme } from "../../theme";
 import { Theme } from "../../types";
 
 export interface Props {

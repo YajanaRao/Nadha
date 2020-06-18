@@ -1,10 +1,10 @@
-import React, {Suspense} from "react";
-import {TouchableOpacity, View} from "react-native";
-import {Theme} from "../../types";
-import {useTheme} from "emotion-theming";
-import {Path, Svg} from "react-native-svg";
+import React, { Suspense } from "react";
+import { TouchableOpacity, View } from "react-native";
+import { Theme } from "../../types";
+import { useTheme } from "../../theme";
+import { Path, Svg } from "react-native-svg";
 
-export {Heart} from "./Heart";
+export { Heart } from "./Heart";
 const Color = require("color");
 
 interface Props {
@@ -14,8 +14,8 @@ interface Props {
     color?: string;
 }
 
-const Loader = ({size, color}: { size: number; color: string }) => (
-    <View style={{height: size, width: size}}>
+const Loader = ({ size, color }: { size: number; color: string }) => (
+    <View style={{ height: size, width: size }}>
         <Svg viewBox="0 0 512 512">
             <Path
                 fill={color}
@@ -32,12 +32,13 @@ const ICON_MAPS: any = {
     'Play': require("./Play").default,
     'Pause': require("./Pause").default,
     'SkipForward': require("./SkipForward").default,
-    'SkipBack': require("./SkipBack").default
-}
+    'SkipBack': require("./SkipBack").default,
+    'ArrowForward': require("./ArrowForward").default
+};
 
-export const Icon = ({name, size = 24, onPress, color}: Props) => {
+export const Icon = ({ name, size = 24, onPress, color }: Props) => {
     let IconComponent: any = null;
-    let iconColor = null;
+    let iconColor: string;
     try {
         IconComponent = ICON_MAPS[name];
     } catch (e) {
@@ -45,18 +46,18 @@ export const Icon = ({name, size = 24, onPress, color}: Props) => {
     }
     const theme: Theme = useTheme();
     const {
-        colors: {text},
+        colors: { text },
     } = theme;
     if (color) {
         iconColor = color;
     } else {
         const color = Color(text);
-        iconColor = color.lighten(0.8).hex();
+        iconColor = color.lighten(0.75).hex();
     }
     return (
-        <Suspense fallback={<Loader size={size - 4} color={iconColor}/>}>
-            <TouchableOpacity style={{height: size, width: size}} onPress={onPress}>
-                {IconComponent ? <IconComponent color={iconColor}/> : false}
+        <Suspense fallback={<Loader size={size - 4} color={iconColor} />}>
+            <TouchableOpacity style={{ height: size, width: size }} onPress={onPress}>
+                {IconComponent ? <IconComponent color={iconColor} /> : false}
             </TouchableOpacity>
         </Suspense>
     );

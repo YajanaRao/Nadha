@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "emotion-theming";
+import { useTheme } from "../../theme";
 import { TouchableOpacity, Text, StyleProp, ViewStyle } from "react-native";
 import { Theme } from "../../types";
 

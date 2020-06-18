@@ -1,18 +1,18 @@
 import * as React from "react";
-import { Platform } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "react-native-screens/native-stack";
-import { enableScreens } from "react-native-screens";
-import { Library } from '../pages/Home/Library';
-import { Player } from '../pages/Player';
-import { Folder } from '../pages/Home/Folder';
-import { Breadcrumb } from "@nadha/views";
+import {NavigationContainer} from "@react-navigation/native";
+import {createNativeStackNavigator} from "react-native-screens/native-stack";
+import {enableScreens} from "react-native-screens";
+import {Library} from '../pages/Home/Library';
+import {Player} from '../pages/Player';
+import {Folder} from '../pages/Home/Folder';
 import {DataPull} from "../pages/DataPull";
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 
 enableScreens();
 const RootStack = createNativeStackNavigator();
 const HomeStack = createNativeStackNavigator();
+
 export function Landing() {
     return (
         <HomeStack.Navigator
@@ -55,10 +55,14 @@ export function Root() {
         </RootStack.Navigator>
     );
 }
+
 export default function Navigation() {
-  return (
-    <NavigationContainer>
-      <Root />
-    </NavigationContainer>
-  );
+    return (
+        <SafeAreaProvider>
+            <NavigationContainer>
+                <Root/>
+            </NavigationContainer>
+        </SafeAreaProvider>
+
+    );
 }

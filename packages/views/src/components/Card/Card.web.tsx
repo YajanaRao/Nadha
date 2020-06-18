@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { useTheme } from "emotion-theming";
+import { useTheme } from "../../theme";
 import { StyleProp, View, ViewStyle } from "react-native";
 import { Theme } from "../../types";
 const Color = require("color");

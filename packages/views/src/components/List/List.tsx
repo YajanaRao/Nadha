@@ -1,8 +1,8 @@
 import React from "react";
-import {StyleProp, Text, TouchableOpacity, View, ViewStyle} from "react-native";
-import {useTheme} from "emotion-theming";
-import {Theme} from "../../types";
-import {Icon} from "../Icons";
+import { StyleProp, Text, TouchableOpacity, View, ViewStyle } from "react-native";
+import { useTheme } from "../../theme";
+import { Theme } from "../../types";
+import { Icon } from "../Icons";
 
 const Color = require("color");
 
@@ -37,13 +37,13 @@ const TEXT_CONTAINER: ViewStyle = {
     alignItems: "flex-start",
 };
 
-export const List = ({title, description, icon, onPress, style, active = false}: Props) => {
+export const List = ({ title, description, icon, onPress, style, active = false }: Props) => {
 
 
     const theme: Theme = useTheme();
     const {
         border,
-        colors: {surface, text, primary},
+        colors: { surface, text, primary },
         roundness,
     } = theme;
 
@@ -77,20 +77,20 @@ export const List = ({title, description, icon, onPress, style, active = false}:
         >
             {icon ? (
                 <View style={ICON_CONTAINER}>
-                    <Icon name={icon} color={textColor}/>
+                    <Icon name={icon} color={textColor} />
                 </View>
             ) : (
-                false
-            )}
+                    false
+                )}
             <View style={TEXT_CONTAINER}>
-                <Text style={{color: textColor, fontSize: 16}}>{title}</Text>
+                <Text style={{ color: textColor, fontSize: 16 }}>{title}</Text>
                 {description ? (
-                    <Text style={{fontSize: 12, color: textColor, marginTop: 2}}>
+                    <Text style={{ fontSize: 12, color: textColor, marginTop: 2 }}>
                         {description}
                     </Text>
                 ) : (
-                    false
-                )}
+                        false
+                    )}
             </View>
         </TouchableOpacity>
     );

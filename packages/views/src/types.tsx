@@ -8,10 +8,12 @@ export interface TrackProps {
 }
 
 export interface Theme {
+  name: string;
   dark: boolean;
   roundness: number;
   border: number;
   colors: {
+    accent: string;
     background: string;
     primary: string;
     secondary: string;

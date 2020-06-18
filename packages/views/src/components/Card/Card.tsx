@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { useTheme } from "emotion-theming";
+import { useTheme } from "../../theme";
 import { StyleProp, View, ViewStyle } from "react-native";
 import { Theme } from "../../types";
 const Color = require("color");
@@ -11,11 +11,11 @@ interface Props {
 
 const CARD: ViewStyle = {
   padding: 12,
-  elevation: 2,
+  elevation: 1,
   margin: 4,
-  shadowOffset: { width: 0, height: 0 },
-  shadowOpacity: 0.1,
-  shadowRadius: 5,
+  shadowOffset: { width: 0, height: 0.5 },
+  shadowOpacity: 0.24,
+  shadowRadius: 0.75,
 };
 
 export const Card = ({ children, style }: Props) => {
@@ -35,7 +35,7 @@ export const Card = ({ children, style }: Props) => {
         {
           backgroundColor: surface,
           borderRadius: roundness,
-          shadowColor: text,
+          shadowColor: 'black',
           borderWidth: border,
           borderColor,
         },

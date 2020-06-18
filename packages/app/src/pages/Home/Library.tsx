@@ -1,10 +1,11 @@
 import React, {useEffect} from "react";
 import {useNavigation} from "@react-navigation/native";
-import {Appbar, Breadcrumb, Card, Container, Link, Screen, Text} from "@nadha/views";
+import {Breadcrumb, Card, Container, Link, Screen, Text} from "@nadha/views";
 import {MediaManager,} from "@nadha/core";
 import {useDispatch, useSelector} from 'react-redux';
 import {MediaList} from "../../components/MediaList";
 import {Toolbox} from "../../components/Toolbox";
+import Header from "../../components/Header";
 
 export function Library() {
     const songs = useSelector((state: any) => state.mediaStore.media);
@@ -12,7 +13,7 @@ export function Library() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(MediaManager.getMedia());
-    }, []);
+    }, [dispatch]);
 
     const navigate = (media: any) => {
         if (media.type === "Folder") {
@@ -24,18 +25,18 @@ export function Library() {
         } else {
             navigation.navigate("Player")
         }
-    }
+    };
 
     return (
         <Screen>
-            <Appbar/>
+            <Header/>
             <Breadcrumb routes={['Library']} navigate={(route: string) => navigation.navigate(route)}/>
             <Container>
-                <Card style={{backgroundColor: '#ffe56433'}}>
-                    <Text style={{fontSize: 24, marginBottom: 2, fontWeight: "700"}}>
+                <Card style={{backgroundColor: '#ffe564'}}>
+                    <Text style={{fontSize: 24, marginBottom: 2, fontWeight: "700", color: "black"}}>
                         Hi everyone!
                     </Text>
-                    <Text>
+                    <Text style={{color: "black"}}>
                         Hi everyone! The application is in development. The developers are working to make this great.
                         You can checkout the development and code at
                         <Link url={"https://github.com/YajanaRao/Nadha"}>

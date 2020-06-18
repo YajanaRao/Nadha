@@ -1,7 +1,8 @@
 import React from "react";
 import { View, ViewStyle, Text } from "react-native";
-import { useTheme } from "emotion-theming";
+import { useTheme } from "../../theme";
 import { Theme } from "../../types";
+import { Switch } from '../Switch/Switch'
 const Color = require("color");
 
 const APPBAR_CONTAINER: ViewStyle = {
@@ -16,7 +17,13 @@ const APPBAR_CONTAINER: ViewStyle = {
   shadowRadius: 5,
 };
 
-export const Appbar = () => {
+export interface Props {
+  title: string;
+  isDark: boolean;
+  onToggle: () => void
+}
+
+export const Appbar = ({ title, onToggle, isDark = false }: Props) => {
   const theme: Theme = useTheme();
   const {
     colors: { primary, text },
@@ -31,8 +38,9 @@ export const Appbar = () => {
       ]}
     >
       <Text style={{ color: textColor, fontSize: 24, fontWeight: "800" }}>
-        Nadha
+        {title}
       </Text>
+      <Switch value={isDark} onValueChange={onToggle} />
     </View>
   );
 };
