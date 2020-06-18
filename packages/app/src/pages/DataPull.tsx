@@ -13,17 +13,23 @@ export const DataPull = () => {
             </Container>
             <Container>
                 <Text style={{textAlign: 'center', marginVertical: 16}}>List of integrations</Text>
-                <FlatList data={[{title: "Dropbox"}, {title: "Google Drive"}, {title: 'Spotify'}]}
-                          numColumns={2}
-                          renderItem={({item}) => <Card
-                              style={{
-                                  flex: 1,
-                                  height: 100,
-                                  alignItems: 'center',
-                                  justifyContent: 'center'
-                              }}><Text>{item.title}</Text></Card>}/>
+                <FlatList
+                    data={[{title: "Dropbox"}, {title: "Google Drive"}, {title: 'Spotify'}]}
+                    numColumns={2}
+                    renderItem={({item}) =>
+                        <Card style={{
+                            flex: 1,
+                            height: 100,
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+                            <Text>{item.title}</Text>
+                        </Card>
+                    }
+                    keyExtractor={item => item.title}
+                />
                 <Button onPress={() => navigation.goBack()} title={"Go Back"}/>
             </Container>
         </Screen>
     )
-}
+};

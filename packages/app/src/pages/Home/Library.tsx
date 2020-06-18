@@ -13,7 +13,7 @@ export function Library() {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(MediaManager.getMedia());
-    }, []);
+    }, [dispatch]);
 
     const navigate = (media: any) => {
         if (media.type === "Folder") {
@@ -25,14 +25,14 @@ export function Library() {
         } else {
             navigation.navigate("Player")
         }
-    }
+    };
 
     return (
         <Screen>
             <Header/>
             <Breadcrumb routes={['Library']} navigate={(route: string) => navigation.navigate(route)}/>
             <Container>
-                <Card style={{backgroundColor: '#ffe56433'}}>
+                <Card style={{backgroundColor: '#ffe564'}}>
                     <Text style={{fontSize: 24, marginBottom: 2, fontWeight: "700"}}>
                         Hi everyone!
                     </Text>
