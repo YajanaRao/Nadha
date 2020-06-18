@@ -2,6 +2,7 @@
 
 An extensible, cross platform music player
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a72df383fa3048dd8ba0f41449886b14)](https://app.codacy.com/manual/yajananrao/Nadha?utm_source=github.com&utm_medium=referral&utm_content=YajanaRao/Nadha&utm_campaign=Badge_Grade_Dashboard)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fea67322-45d4-4a22-b388-bf990397775d/deploy-status)](https://app.netlify.com/sites/nadha/deploys)
 ![Build](https://github.com/YajanaRao/Nadha/workflows/Build/badge.svg?branch=master)
 ![Platform - Android](https://img.shields.io/badge/platform-Android-yellow.svg)
