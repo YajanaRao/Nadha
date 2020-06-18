@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react";
-import { View, StyleProp, ViewStyle, Platform, Dimensions } from "react-native";
+import { View, StyleProp, ViewStyle, Platform } from "react-native";
 import { Theme } from "../../types";
 
-import { useTheme } from "emotion-theming";
+import { useTheme } from "../../theme";
 
 export interface Screen {
   children: ReactNode;

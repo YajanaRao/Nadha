@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from '../Container/Container';
 import { Text } from '../Text/Text';
 import { Theme } from '../../types';
-import { useTheme } from 'emotion-theming';
+import { useTheme } from '../../theme';
 import { TextStyle } from 'react-native';
 
 interface Props {

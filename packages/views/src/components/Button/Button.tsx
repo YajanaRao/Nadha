@@ -1,7 +1,7 @@
 import React from "react";
-import {useTheme} from "emotion-theming";
-import {StyleProp, TouchableOpacity, ViewStyle, Text} from "react-native";
-import {Theme} from "../../types";
+import { useTheme } from "../../theme";
+import { StyleProp, TouchableOpacity, ViewStyle, Text } from "react-native";
+import { Theme } from "../../types";
 
 const Color = require("color");
 
@@ -19,7 +19,7 @@ const BUTTON: ViewStyle = {
     paddingVertical: 8,
     paddingHorizontal: 16,
     elevation: 4,
-    shadowOffset: {width: 0, height: 0},
+    shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 0.1,
     shadowRadius: 5,
     borderWidth: 1,
@@ -27,11 +27,11 @@ const BUTTON: ViewStyle = {
     minHeight: 40,
 };
 
-export const Button = ({style, onPress, title}: Props) => {
+export const Button = ({ style, onPress, title }: Props) => {
     const theme: Theme = useTheme();
     const {
         roundness,
-        colors: {primary, text},
+        colors: { primary, text },
     } = theme;
 
     const color = Color(primary);

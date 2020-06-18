@@ -1,5 +1,5 @@
-import React, {createContext, ReactNode, useReducer} from "react";
-import {ThemeProvider as EmotionProvider} from "emotion-theming";
+import React, { createContext, ReactNode, useReducer, useContext } from "react";
+import { Theme } from "./types";
 
 export const DefaultTheme = {
     name: 'Default White',
@@ -27,11 +27,15 @@ export const DarkTheme = {
     },
 };
 
-const initialState: any = DefaultTheme;
-const store = createContext(initialState);
-const {Provider} = store;
+const initialTheme: any = DefaultTheme;
+const ThemeContext = createContext(initialTheme);
+const { Provider } = ThemeContext;
 
-const ThemeProvider = ({children}: { children: ReactNode }) => {
+export function useTheme(): Theme {
+    return useContext(ThemeContext).state;
+}
+
+const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const [state, dispatch] = useReducer((state: any, action: any) => {
         switch (action.theme) {
             case 'Default White':
@@ -39,13 +43,11 @@ const ThemeProvider = ({children}: { children: ReactNode }) => {
             default:
                 return DefaultTheme;
         }
-    }, initialState);
+    }, initialTheme);
 
-    return <Provider value={{state, dispatch}}>
-        <EmotionProvider theme={state}>
-            {children}
-        </EmotionProvider>
+    return <Provider value={{ state, dispatch }}>
+        {children}
     </Provider>;
 };
 
-export {store, ThemeProvider}
+export { ThemeContext, ThemeProvider }
