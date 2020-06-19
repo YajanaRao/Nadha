@@ -8,9 +8,9 @@
  * @format
  */
 
-import React, {useEffect} from "react";
+import React from "react";
 import {ThemeProvider} from "@nadha/views";
-import {configureStore, Player, PlayerContextProvider} from "@nadha/core";
+import {configureStore, PlayerContextProvider} from "@nadha/core";
 import Navigation from "./navigation";
 import {Provider} from "react-redux";
 // @ts-ignore

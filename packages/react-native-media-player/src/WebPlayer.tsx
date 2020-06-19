@@ -1,6 +1,6 @@
-const MediaPlayer = {
+export const MediaPlayer = {
     player: HTMLAudioElement,
-    load(url: string) {
+    load: function (url: string) {
         return new Promise((resolve, reject) => {
             try {
                 this.player = new Audio(url);
@@ -17,5 +17,3 @@ const MediaPlayer = {
         this.player.pause();
     }
 }
-
-export {MediaPlayer};
