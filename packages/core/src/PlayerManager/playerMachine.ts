@@ -23,6 +23,7 @@ export const playerMachine = Machine<PlayerContext>({
     },
     states: {
         idle: {
+            id: 'setup',
             on: {SELECT: "loading"}
         },
         loading: {
@@ -51,7 +52,7 @@ export const playerMachine = Machine<PlayerContext>({
                 id: 'pause',
                 src: () => MediaPlayer.pause(),
             },
-            on: {TOGGLE: "play", SELECT: "loading"}
-        }
+            on: {TOGGLE: "play", SELECT: "loading", COMPLETE: "idle"}
+        },
     }
 });
