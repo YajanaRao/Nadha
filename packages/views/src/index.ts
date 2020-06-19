@@ -14,6 +14,7 @@ export { Logo } from "./components/Icons/Logo";
 export { Icon } from "./components/Icons";
 export { Link } from "./components/Link/Link";
 export { Snackbar } from "./components/Snackbar/Snackbar";
+export { ResponsiveContainer } from "./components/ResponsiveContainer";
 export type { Theme } from './types';
 export {
     Screen,
