@@ -4,6 +4,7 @@ import {FlatList} from "react-native";
 import {PlayerContext} from "@nadha/core";
 
 const MediaItem = ({media, onSelect}: { media: any, onSelect: (media: any) => void }) => {
+
     const {current: {context}} = useContext(PlayerContext);
     const isActive = media.type !== "Folder" ? context.media.nid === media.nid : false;
     return (

@@ -45,14 +45,14 @@ export const playerMachine = Machine<PlayerContext>({
                 id: 'play',
                 src: () => MediaPlayer.play(),
             },
-            on: {TOGGLE: "pause", SELECT: "loading"}
+            on: {PAUSE: "pause", SELECT: "loading", COMPLETE: "idle"}
         },
         pause: {
             invoke: {
                 id: 'pause',
                 src: () => MediaPlayer.pause(),
             },
-            on: {TOGGLE: "play", SELECT: "loading", COMPLETE: "idle"}
+            on: {PLAY: "play", SELECT: "loading"}
         },
     }
 });

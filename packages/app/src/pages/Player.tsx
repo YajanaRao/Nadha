@@ -10,7 +10,15 @@ export const Player = () => {
     const {context: {media}} = current;
     const navigation = useNavigation();
 
+    const isPlaying = current.matches("play");
 
+    const togglePlayer = () => {
+        if (isPlaying) {
+            send("PAUSE");
+        } else {
+            send("PLAY");
+        }
+    }
     return (
         <Screen>
             <Container>
@@ -28,7 +36,7 @@ export const Player = () => {
                 <Container style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                     <Icon name={"SkipBack"} size={40}/>
                     <Icon name={current.matches("play") ? "Pause" : "Play"}
-                          onPress={() => send('TOGGLE')}
+                          onPress={togglePlayer}
                           size={60}/>
                     <Icon name={"SkipForward"} size={40}/>
                 </Container>

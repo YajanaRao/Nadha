@@ -10,35 +10,26 @@
 
 import React, {useEffect} from "react";
 import {ThemeProvider} from "@nadha/views";
-import {configureStore, Player, PlayerContext, playerMachine} from "@nadha/core";
+import {configureStore, Player, PlayerContextProvider} from "@nadha/core";
 import Navigation from "./navigation";
 import {Provider} from "react-redux";
 // @ts-ignore
 import ErrorBoundary from "./components/ErrorBoundary";
-import {useMachine} from "@xstate/react";
 
 const {store} = configureStore();
 
 
 const App = () => {
-    const [current, send] = useMachine(playerMachine);
-
-    useEffect(() => {
-        Player.setup();
-        return () => Player.destroy();
-    });
 
     return (
         <Provider store={store}>
-            {/*<PersistGate loading={<Loader/>} persistor={persistor}>*/}
             <ThemeProvider>
                 <ErrorBoundary>
-                    <PlayerContext.Provider value={{current, send}}>
+                    <PlayerContextProvider>
                         <Navigation/>
-                    </PlayerContext.Provider>
+                    </PlayerContextProvider>
                 </ErrorBoundary>
             </ThemeProvider>
-            {/*</PersistGate>*/}
         </Provider>
     );
 };
