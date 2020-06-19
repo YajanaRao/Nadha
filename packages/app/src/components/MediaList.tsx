@@ -17,9 +17,9 @@ const MediaItem = ({media, onSelect}: { media: any, onSelect: (media: any) => vo
 
 export const MediaList = ({media, onMediaSelect}: { media: any, onMediaSelect: (media: any) => void }) => {
     return (
-        <Container style={{justifyContent: 'center', alignItems: 'center', flex: 1, padding: 4}}>
+        <Container style={{justifyContent: 'center', flex: 1, padding: 4}}>
             <FlatList
-                style={{width: '100%', margin: 4}}
+                style={{margin: 4}}
                 contentContainerStyle={{margin: 8}}
                 data={media}
                 renderItem={({item}) => (

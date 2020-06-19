@@ -19,12 +19,12 @@ export const DarkTheme = {
     name: 'Default Dark',
     dark: true,
     roundness: 4,
-    border: 0.005,
+    border: 0,
     colors: {
         background: "#212121",
         surface: "#272d34",
-        primary: "#0070f3",
-        accent: '#90ee02',
+        primary: "#2196f3",
+        accent: '#f44336',
         text: "#fff",
     },
 };
