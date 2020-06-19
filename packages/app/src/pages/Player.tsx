@@ -4,10 +4,13 @@ import {PlayerContext} from "@nadha/core";
 import {useNavigation} from "@react-navigation/native";
 import {Image} from "react-native";
 
+
 export const Player = () => {
     const {current, send} = useContext(PlayerContext);
     const {context: {media}} = current;
     const navigation = useNavigation();
+
+
     return (
         <Screen>
             <Container>
@@ -24,7 +27,8 @@ export const Player = () => {
                 </Container>
                 <Container style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                     <Icon name={"SkipBack"} size={40}/>
-                    <Icon name={current.matches("play") ? "Pause" : "Play"} onPress={() => send('TOGGLE')}
+                    <Icon name={current.matches("play") ? "Pause" : "Play"}
+                          onPress={() => send('TOGGLE')}
                           size={60}/>
                     <Icon name={"SkipForward"} size={40}/>
                 </Container>
