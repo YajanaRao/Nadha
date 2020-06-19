@@ -13,7 +13,6 @@ import {ThemeProvider} from "@nadha/views";
 import {configureStore, PlayerContextProvider} from "@nadha/core";
 import Navigation from "./navigation";
 import {Provider} from "react-redux";
-// @ts-ignore
 import ErrorBoundary from "./components/ErrorBoundary";
 
 const {store} = configureStore();
