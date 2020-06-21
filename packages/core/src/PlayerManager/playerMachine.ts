@@ -1,5 +1,5 @@
-import {assign, Machine} from "xstate";
-import {MediaPlayer} from 'react-native-media-player';
+import { assign, Machine } from "xstate";
+import { MediaPlayer } from 'react-native-media-player';
 
 
 interface PlayerContext {
@@ -24,7 +24,7 @@ export const playerMachine = Machine<PlayerContext>({
     states: {
         idle: {
             id: 'setup',
-            on: {SELECT: "loading"}
+            on: { SELECT: "loading" }
         },
         loading: {
             invoke: {
@@ -38,21 +38,21 @@ export const playerMachine = Machine<PlayerContext>({
                 },
                 onError: 'idle'
             },
-            on: {TOGGLE: "play", SELECT: "loading"}
+            on: { TOGGLE: "play", SELECT: "loading" }
         },
         play: {
             invoke: {
                 id: 'play',
                 src: () => MediaPlayer.play(),
             },
-            on: {PAUSE: "pause", SELECT: "loading", COMPLETE: "idle"}
+            on: { PAUSE: "pause", SELECT: "loading", COMPLETE: "idle" }
         },
         pause: {
             invoke: {
                 id: 'pause',
                 src: () => MediaPlayer.pause(),
             },
-            on: {PLAY: "play", SELECT: "loading"}
+            on: { PLAY: "play", SELECT: "loading" }
         },
     }
 });

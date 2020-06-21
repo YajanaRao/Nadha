@@ -1,11 +1,17 @@
 import React from "react";
-import { View, ViewStyle, Text } from "react-native";
+import { View, ViewStyle, Text, Platform, StatusBar } from "react-native";
 import { useTheme } from "../../theme";
 import { Theme } from "../../types";
 import { Switch } from '../Switch/Switch'
 const Color = require("color");
 
+const APPROX_STATUSBAR_HEIGHT = Platform.select({
+  android: StatusBar.currentHeight,
+  ios: Platform.Version < 11 ? 50 : 0,
+});
+
 const APPBAR_CONTAINER: ViewStyle = {
+  marginTop: APPROX_STATUSBAR_HEIGHT,
   height: 60,
   flexDirection: "row",
   justifyContent: "space-between",
@@ -14,7 +20,7 @@ const APPBAR_CONTAINER: ViewStyle = {
   elevation: 4,
   shadowOffset: { width: 0, height: 0 },
   shadowOpacity: 0.1,
-  shadowRadius: 5,
+  shadowRadius: 5
 };
 
 export interface Props {

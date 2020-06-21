@@ -28,16 +28,16 @@ const FAB: ViewStyle = {
 export const Fab = ({ style, onPress }: Props) => {
   const theme: Theme = useTheme();
   const {
-    colors: { primary, surface, text },
+    colors: { accent, text },
   } = theme;
 
-  const textColor = Color(primary).isDark() ? "white" : "black";
+  const textColor = Color(accent).isDark() ? "white" : "black";
 
   return (
     <TouchableOpacity
       key="fab"
       onPress={onPress}
-      style={[FAB, { backgroundColor: primary, shadowColor: text }, style]}
+      style={[FAB, { backgroundColor: accent, shadowColor: text }, style]}
     >
       <Text style={{ color: textColor, fontSize: 30 }}>+</Text>
     </TouchableOpacity>

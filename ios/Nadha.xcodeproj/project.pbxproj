@@ -12,14 +12,14 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		27096C1D38C8596215F89AF5 /* libPods-Nadha-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 850102005D8341FF56A3A7C0 /* libPods-Nadha-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* NadhaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* NadhaTests.m */; };
-		9A42658424B7F6C22A6B3E92 /* libPods-Nadha.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0426BF7A389D793F8F0D0279 /* libPods-Nadha.a */; };
-		A971A07923A8D42692B6C7CE /* libPods-Nadha-NadhaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE09EEF73717B6E9CFB1CFEA /* libPods-Nadha-NadhaTests.a */; };
-		B318278E9D23C436D9F35ED5 /* libPods-Nadha-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F97743E4760B644A6FB27FC /* libPods-Nadha-tvOS.a */; };
-		BC31CB248B5826FFDFA488A8 /* libPods-Nadha-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63837155109AF37100FB19BB /* libPods-Nadha-tvOSTests.a */; };
+		62EACE9C61410E2CB6AE7208 /* libPods-Nadha-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81F339177E5D0AA558E2D8AE /* libPods-Nadha-tvOS.a */; };
+		C0546C36CED5E10C0390BBAB /* libPods-Nadha.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BCDA68DA1B6AB7371E5E840 /* libPods-Nadha.a */; };
+		F8704C943387809259555A4F /* libPods-Nadha-NadhaTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B0B9BF564527DBBC76D31E9 /* libPods-Nadha-NadhaTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,7 @@
 		00E356EE1AD99517003FC87E /* NadhaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NadhaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* NadhaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NadhaTests.m; sourceTree = "<group>"; };
-		0426BF7A389D793F8F0D0279 /* libPods-Nadha.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nadha.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		135F647C04EDCE4A0ED79EC9 /* Pods-Nadha-NadhaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-NadhaTests.debug.xcconfig"; path = "Target Support Files/Pods-Nadha-NadhaTests/Pods-Nadha-NadhaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Nadha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nadha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Nadha/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Nadha/AppDelegate.m; sourceTree = "<group>"; };
@@ -52,21 +52,23 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Nadha/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Nadha/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Nadha/main.m; sourceTree = "<group>"; };
-		14C0D8465A9638C3A4BBBB1E /* Pods-Nadha-NadhaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-NadhaTests.release.xcconfig"; path = "Target Support Files/Pods-Nadha-NadhaTests/Pods-Nadha-NadhaTests.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Nadha-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nadha-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Nadha-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nadha-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		37FC0A6E0C6FE1611F6749E4 /* Pods-Nadha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha.debug.xcconfig"; path = "Target Support Files/Pods-Nadha/Pods-Nadha.debug.xcconfig"; sourceTree = "<group>"; };
-		3BBF254F4AFC2C91708F9C23 /* Pods-Nadha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha.release.xcconfig"; path = "Target Support Files/Pods-Nadha/Pods-Nadha.release.xcconfig"; sourceTree = "<group>"; };
-		3F97743E4760B644A6FB27FC /* libPods-Nadha-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nadha-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		63837155109AF37100FB19BB /* libPods-Nadha-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nadha-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EF89A74C6C76951CCFDC68C /* Pods-Nadha-NadhaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-NadhaTests.debug.xcconfig"; path = "Target Support Files/Pods-Nadha-NadhaTests/Pods-Nadha-NadhaTests.debug.xcconfig"; sourceTree = "<group>"; };
-		951E912ECAEEF37EE3F82FCB /* Pods-Nadha-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Nadha-tvOSTests/Pods-Nadha-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		9856A6BAA4815E944D9D2F00 /* Pods-Nadha-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Nadha-tvOS/Pods-Nadha-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		BA0A0BAC1D7745B79C0326ED /* Pods-Nadha-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Nadha-tvOS/Pods-Nadha-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		DDDB588574458A587B155B58 /* Pods-Nadha-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Nadha-tvOSTests/Pods-Nadha-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		355884F7A1A088FA6B7EED72 /* Pods-Nadha-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Nadha-tvOSTests/Pods-Nadha-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3BCDA68DA1B6AB7371E5E840 /* libPods-Nadha.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nadha.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		415397E212DE3AFD7C9CAFE3 /* Pods-Nadha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha.debug.xcconfig"; path = "Target Support Files/Pods-Nadha/Pods-Nadha.debug.xcconfig"; sourceTree = "<group>"; };
+		81F339177E5D0AA558E2D8AE /* libPods-Nadha-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nadha-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		850102005D8341FF56A3A7C0 /* libPods-Nadha-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nadha-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85BBE6F3C18DC3649EC2B82D /* Pods-Nadha-NadhaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-NadhaTests.release.xcconfig"; path = "Target Support Files/Pods-Nadha-NadhaTests/Pods-Nadha-NadhaTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B0B9BF564527DBBC76D31E9 /* libPods-Nadha-NadhaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nadha-NadhaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9227F7D6BF992340A6917FA1 /* Pods-Nadha-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Nadha-tvOS/Pods-Nadha-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		A61B5E30249F502600679ACE /* libReact-Core.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libReact-Core.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61B5E32249F505F00679ACE /* libReactCommon.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReactCommon.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6A4DF92E55DB6E5958CB8A8 /* Pods-Nadha-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Nadha-tvOSTests/Pods-Nadha-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		B74B42E763756EE90930A024 /* Pods-Nadha-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Nadha-tvOS/Pods-Nadha-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		EE09EEF73717B6E9CFB1CFEA /* libPods-Nadha-NadhaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Nadha-NadhaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9210859E9EBCCC0B3F5CEDB /* Pods-Nadha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nadha.release.xcconfig"; path = "Target Support Files/Pods-Nadha/Pods-Nadha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A971A07923A8D42692B6C7CE /* libPods-Nadha-NadhaTests.a in Frameworks */,
+				F8704C943387809259555A4F /* libPods-Nadha-NadhaTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A42658424B7F6C22A6B3E92 /* libPods-Nadha.a in Frameworks */,
+				C0546C36CED5E10C0390BBAB /* libPods-Nadha.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B318278E9D23C436D9F35ED5 /* libPods-Nadha-tvOS.a in Frameworks */,
+				62EACE9C61410E2CB6AE7208 /* libPods-Nadha-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC31CB248B5826FFDFA488A8 /* libPods-Nadha-tvOSTests.a in Frameworks */,
+				27096C1D38C8596215F89AF5 /* libPods-Nadha-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,12 +141,14 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A61B5E32249F505F00679ACE /* libReactCommon.a */,
+				A61B5E30249F502600679ACE /* libReact-Core.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				0426BF7A389D793F8F0D0279 /* libPods-Nadha.a */,
-				EE09EEF73717B6E9CFB1CFEA /* libPods-Nadha-NadhaTests.a */,
-				3F97743E4760B644A6FB27FC /* libPods-Nadha-tvOS.a */,
-				63837155109AF37100FB19BB /* libPods-Nadha-tvOSTests.a */,
+				3BCDA68DA1B6AB7371E5E840 /* libPods-Nadha.a */,
+				8B0B9BF564527DBBC76D31E9 /* libPods-Nadha-NadhaTests.a */,
+				81F339177E5D0AA558E2D8AE /* libPods-Nadha-tvOS.a */,
+				850102005D8341FF56A3A7C0 /* libPods-Nadha-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,16 +156,15 @@
 		31F8BB5EB459DC2261100D66 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				37FC0A6E0C6FE1611F6749E4 /* Pods-Nadha.debug.xcconfig */,
-				3BBF254F4AFC2C91708F9C23 /* Pods-Nadha.release.xcconfig */,
-				8EF89A74C6C76951CCFDC68C /* Pods-Nadha-NadhaTests.debug.xcconfig */,
-				14C0D8465A9638C3A4BBBB1E /* Pods-Nadha-NadhaTests.release.xcconfig */,
-				9856A6BAA4815E944D9D2F00 /* Pods-Nadha-tvOS.debug.xcconfig */,
-				BA0A0BAC1D7745B79C0326ED /* Pods-Nadha-tvOS.release.xcconfig */,
-				DDDB588574458A587B155B58 /* Pods-Nadha-tvOSTests.debug.xcconfig */,
-				951E912ECAEEF37EE3F82FCB /* Pods-Nadha-tvOSTests.release.xcconfig */,
+				415397E212DE3AFD7C9CAFE3 /* Pods-Nadha.debug.xcconfig */,
+				F9210859E9EBCCC0B3F5CEDB /* Pods-Nadha.release.xcconfig */,
+				135F647C04EDCE4A0ED79EC9 /* Pods-Nadha-NadhaTests.debug.xcconfig */,
+				85BBE6F3C18DC3649EC2B82D /* Pods-Nadha-NadhaTests.release.xcconfig */,
+				B74B42E763756EE90930A024 /* Pods-Nadha-tvOS.debug.xcconfig */,
+				9227F7D6BF992340A6917FA1 /* Pods-Nadha-tvOS.release.xcconfig */,
+				355884F7A1A088FA6B7EED72 /* Pods-Nadha-tvOSTests.debug.xcconfig */,
+				A6A4DF92E55DB6E5958CB8A8 /* Pods-Nadha-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -205,7 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "NadhaTests" */;
 			buildPhases = (
-				5AE05DCCD612BB4D04BF5624 /* [CP] Check Pods Manifest.lock */,
+				CAF56D035B6CF203EA028CAC /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -224,7 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Nadha" */;
 			buildPhases = (
-				51BA0303818F2512F9DC1077 /* [CP] Check Pods Manifest.lock */,
+				8A89A56DB92D4F73A6789D4D /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -244,7 +247,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Nadha-tvOS" */;
 			buildPhases = (
-				03275017D6D69E7E614642F1 /* [CP] Check Pods Manifest.lock */,
+				546ACF48E6D2ADEE3E0F7159 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -264,7 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Nadha-tvOSTests" */;
 			buildPhases = (
-				E792399401D7D208F59CB840 /* [CP] Check Pods Manifest.lock */,
+				8FACBD683E7E33A293946EC9 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -375,7 +378,21 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		03275017D6D69E7E614642F1 /* [CP] Check Pods Manifest.lock */ = {
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		546ACF48E6D2ADEE3E0F7159 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,21 +414,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		51BA0303818F2512F9DC1077 /* [CP] Check Pods Manifest.lock */ = {
+		8A89A56DB92D4F73A6789D4D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -433,29 +436,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5AE05DCCD612BB4D04BF5624 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Nadha-NadhaTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E792399401D7D208F59CB840 /* [CP] Check Pods Manifest.lock */ = {
+		8FACBD683E7E33A293946EC9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -471,6 +452,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Nadha-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAF56D035B6CF203EA028CAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nadha-NadhaTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -582,7 +585,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EF89A74C6C76951CCFDC68C /* Pods-Nadha-NadhaTests.debug.xcconfig */;
+			baseConfigurationReference = 135F647C04EDCE4A0ED79EC9 /* Pods-Nadha-NadhaTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -605,7 +608,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14C0D8465A9638C3A4BBBB1E /* Pods-Nadha-NadhaTests.release.xcconfig */;
+			baseConfigurationReference = 85BBE6F3C18DC3649EC2B82D /* Pods-Nadha-NadhaTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -625,7 +628,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37FC0A6E0C6FE1611F6749E4 /* Pods-Nadha.debug.xcconfig */;
+			baseConfigurationReference = 415397E212DE3AFD7C9CAFE3 /* Pods-Nadha.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -634,6 +637,43 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLibEvent\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/FBLazyVector\"",
+					"\"${PODS_ROOT}/Headers/Public/FBReactNativeSpec\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Glog\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-PeerTalk\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-RSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/FlipperKit\"",
+					"\"${PODS_ROOT}/Headers/Public/OpenSSL-Universal\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTRequired\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTTypeSafety\"",
+					"\"${PODS_ROOT}/Headers/Public/RNCAsyncStorage\"",
+					"\"${PODS_ROOT}/Headers/Public/RNCMaskedView\"",
+					"\"${PODS_ROOT}/Headers/Public/RNGestureHandler\"",
+					"\"${PODS_ROOT}/Headers/Public/RNReanimated\"",
+					"\"${PODS_ROOT}/Headers/Public/RNSVG\"",
+					"\"${PODS_ROOT}/Headers/Public/RNScreens\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactCommon\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-safe-area-context\"",
+					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
 				);
 				INFOPLIST_FILE = Nadha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -652,11 +692,48 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BBF254F4AFC2C91708F9C23 /* Pods-Nadha.release.xcconfig */;
+			baseConfigurationReference = F9210859E9EBCCC0B3F5CEDB /* Pods-Nadha.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLibEvent\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/FBLazyVector\"",
+					"\"${PODS_ROOT}/Headers/Public/FBReactNativeSpec\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Glog\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-PeerTalk\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-RSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/FlipperKit\"",
+					"\"${PODS_ROOT}/Headers/Public/OpenSSL-Universal\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTRequired\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTTypeSafety\"",
+					"\"${PODS_ROOT}/Headers/Public/RNCAsyncStorage\"",
+					"\"${PODS_ROOT}/Headers/Public/RNCMaskedView\"",
+					"\"${PODS_ROOT}/Headers/Public/RNGestureHandler\"",
+					"\"${PODS_ROOT}/Headers/Public/RNReanimated\"",
+					"\"${PODS_ROOT}/Headers/Public/RNSVG\"",
+					"\"${PODS_ROOT}/Headers/Public/RNScreens\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactCommon\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-safe-area-context\"",
+					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
+				);
 				INFOPLIST_FILE = Nadha/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -673,7 +750,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9856A6BAA4815E944D9D2F00 /* Pods-Nadha-tvOS.debug.xcconfig */;
+			baseConfigurationReference = B74B42E763756EE90930A024 /* Pods-Nadha-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -701,7 +778,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA0A0BAC1D7745B79C0326ED /* Pods-Nadha-tvOS.release.xcconfig */;
+			baseConfigurationReference = 9227F7D6BF992340A6917FA1 /* Pods-Nadha-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -729,7 +806,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDDB588574458A587B155B58 /* Pods-Nadha-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 355884F7A1A088FA6B7EED72 /* Pods-Nadha-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -756,7 +833,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 951E912ECAEEF37EE3F82FCB /* Pods-Nadha-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = A6A4DF92E55DB6E5958CB8A8 /* Pods-Nadha-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -828,7 +905,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
@@ -881,7 +958,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
