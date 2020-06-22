@@ -3,7 +3,11 @@ package com.yajananrao.mediaplayer;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.*;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.content.BroadcastReceiver;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.AudioAttributes;
@@ -177,7 +181,7 @@ public class MediaPlayerService extends MediaBrowserServiceCompat implements Aud
         try {
             initalLoad = true;
             if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
-                    stopPlayback();
+                stopPlayback();
             }
             initMediaPlayer();
             mMediaPlayer.setDataSource(uri);

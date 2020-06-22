@@ -61,7 +61,6 @@ Nadha is currently extended with the following plugins. Instructions on how to u
 
 
 ## License
-----
 
 MIT
 
