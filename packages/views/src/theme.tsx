@@ -2,31 +2,31 @@ import React, { createContext, ReactNode, useReducer, useContext } from "react";
 import { Theme } from "./types";
 
 export const DefaultTheme = {
-    name: 'Default White',
-    dark: false,
-    roundness: 4,
-    border: 0,
-    colors: {
-        background: "#f1f3f4",
-        surface: "#fff",
-        primary: "#0070f3",
-        accent: "#f48fb1",
-        text: "#111",
-    },
+  name: "Default White",
+  dark: false,
+  roundness: 4,
+  border: 0,
+  colors: {
+    background: "#ecfbfc",
+    surface: "#ffebd9",
+    primary: "#235952",
+    accent: "#ffc8bd",
+    text: "#111",
+  },
 };
 
 export const DarkTheme = {
-    name: 'Default Dark',
-    dark: true,
-    roundness: 4,
-    border: 0,
-    colors: {
-        background: "#212121",
-        surface: "#272d34",
-        primary: "#3f51b5",
-        accent: '#f44336',
-        text: "#fff",
-    },
+  name: "Default Dark",
+  dark: true,
+  roundness: 4,
+  border: 0,
+  colors: {
+    background: "#525252",
+    surface: "#414141",
+    primary: "#ca3e47",
+    accent: "#313131",
+    text: "#fff",
+  },
 };
 
 const initialTheme: any = DefaultTheme;
@@ -34,22 +34,20 @@ const ThemeContext = createContext(initialTheme);
 const { Provider } = ThemeContext;
 
 export function useTheme(): Theme {
-    return useContext(ThemeContext).state;
+  return useContext(ThemeContext).state;
 }
 
 const ThemeProvider = ({ children }: { children: ReactNode }) => {
-    const [state, dispatch] = useReducer((state: any, action: any) => {
-        switch (action.theme) {
-            case 'Default White':
-                return DarkTheme;
-            default:
-                return DefaultTheme;
-        }
-    }, initialTheme);
+  const [state, dispatch] = useReducer((state: any, action: any) => {
+    switch (action.theme) {
+      case "Default White":
+        return DarkTheme;
+      default:
+        return DefaultTheme;
+    }
+  }, initialTheme);
 
-    return <Provider value={{ state, dispatch }}>
-        {children}
-    </Provider>;
+  return <Provider value={{ state, dispatch }}>{children}</Provider>;
 };
 
-export { ThemeContext, ThemeProvider }
+export { ThemeContext, ThemeProvider };
