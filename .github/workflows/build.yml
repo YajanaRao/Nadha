@@ -26,14 +26,20 @@ jobs:
       - name: Enable yarn workspace
         run: yarn config set workspaces-experimental true
 
+      # set yarn cache directory
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
       # Yarn cache
       - name: Cache Node Modules
         id: cache-root
         uses: actions/cache@v2
         with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-cache
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
       # Runs a single command using the runners shell
       - name: Install packages
