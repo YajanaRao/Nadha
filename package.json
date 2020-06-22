@@ -7,6 +7,11 @@
       "packages/*"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "scripts": {
     "compile": "yarn workspace @nadha/views run tsc && yarn workspace @nadha/utils run tsc &&  yarn workspace react-native-media-player run tsc && yarn workspace @nadha/core run tsc &&  yarn workspace @nadha/app run tsc",
     "android": "react-native run-android",
@@ -62,9 +67,11 @@
     "@typescript-eslint/parser": "^2.27.0",
     "babel-jest": "^24.9.0",
     "eslint": "^6.5.1",
+    "husky": "^3.0.8",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.58.0",
     "prettier": "^2.0.4",
+    "pretty-quick": "^1.11.1",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
