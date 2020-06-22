@@ -38,6 +38,7 @@ export function Root() {
             initialRouteName={"Landing"}
             screenOptions={{
                 headerShown: false,
+                stackPresentation: "modal"
             }}
         >
             <RootStack.Screen

@@ -1,3 +1,10 @@
+# Components
+
+All components are stored and organized here
+
+"In an ideal world, most of your components would be stateless functions because in the future we’ll also be able to make performance optimizations specific to these components by avoiding unnecessary checks and memory allocations. This is the recommended pattern, when possible." --React docs
+
+
 ## 1. Use capitals for component names
 
 If, like most folks, you’re using JSX (a JavaScript extension), the names of the components you create need to begin with uppercase letters. For instance, you’ll name components as SelectButton instead of selectbutton, or Menu instead of menu. We do this so that JSX can identify them differently from default HTML tags.

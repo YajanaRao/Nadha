@@ -1,8 +1,8 @@
-import React, { ReactNode, useCallback } from 'react';
-import { Alert, Linking } from "react-native";
-import { Text } from "../..";
+import React, {ReactNode, useCallback} from 'react';
+import {Alert, Linking} from "react-native";
+import {Text} from "../Text/Text";
 
-export const Link = ({ url, children }: { url: string, children: ReactNode }) => {
+export const Link = ({url, children}: { url: string, children: ReactNode }) => {
     const handlePress = useCallback(async () => {
         // Checking if the link is supported for links with custom URL scheme.
         const supported = await Linking.canOpenURL(url);
@@ -17,6 +17,6 @@ export const Link = ({ url, children }: { url: string, children: ReactNode }) =>
     }, [url]);
 
     return (
-        <Text style={{ color: '#3495e0' }} onPress={handlePress}>{" "}{children}{" "}</Text>
+        <Text style={{color: '#3495e0'}} onPress={handlePress}>{" "}{children}{" "}</Text>
     )
 };

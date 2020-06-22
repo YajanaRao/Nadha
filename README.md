@@ -12,9 +12,9 @@ An extensible, cross platform music player
 
 Nadha uses a number of open source projects to work properly:
 
-* [React Native](https://reactnative.dev) - React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.!
-* [React Native For Web](https://github.com/necolas/react-native-web) - "React Native for Web" makes it possible to run React Native components and APIs on the web using React DOM.
-* [React Navigation 5](https://reactnavigation.org) - Routing and navigation for  React Native apps
+    * [React Native](https://reactnative.dev) - React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.!
+    * [React Native For Web](https://github.com/necolas/react-native-web) - "React Native for Web" makes it possible to run React Native components and APIs on the web using React DOM.
+    * [React Navigation 5](https://reactnavigation.org) - Routing and navigation for  React Native apps
 
 ## Installation
 

@@ -33,8 +33,6 @@ import androidx.media.session.MediaButtonReceiver;
 
 import java.util.HashMap;
 import java.util.List;
-import java.lang.Thread;
-import java.lang.Runnable;
 
 public class MediaPlayerService extends MediaBrowserServiceCompat implements AudioManager.OnAudioFocusChangeListener {
 
@@ -178,10 +176,8 @@ public class MediaPlayerService extends MediaBrowserServiceCompat implements Aud
         Log.d(TAG, "onPlayFromUri: song received " + uri);
         try {
             initalLoad = true;
-            if (mMediaPlayer != null) {
-                if (mMediaPlayer.isPlaying()) {
+            if (mMediaPlayer != null && mMediaPlayer.isPlaying()) {
                     stopPlayback();
-                }
             }
             initMediaPlayer();
             mMediaPlayer.setDataSource(uri);
