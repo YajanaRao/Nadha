@@ -1,11 +1,11 @@
-import React, {createContext, ReactNode, useContext, useEffect} from "react";
-import {playerMachine} from "./playerMachine";
-import {useMachine} from "@xstate/react";
-import {DeviceEventEmitter, EmitterSubscription} from "react-native";
+import React, { createContext, ReactNode, useContext, useEffect } from "react";
+import { playerMachine } from "./playerMachine";
+import { useMachine } from "@xstate/react";
+import { DeviceEventEmitter, EmitterSubscription } from "react-native";
 
 const PlayerContext = createContext<any>(null);
 
-const {Provider} = PlayerContext;
+const { Provider } = PlayerContext;
 
 export function usePlayerContext(): any {
     return useContext(PlayerContext);
@@ -13,12 +13,11 @@ export function usePlayerContext(): any {
 
 let subscription: EmitterSubscription;
 
-const PlayerContextProvider = ({children}: { children: ReactNode }) => {
+const PlayerContextProvider = ({ children }: { children: ReactNode }) => {
     const [current, send] = useMachine(playerMachine);
 
     useEffect(() => {
         subscription = DeviceEventEmitter.addListener('media', event => {
-            console.log(event);
             // handle event
             // log.debug(`from event listener: ${event}`);
             if (event === 'skip_to_next') {
@@ -38,9 +37,9 @@ const PlayerContextProvider = ({children}: { children: ReactNode }) => {
         return () => subscription.remove();
     });
 
-    return (<Provider value={{current, send}}>
+    return (<Provider value={{ current, send }}>
         {children}
     </Provider>);
 };
 
-export {PlayerContext, PlayerContextProvider}
+export { PlayerContext, PlayerContextProvider }
