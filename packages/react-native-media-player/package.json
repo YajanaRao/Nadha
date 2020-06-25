@@ -1,0 +1,49 @@
+{
+  "name": "react-native-media-player",
+  "version": "0.0.1",
+  "description": "A fully fledged audio module created for music apps",
+  "summary": "Cross platform music player",
+  "author": "Yajana N Rao <yajananrao@gmail.com>",
+  "homepage": "https://github.com/YajanaRao/react-native-media-player.git#readme",
+  "private": true,
+  "main": "lib/index.js",
+  "source": "src/index.ts",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "react-native": "lib/index.js",
+  "contributors": [
+    {
+      "name": "Yajana N Rao",
+      "email": "yajananrao@gmail.com",
+      "url": "http://yajana.herokuapp.com"
+    }
+  ],
+  "keywords": [
+    "react",
+    "react-native",
+    "track-player",
+    "audio-player",
+    "audio",
+    "player",
+    "music",
+    "controls",
+    "chromecast",
+    "android",
+    "hooks"
+  ],
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YajanaRao/react-native-media-player.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YajanaRao/react-native-media-player/issues"
+  }
+}

@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleProp, Text, TouchableOpacity, View, ViewStyle } from "react-native";
+import {
+  StyleProp,
+  Text,
+  TouchableOpacity,
+  View,
+  ViewStyle,
+} from "react-native";
 import { useTheme } from "../../theme";
 import { Theme } from "../../types";
 import { Icon } from "../Icons";
@@ -7,91 +13,99 @@ import { Icon } from "../Icons";
 const Color = require("color");
 
 export interface Props {
-    title?: string;
-    description?: string;
-    icon?: string;
-    onPress?: () => void;
-    style?: StyleProp<ViewStyle>;
-    active?: boolean;
+  title?: string;
+  description?: string;
+  icon?: string;
+  onPress?: () => void;
+  style?: StyleProp<ViewStyle>;
+  active?: boolean;
 }
 
 const LIST_CONTAINER: ViewStyle = {
-    padding: 12,
-    marginVertical: 2,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    flex: 1
+  padding: 12,
+  marginVertical: 2,
+  flexDirection: "row",
+  justifyContent: "space-between",
+  flex: 1,
 };
 
 const ICON_CONTAINER: ViewStyle = {
-    maxWidth: 40,
-    marginRight: 16,
-    justifyContent: "center",
-    alignItems: "center"
+  maxWidth: 40,
+  marginRight: 16,
+  justifyContent: "center",
+  alignItems: "center",
 };
 
 const TEXT_CONTAINER: ViewStyle = {
-    width: '100%',
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "flex-start",
+  width: "100%",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "flex-start",
 };
 
-export const List = ({ title, description, icon, onPress, style, active = false }: Props) => {
+export const List = ({
+  title,
+  description,
+  icon,
+  onPress,
+  style,
+  active = false,
+}: Props) => {
+  const theme: Theme = useTheme();
+  const {
+    border,
+    colors: { surface, text, primary },
+    roundness,
+  } = theme;
 
-
-    const theme: Theme = useTheme();
-    const {
-        border,
-        colors: { surface, text, primary },
-        roundness,
-    } = theme;
-
-    const getActiveTextColor = () => {
-        let textColor = "black";
-        let color = Color(primary);
-        if (color.isDark()) {
-            textColor = "white";
-        }
-        return textColor;
+  const getActiveTextColor = () => {
+    let textColor = "black";
+    let color = Color(primary);
+    if (color.isDark()) {
+      textColor = "white";
     }
+    return textColor;
+  };
 
-    let backgroundColor = active ? primary : surface;
-    let textColor = active ? getActiveTextColor() : text;
-    const color = Color(textColor);
-    let borderColor = color.fade(0.75).hex();
+  let backgroundColor = active ? primary : surface;
+  let textColor = active ? getActiveTextColor() : text;
+  const titleColor = Color(textColor).alpha(0.87).rgb().string();
+  const descriptionColor = Color(textColor).alpha(0.54).rgb().string();
 
-    return (
-        <TouchableOpacity
-            onPress={onPress}
-            style={[
-                LIST_CONTAINER,
-                {
-                    backgroundColor,
-                    borderRadius: roundness,
-                    borderWidth: border,
-                    borderColor,
-                },
-                style
-            ]}
-        >
-            {icon ? (
-                <View style={ICON_CONTAINER}>
-                    <Icon name={icon} color={textColor} />
-                </View>
-            ) : (
-                    false
-                )}
-            <View style={TEXT_CONTAINER}>
-                <Text style={{ color: textColor, fontSize: 16 }}>{title}</Text>
-                {description ? (
-                    <Text style={{ fontSize: 12, color: textColor, marginTop: 2 }}>
-                        {description}
-                    </Text>
-                ) : (
-                        false
-                    )}
-            </View>
-        </TouchableOpacity>
-    );
+  const color = Color(textColor);
+  let borderColor = color.fade(0.75).hex();
+
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      style={[
+        LIST_CONTAINER,
+        {
+          backgroundColor,
+          borderRadius: roundness,
+          borderWidth: border,
+          borderColor,
+        },
+        style,
+      ]}
+    >
+      {icon ? (
+        <View style={ICON_CONTAINER}>
+          <Icon name={icon} color={descriptionColor} />
+        </View>
+      ) : (
+        false
+      )}
+      <View style={TEXT_CONTAINER}>
+        <Text style={{ color: titleColor, fontSize: 14 }}>{title}</Text>
+        {description ? (
+          <Text style={{ fontSize: 12, color: descriptionColor, marginTop: 2 }}>
+            {description}
+          </Text>
+        ) : (
+          false
+        )}
+      </View>
+    </TouchableOpacity>
+  );
 };

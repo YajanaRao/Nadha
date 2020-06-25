@@ -1,6 +1,6 @@
 import React from 'react';
-import {Container} from '../..';
-import {Text} from '../..';
+import {Container} from '../Container/Container';
+import {Text} from '../Text/Text';
 import {Theme} from '../../types';
 import {useTheme} from '../../theme';
 import {FlatList, TextStyle, View} from 'react-native';

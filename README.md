@@ -1,4 +1,5 @@
 # Nadha
+Nadha, is Sanskrit for `sound from the depths of the soul` 
 
 An extensible, cross platform music player
 
@@ -8,20 +9,40 @@ An extensible, cross platform music player
 ![Platform - Android](https://img.shields.io/badge/platform-Android-yellow.svg)
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/YajanaRao/Serenity/pulls)
 
-### Tech
+## Tech
 
 Nadha uses a number of open source projects to work properly:
 
-* [React Native](https://reactnative.dev) - React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.!
+    * [React Native](https://reactnative.dev) - React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.!
+    * [React Native For Web](https://github.com/necolas/react-native-web) - "React Native for Web" makes it possible to run React Native components and APIs on the web using React DOM.
+    * [React Navigation 5](https://reactnavigation.org) - Routing and navigation for  React Native apps
 
-### Installation
+## Installation
 
 Install the dependencies and devDependencies and start the server.
 
 ```sh
 cd Nadha
 yarn install
+yarn compile
+```
+
+### Android
+
+```sh
 yarn android
+```
+
+### Web
+
+```sh
+yarn web
+```
+
+### IOS
+
+```sh
+yarn ios
 ```
 
 For production environments...
@@ -30,7 +51,7 @@ For production environments...
 yarn build
 ```
 
-### Plugins
+## Plugins
 
 Nadha is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
 
@@ -40,8 +61,7 @@ Nadha is currently extended with the following plugins. Instructions on how to u
 | Google Drive | [Coming up](plugins/googledrive/README.md) |
 
 
-### License
-----
+## License
 
 MIT
 

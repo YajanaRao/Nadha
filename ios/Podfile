@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '8.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 def add_flipper_pods!(versions = {})
@@ -41,8 +41,13 @@ def flipper_post_install(installer)
         config.build_settings['SWIFT_VERSION'] = '4.1'
       end
     end
+    if target.name == "React"
+      target.remove_from_project
+    end
   end
 end
+
+
 
 target 'Nadha' do
   # Pods for Nadha
@@ -76,6 +81,7 @@ target 'Nadha' do
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+  pod 'react-native-media-player', :podspec => '../packages/react-native-media-player/react-native-media-player.podspec'
 
   target 'NadhaTests' do
     inherit! :complete
@@ -102,3 +108,5 @@ target 'Nadha-tvOS' do
     # Pods for testing
   end
 end
+
+

@@ -1,4 +1,6 @@
-import {assign, Machine} from "xstate";
+import { assign, Machine } from "xstate";
+import { MediaPlayer } from 'react-native-media-player';
+
 
 interface PlayerContext {
     media: {
@@ -7,6 +9,7 @@ interface PlayerContext {
         subtitle: string;
     };
 }
+
 
 export const playerMachine = Machine<PlayerContext>({
     id: "toggle",
@@ -20,21 +23,36 @@ export const playerMachine = Machine<PlayerContext>({
     },
     states: {
         idle: {
-            on: {SELECT: "loading"}
+            id: 'setup',
+            on: { SELECT: "loading" }
         },
         loading: {
-            entry: [
-                assign({
-                    media: (context, event) => event.media
-                })
-            ],
-            on: {TOGGLE: "play", SELECT: "loading"}
+            invoke: {
+                id: 'loadMedia',
+                src: (context, event) => MediaPlayer.load(event.media.url).then(() => event.media),
+                onDone: {
+                    target: 'pause',
+                    actions: assign({
+                        media: (_, event) => event.data
+                    })
+                },
+                onError: 'idle'
+            },
+            on: { TOGGLE: "play", SELECT: "loading" }
         },
         play: {
-            on: {TOGGLE: "pause", SELECT: "loading"}
+            invoke: {
+                id: 'play',
+                src: () => MediaPlayer.play(),
+            },
+            on: { PAUSE: "pause", SELECT: "loading", COMPLETE: "idle" }
         },
         pause: {
-            on: {TOGGLE: "play", SELECT: "loading"}
-        }
+            invoke: {
+                id: 'pause',
+                src: () => MediaPlayer.pause(),
+            },
+            on: { PLAY: "play", SELECT: "loading" }
+        },
     }
 });
