@@ -1,4 +1,5 @@
 # Nadha
+Nadha, is Sanskrit for `sound from the depths of the soul` 
 
 An extensible, cross platform music player
 
