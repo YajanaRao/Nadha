@@ -1,30 +1,31 @@
-import React, {useContext} from 'react';
-import {Container, List} from "@nadha/views";
-import {FlatList} from "react-native";
-import {PlayerContext} from "@nadha/core";
+import React, { useContext } from 'react';
+import { Container, List } from "@nadha/views";
+import { FlatList } from "react-native";
+import { PlayerContext } from "@nadha/core";
 
-const MediaItem = ({media, onSelect}: { media: any, onSelect: (media: any) => void }) => {
+const MediaItem = ({ media, onSelect }: { media: any, onSelect: (media: any) => void }) => {
 
-    const {current: {context}} = useContext(PlayerContext);
+    const { current: { context } } = useContext(PlayerContext);
     const isActive = media.type !== "Folder" ? context.media.nid === media.nid : false;
+    const subtitle = media.subtitle || media.artist;
     return (
         <List icon={media.type} title={media.title}
-              description={media.subtitle}
-              onPress={() => onSelect(media)}
-              active={isActive}
+            description={subtitle}
+            onPress={() => onSelect(media)}
+            active={isActive}
         />
     )
 }
 
-export const MediaList = ({media, onMediaSelect}: { media: any, onMediaSelect: (media: any) => void }) => {
+export const MediaList = ({ media, onMediaSelect }: { media: any, onMediaSelect: (media: any) => void }) => {
     return (
-        <Container style={{justifyContent: 'center', flex: 1, padding: 4}}>
+        <Container style={{ justifyContent: 'center', flex: 1, padding: 4 }}>
             <FlatList
-                style={{margin: 4}}
-                contentContainerStyle={{margin: 8}}
+                style={{ margin: 4 }}
+                contentContainerStyle={{ margin: 8 }}
                 data={media}
-                renderItem={({item}) => (
-                    <MediaItem media={item} onSelect={onMediaSelect}/>
+                renderItem={({ item }) => (
+                    <MediaItem media={item} onSelect={onMediaSelect} />
                 )}
                 keyExtractor={(item: any) => item.nid}
             />

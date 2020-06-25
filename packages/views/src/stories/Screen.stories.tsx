@@ -6,10 +6,13 @@ import { Card } from "../components/Card";
 import { Appbar } from "../components/Appbar/AppBar";
 import { List } from "../components/List/List";
 import { Text } from '../components/Text/Text';
+import { action } from "@storybook/addon-actions";
+
+const onTogglePressed = action("Clicked on button");
 
 export const LandingScreen = () => (
   <Screen>
-    <Appbar />
+    <Appbar title="Nadha" isDark={false} onToggle={onTogglePressed} />
     <Container>
       <Card>
         Hi everyone! Seems like there hasn't been much going on in this issue
