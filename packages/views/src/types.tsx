@@ -13,10 +13,9 @@ export interface Theme {
   roundness: number;
   border: number;
   colors: {
+    primary: string;
     accent: string;
     background: string;
-    primary: string;
-    secondary: string;
     text: string;
     surface: string;
   };

@@ -1,4 +1,5 @@
 import React, { createContext, ReactNode, useReducer, useContext } from "react";
+import { Appearance } from "react-native";
 import { Theme } from "./types";
 
 export const DefaultTheme = {
@@ -28,8 +29,9 @@ export const DarkTheme = {
     text: "#fff",
   },
 };
+const colorScheme = Appearance.getColorScheme();
 
-const initialTheme: any = DefaultTheme;
+const initialTheme: any = colorScheme === "dark" ? DarkTheme : DefaultTheme;
 const ThemeContext = createContext(initialTheme);
 const { Provider } = ThemeContext;
 
