@@ -93,7 +93,7 @@ jobs:
           file: android/app/build/outputs/apk/release/app-release.apk
 
       - uses: actions/checkout@master
-      - name: send photo message
+      - name: Distribute APK
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
