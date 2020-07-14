@@ -1,5 +1,10 @@
-# Nadha
-Nadha, is Sanskrit for `sound from the depths of the soul` 
+<h3 align="center">
+  <a href="https://github.com/YajanaRao/Nadha/tree/master/docs/nadha_text.png">
+  <img src="https://github.com/YajanaRao/Nadha/tree/master/docs/nadha_text.png?raw=true" alt="Nadha Logo" width="500">
+  </a>
+</h3>
+
+Nadha, is Sanskrit for `sound from the depths of the soul`
 
 An extensible, cross platform music player
 
@@ -13,9 +18,9 @@ An extensible, cross platform music player
 
 Nadha uses a number of open source projects to work properly:
 
-   * [React Native](https://reactnative.dev) - React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.!
-   * [React Native For Web](https://github.com/necolas/react-native-web) - "React Native for Web" makes it possible to run React Native components and APIs on the web using React DOM.
-   * [React Navigation 5](https://reactnavigation.org) - Routing and navigation for  React Native apps
+- [React Native](https://reactnative.dev) - React Native combines the best parts of native development with React, a best-in-class JavaScript library for building user interfaces.!
+- [React Native For Web](https://github.com/necolas/react-native-web) - "React Native for Web" makes it possible to run React Native components and APIs on the web using React DOM.
+- [React Navigation 5](https://reactnavigation.org) - Routing and navigation for React Native apps
 
 ## Installation
 
@@ -55,19 +60,13 @@ yarn build
 
 Nadha is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [Coming up](plugins/dropbox/README.md) |
+| Plugin       | README                                     |
+| ------------ | ------------------------------------------ |
+| Dropbox      | [Coming up](plugins/dropbox/README.md)     |
 | Google Drive | [Coming up](plugins/googledrive/README.md) |
-
 
 ## License
 
 MIT
 
-
 **Free Software, Hell Yeah!**
-
-
-
- 
