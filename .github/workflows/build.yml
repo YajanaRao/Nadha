@@ -91,15 +91,6 @@ jobs:
           token: ${{secrets.FIREBASE_TOKEN}}
           groups: testers
           file: android/app/build/outputs/apk/release/app-release.apk
-
-      - uses: actions/checkout@master
-      - name: Distribute APK
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: Android APK
-          document: android/app/build/outputs/apk/release/app-release.apk
       
       - name: Discord notification
         env:
