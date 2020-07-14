@@ -13,4 +13,4 @@ A problem occurred configuring project ':@react-native-community_netinfo'.
 
 Create a file `android/local.properties`
 
-sdk.dir=/Users/yajanarao/Library/Android/sdk
+sdk.dir=/Users/yajanarao/Library/Android/sdk (update path based on android sdk installation)
