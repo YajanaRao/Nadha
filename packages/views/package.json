@@ -12,8 +12,7 @@
     "src"
   ],
   "react-native": "lib/index.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-links": "^5.3.19",
@@ -24,6 +23,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "watch": "tsc --watch"
   }
 }

@@ -8,24 +8,25 @@ export const DefaultTheme = {
   roundness: 4,
   border: 0,
   colors: {
-    background: "#ecfbfc",
-    surface: "#ffebd9",
-    primary: "#235952",
-    accent: "#ffc8bd",
-    text: "#111",
+    background: "#fafafa",
+    surface: "#fff",
+    primary: "#4caf50",
+    accent: "#ff9800",
+    text: "rgba(0, 0, 0, 0.87)",
   },
 };
 
+// TODO: Standard theme
 export const DarkTheme = {
   name: "Default Dark",
   dark: true,
   roundness: 4,
   border: 0,
   colors: {
-    background: "#525252",
-    surface: "#414141",
-    primary: "#ca3e47",
-    accent: "#313131",
+    background: "#303030",
+    surface: "#424242",
+    primary: "#4caf50",
+    accent: "#ff9800",
     text: "#fff",
   },
 };
