@@ -16,7 +16,9 @@
   "scripts": {
     "tsc": "tsc"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-native-media-player": "^0.0.1"
+  },
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.1",
     "@xstate/test": "^0.4.0"

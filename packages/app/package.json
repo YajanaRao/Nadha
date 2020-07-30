@@ -8,7 +8,8 @@
   "types": "lib/index.d.ts",
   "react-native": "lib/index.js",
   "scripts": {
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "watch": "tsc --watch"
   },
   "files": [
     "lib",
@@ -17,6 +18,5 @@
   "author": "Yajana N Rao",
   "license": "MIT",
   "private": true,
-  "dependencies": {
-  }
+  "dependencies": {}
 }
