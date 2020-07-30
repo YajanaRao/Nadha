@@ -18,6 +18,7 @@
     "compile": "node_modules/.bin/lerna  --stream exec -- tsc",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "pod": "cd ios && pod install && cd ..",
     "start": "react-native start",
     "web": "react-scripts start",
     "build": "CI=false react-scripts build",
