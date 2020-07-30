@@ -1,6 +1,6 @@
 <h3 align="center">
   <a href="https://github.com/YajanaRao/Nadha/tree/master/docs/nadha_text.png">
-  <img src="https://github.com/YajanaRao/Nadha/tree/master/docs/nadha_text.png?raw=true" alt="Nadha Logo" width="500">
+  <img src="https://github.com/YajanaRao/Nadha/blob/master/docs/nadha_text.png?raw=true" alt="Nadha Logo" width="500">
   </a>
 </h3>
 
