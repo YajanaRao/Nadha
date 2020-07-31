@@ -7,6 +7,10 @@ name: Build
 on:
   push:
     branches: [master]
+    paths-ignore:
+      - "README.md"
+      - "docs/**"
+
   pull_request:
     branches: [master]
 
@@ -83,7 +87,7 @@ jobs:
         with:
           name: app-release.apk
           path: android/app/build/outputs/apk/release/app-release.apk
-      
+
       - name: upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1.2.2
         with:
@@ -92,15 +96,6 @@ jobs:
           groups: testers
           file: android/app/build/outputs/apk/release/app-release.apk
 
-      - uses: actions/checkout@master
-      - name: Distribute APK
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_TO }}
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: Android APK
-          document: android/app/build/outputs/apk/release/app-release.apk
-      
       - name: Discord notification
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
