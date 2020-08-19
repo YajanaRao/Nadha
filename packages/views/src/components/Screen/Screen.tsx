@@ -5,12 +5,12 @@ import { Theme } from "../../types";
 
 import { useTheme } from "../../theme";
 
-export interface Screen {
+export interface Props {
   children: ReactNode;
   style?: StyleProp<ViewStyle>;
 }
 
-export const Screen = ({ children, style }: Screen) => {
+export const Screen = ({ children, style }: Props) => {
   const theme: Theme = useTheme();
   const {
     dark,

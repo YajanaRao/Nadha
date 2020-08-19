@@ -18,7 +18,7 @@
   "author": "Yajana N Rao",
   "private": true,
   "dependencies": {
-    "@types/express": "^4.17.6",
+    "@types/express": "^4.17.7",
     "babel-loader": "^8.1.0",
     "express": "^4.17.1"
   }

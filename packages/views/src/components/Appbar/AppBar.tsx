@@ -4,8 +4,6 @@ import { useTheme } from "../../theme";
 import { Theme } from "../../types";
 import { Switch } from "../Switch/Switch";
 
-const Color = require("color");
-
 const APPROX_STATUSBAR_HEIGHT = Platform.select({
   android: 0,
   ios: Platform.Version < 11 ? 50 : 0,
