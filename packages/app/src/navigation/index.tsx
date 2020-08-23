@@ -6,6 +6,7 @@ import { Library } from "../pages/Library/Library";
 import { Player } from "../pages/Player";
 import { Folder } from "../pages/Folder/Folder";
 import { DataPull } from "../pages/DataPull";
+import { OAuth } from "../pages/OAuth";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { Switch } from "@nadha/views";
 import { ThemeContext, useTheme, Theme } from "@nadha/views";
@@ -49,6 +50,7 @@ export function Root() {
       <RootStack.Screen name="Landing" component={Landing} />
       <RootStack.Screen name="Player" component={Player} />
       <RootStack.Screen name="DataPull" component={DataPull} />
+      <RootStack.Screen name="OAuth" component={OAuth} />
     </RootStack.Navigator>
   );
 }

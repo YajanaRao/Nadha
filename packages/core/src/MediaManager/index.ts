@@ -25,7 +25,7 @@ export const mediaManager = {
         {
           nid: "2",
           artwork: "http://kannadasongs.cc/thumbs/102.png",
-          title: " Avarivara Jothe",
+          title: "Avarivara Jothe",
           url: "http://kannadasongs.cc/file/download/104.html",
           artist: "Sonu Nigam",
           type: "Music",
