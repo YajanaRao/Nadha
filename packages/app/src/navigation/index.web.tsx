@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { Library } from "../pages/Library";
 import { Player } from "../pages/Player";
 import { Folder } from "../pages/Folder";
+import { OAuth } from "../pages/OAuth";
 import { DataPull } from "../pages/DataPull";
 
 const RootStack = createStackNavigator();
@@ -33,6 +34,7 @@ export function Root() {
       <RootStack.Screen name="Landing" component={Landing} />
       <RootStack.Screen name="Player" component={Player} />
       <RootStack.Screen name="DataPull" component={DataPull} />
+      <RootStack.Screen name="OAuth" component={OAuth} />
     </RootStack.Navigator>
   );
 }

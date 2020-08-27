@@ -45,6 +45,7 @@
     "react-native-screens": "^2.8.0",
     "react-native-svg": "^12.1.0",
     "react-native-web": "^0.13.3",
+    "react-native-webview": "^10.7.0",
     "react-redux": "^7.2.0",
     "redux": "^4.0.0-0",
     "redux-devtools-extension": "^2.13.8",
@@ -55,6 +56,7 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/plugin-transform-flow-strip-types": "^7.10.1",
+    "@babel/preset-react": "^7.10.4",
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^1.1.0",
     "@types/jest": "^24.0.24",
@@ -80,7 +82,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "react-test-renderer": "16.11.0",
-    "typescript": "^3.8.3",
+    "typescript": "^3.9.7",
     "webpack": "4.42.0"
   },
   "jest": {

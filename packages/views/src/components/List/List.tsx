@@ -12,7 +12,7 @@ import { Icon } from "../Icons";
 
 const Color = require("color");
 
-export interface Props {
+export interface ListProps {
   title?: string;
   description?: string;
   icon?: string;
@@ -50,7 +50,7 @@ export const List = ({
   onPress,
   style,
   active = false,
-}: Props) => {
+}: ListProps) => {
   const theme: Theme = useTheme();
   const {
     border,
