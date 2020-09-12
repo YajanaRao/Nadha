@@ -12,7 +12,14 @@ export const DataPull = () => {
         <Icon name={"Close"} onPress={() => navigation.goBack()} />
       </Container>
       <Container>
-        <Text style={{ textAlign: "center", marginVertical: 16 }}>
+        <Text
+          style={{
+            textAlign: "center",
+            marginVertical: 16,
+            fontSize: 18,
+            fontWeight: "bold",
+          }}
+        >
           List of integrations
         </Text>
         <FlatList
