@@ -7,6 +7,7 @@ const Color = require("color");
 interface Props {
   style?: StyleProp<ViewStyle>;
   children: ReactNode;
+  onPress?: () => void;
 }
 
 const CARD: ViewStyle = {
@@ -35,7 +36,7 @@ export const Card = ({ children, style }: Props) => {
         {
           backgroundColor: surface,
           borderRadius: roundness,
-          shadowColor: 'black',
+          shadowColor: "black",
           borderWidth: border,
           borderColor,
         },

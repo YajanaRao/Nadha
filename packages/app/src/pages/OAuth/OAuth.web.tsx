@@ -1,12 +1,21 @@
 import React from "react";
-import { Screen, Text } from "@nadha/views";
+import { Container, Icon, Screen, Text } from "@nadha/views";
 
-export interface OAuthProps {}
+export interface OAuthProps {
+  navigation: any;
+  route: any;
+}
 
-export function OAuth({}: OAuthProps) {
+export function OAuth({ navigation, route }: OAuthProps) {
+  const { integration } = route.params;
   return (
     <Screen>
-      <Text>OAuth</Text>
+      <Container>
+        <Icon name={"Close"} onPress={() => navigation.goBack()} />
+      </Container>
+      <Container>
+        <Text>{integration.title}</Text>
+      </Container>
     </Screen>
   );
 }

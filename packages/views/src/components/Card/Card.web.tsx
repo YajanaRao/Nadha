@@ -1,12 +1,13 @@
 import React, { ReactNode } from "react";
 import { useTheme } from "../../theme";
-import { StyleProp, View, ViewStyle } from "react-native";
+import { StyleProp, TouchableOpacity, View, ViewStyle } from "react-native";
 import { Theme } from "../../types";
 const Color = require("color");
 
 interface Props {
   style?: StyleProp<ViewStyle>;
   children: ReactNode;
+  onPress?: () => void;
 }
 
 const CARD: ViewStyle = {
@@ -18,7 +19,7 @@ const CARD: ViewStyle = {
   shadowRadius: 5,
 };
 
-export const Card = ({ children, style }: Props) => {
+export const Card = ({ children, style, onPress }: Props) => {
   const theme: Theme = useTheme();
   const {
     roundness,
@@ -29,7 +30,7 @@ export const Card = ({ children, style }: Props) => {
   let borderColor = Color(text).fade(0.25);
 
   return (
-    <View
+    <TouchableOpacity
       style={[
         CARD,
         {
@@ -41,8 +42,9 @@ export const Card = ({ children, style }: Props) => {
         },
         style,
       ]}
+      onPress={onPress}
     >
       {children}
-    </View>
+    </TouchableOpacity>
   );
 };

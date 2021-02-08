@@ -37,10 +37,11 @@ export const DataPull = () => {
                 alignItems: "center",
                 justifyContent: "center",
               }}
+              onPress={() =>
+                navigation.navigate("OAuth", { integration: item })
+              }
             >
-              <Text onPress={() => navigation.navigate("OAuth")}>
-                {item.title}
-              </Text>
+              <Text>{item.title}</Text>
             </Card>
           )}
           keyExtractor={(item) => item.title}
