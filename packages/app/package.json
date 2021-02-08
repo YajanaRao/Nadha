@@ -18,5 +18,8 @@
   "author": "Yajana N Rao",
   "license": "MIT",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@nadha/core": "0.0",
+    "@nadha/views": "0.0"
+  }
 }
