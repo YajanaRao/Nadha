@@ -80,7 +80,7 @@
     "pretty-quick": "^1.11.1",
     "react-docgen-typescript-loader": "^3.7.2",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "react-test-renderer": "16.11.0",
     "typescript": "^3.9.7",
     "webpack": "4.42.0"
